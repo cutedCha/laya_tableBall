@@ -162,7 +162,7 @@ export class billordWorldManager{
      * @param normal 
      * @param hitEnergy 
      */
-    hitNormal(normal:{x:number,y:number},hitEnergy:number =0.05){
+    hitNormal(normal:{x:number,y:number},hitEnergy:number =0.03){
         let force = normal
         normal.x *= hitEnergy;
         normal.y *= hitEnergy;

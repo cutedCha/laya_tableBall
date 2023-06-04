@@ -22,6 +22,7 @@ export class ballMain extends Laya.Script {
     onStart(): void {
         let ballword = this.ballworld = new billordWorldManager
         this.ballManager = this.owner.getComponent(ballManager)
+
         this.ballManager.initBallManager()
         this.ballManager.insertBall(new Laya.Vector2(ballword.mainBall.position.x, ballword.mainBall.position.y), 1)
         let otherballList = Object.keys(ballword.otherBallKv)
@@ -111,6 +112,7 @@ export class ballMain extends Laya.Script {
      * @param dt 
      */
     updateTick(dt: number) {
+        
         this.ballworld.runTick(dt)
         this.ballworld.ballList.forEach(item => {
             let ballItem = this.ballManager.ballKv[item.id]
@@ -124,13 +126,6 @@ export class ballMain extends Laya.Script {
             
             let ball3dNode = ballItem.ball3d.ballNode as Laya.Sprite3D
             if(len){
-
-
-                // let routed = this.routeAngle(normal,90)
-                // normal.x = routed.x
-                // normal.y = routed.y
-
-
                 ball3dNode.transform.rotate(new Laya.Vector3(normal.y*(len/160)*360,0,normal.x*(len/160)*360),false,false)
                 ball2dSp.pos(item.position.x, item.position.y)
             }

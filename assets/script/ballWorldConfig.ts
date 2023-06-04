@@ -10,13 +10,13 @@ export default {
     },
     numRows:5,//其他球的列数
     deskSize:{//物理世界中桌子的尺寸
-        width:817,
-        height:454
+        width:820,
+        height:480
     },
     restitution:1,
     wallSize:{
         width:100000,
         height:100000,
-        wallBorder:40//墙体厚度
+        wallBorder:67//墙体厚度
     }
 }

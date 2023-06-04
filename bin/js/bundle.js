@@ -5000,6 +5000,7 @@
       material.shininess = 1;
       let texture = this.textureList[index - 1];
       material.albedoTexture = texture;
+      material.normalTexture = this.normalMap;
       this.renderMesh.material = material;
       let renderTexture = new RenderTexture(200, 200, RenderTargetFormat.R16G16B16A16, RenderTargetFormat.DEPTHSTENCIL_24_8, false, 1);
       renderTexture.filterMode = Laya.FilterMode.Bilinear;
@@ -5217,14 +5218,14 @@
     //其他球的列数
     deskSize: {
       //物理世界中桌子的尺寸
-      width: 817,
-      height: 454
+      width: 820,
+      height: 480
     },
     restitution: 1,
     wallSize: {
       width: 1e5,
       height: 1e5,
-      wallBorder: 40
+      wallBorder: 67
       //墙体厚度
     }
   };
@@ -5373,7 +5374,7 @@
      * @param normal 
      * @param hitEnergy 
      */
-    hitNormal(normal, hitEnergy = 0.05) {
+    hitNormal(normal, hitEnergy = 0.03) {
       let force = normal;
       normal.x *= hitEnergy;
       normal.y *= hitEnergy;

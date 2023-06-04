@@ -123,10 +123,11 @@
     },
     {
       "_$id": "vsj01h28",
+      "_$var": true,
       "_$type": "Image",
-      "name": "Image",
-      "x": 164,
-      "y": 86,
+      "name": "deskNode",
+      "x": 158,
+      "y": 80,
       "width": 820,
       "height": 480,
       "skin": "res://8882a997-9fe4-4350-97ec-b1c689aecc81",
@@ -165,17 +166,16 @@
               "color": "#ffffff"
             }
           ]
+        },
+        {
+          "_$id": "lr3pnss6",
+          "_$type": "Sprite",
+          "name": "Sprite",
+          "x": 101.56283333512414,
+          "width": 100,
+          "height": 67
         }
       ]
-    },
-    {
-      "_$id": "rscbpsnn",
-      "_$type": "Sprite",
-      "name": "touchLayer",
-      "x": 164,
-      "y": 86,
-      "width": 820,
-      "height": 480
     }
   ]
 }
