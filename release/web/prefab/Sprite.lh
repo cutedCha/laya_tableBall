@@ -3,10 +3,12 @@
   "_$id": "bxtcfhdq",
   "_$type": "Sprite",
   "name": "Sprite",
-  "x": 524,
-  "y": 276,
+  "x": 536.5,
+  "y": 288.5,
   "width": 25,
   "height": 25,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
   "texture": {
     "_$uuid": "../resources/RenderTexture.rendertexture",
     "_$type": "Texture"

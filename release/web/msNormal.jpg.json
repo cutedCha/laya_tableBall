@@ -1,16 +1,16 @@
 {
   "sRGB": true,
   "wrapMode": 0,
-  "filterMode": 2,
+  "filterMode": 1,
   "anisoLevel": 0,
   "readWrite": false,
   "mipmap": true,
-  "pma": true,
+  "pma": false,
   "hdrEncodeFormat": 0,
   "files": [
     {
       "file": "",
-      "ext": "png",
+      "ext": "jpg",
       "format": 1
     }
   ],

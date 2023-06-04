@@ -10,7 +10,14 @@
   "_$comp": [
     {
       "_$type": "8e3b7db3-2492-4e8f-8b42-195285ed59b9",
-      "scriptPath": "script/ballMain.ts"
+      "scriptPath": "script/ballMain.ts",
+      "touchNode": {
+        "_$ref": "rscbpsnn"
+      },
+      "billordCube": {
+        "_$ref": "dq8qq0yq",
+        "_$type": "b3360337-ccae-48c7-959d-4cab4466807e"
+      }
     },
     {
       "_$type": "81f2ed27-4d13-433c-b35f-73d85b703cd2",
@@ -23,7 +30,7 @@
         "_$ref": "n9gjxcltvl"
       },
       "ballPre": {
-        "_$uuid": "prefab/Main Camera.lh",
+        "_$uuid": "prefab/ball3d.lh",
         "_$type": "Prefab"
       }
     },
@@ -116,15 +123,59 @@
     },
     {
       "_$id": "vsj01h28",
+      "_$var": true,
       "_$type": "Image",
-      "name": "Image",
-      "x": 164,
-      "y": 86,
+      "name": "deskNode",
+      "x": 158,
+      "y": 80,
       "width": 820,
       "height": 480,
       "skin": "resources/tablex2.png",
       "useSourceSize": true,
-      "color": "#ffffff"
+      "color": "#ffffff",
+      "_$child": [
+        {
+          "_$id": "dq8qq0yq",
+          "_$type": "Sprite",
+          "name": "cubeNode",
+          "x": 100.00000000000006,
+          "y": 223.00000000000006,
+          "width": 18,
+          "height": 360,
+          "anchorX": 0.5,
+          "rotation": 100,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "b3360337-ccae-48c7-959d-4cab4466807e",
+              "scriptPath": "script/comm/billordCubeBarComm.ts",
+              "cubeNode": {
+                "_$ref": "uupmmqb7"
+              }
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "uupmmqb7",
+              "_$type": "Image",
+              "name": "cube",
+              "width": 18,
+              "height": 360,
+              "skin": "resources/cuex2.png",
+              "useSourceSize": true,
+              "color": "#ffffff"
+            }
+          ]
+        },
+        {
+          "_$id": "lr3pnss6",
+          "_$type": "Sprite",
+          "name": "Sprite",
+          "x": 101.56283333512414,
+          "width": 100,
+          "height": 67
+        }
+      ]
     }
   ]
 }
