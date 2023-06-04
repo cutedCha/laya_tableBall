@@ -1,0 +1,99 @@
+{
+  "version": "LAYAMATERIAL:04",
+  "props": {
+    "textures": [
+      {
+        "path": "res://00000000-0000-0000-0001-000000000003",
+        "constructParams": [
+          1,
+          1,
+          31,
+          false,
+          false,
+          false
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 4
+        },
+        "name": "u_NormalTexture"
+      },
+      {
+        "path": "res://7fd214a9-5a4d-45ff-a861-33be7ba21f78",
+        "constructParams": [
+          256,
+          128,
+          1,
+          false,
+          false,
+          false
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 1
+        },
+        "name": "u_DiffuseTexture"
+      },
+      {
+        "path": "res://00000000-0000-0000-0001-000000000000",
+        "constructParams": [
+          1,
+          1,
+          0,
+          false,
+          false,
+          false
+        ],
+        "propertyParams": {
+          "filterMode": 1,
+          "wrapModeU": 0,
+          "wrapModeV": 0,
+          "anisoLevel": 4
+        },
+        "name": "u_SpecularTexture"
+      }
+    ],
+    "type": "BLINNPHONG",
+    "renderQueue": 3000,
+    "materialRenderMode": 4,
+    "s_Cull": 0,
+    "s_Blend": 1,
+    "s_BlendSrc": 6,
+    "s_BlendDst": 7,
+    "s_DepthTest": 1,
+    "s_DepthWrite": false,
+    "u_TilingOffset": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "u_AlphaTestValue": 0.688,
+    "u_DiffuseColor": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "u_MaterialSpecular": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "u_Shininess": 0.047,
+    "u_TransmissionRate": 0,
+    "u_BackDiffuse": 0,
+    "u_BackScale": 0,
+    "u_AlbedoIntensity": 1.419,
+    "defines": [
+      "NEEDTBN",
+      "NORMALMAP",
+      "DIFFUSEMAP"
+    ]
+  }
+}

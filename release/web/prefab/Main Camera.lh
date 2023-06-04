@@ -1,0 +1,157 @@
+{
+  "_$ver": 1,
+  "_$id": "mu06mbej",
+  "_$type": "Camera",
+  "name": "Main Camera",
+  "transform": {
+    "localPosition": {
+      "_$type": "Vector3",
+      "y": 1,
+      "z": 5
+    }
+  },
+  "orthographic": true,
+  "orthographicVerticalSize": 1,
+  "fieldOfView": 72,
+  "nearPlane": 0.01,
+  "farPlane": 100,
+  "clearFlag": 0,
+  "clearColor": {
+    "_$type": "Color",
+    "r": 0.03656462406064557,
+    "g": 0,
+    "b": 0,
+    "a": 0
+  },
+  "msaa": true,
+  "fxaa": true,
+  "cullingMask": 2147483647,
+  "normalizedViewport": {
+    "_$type": "Viewport",
+    "width": 1,
+    "height": 1
+  },
+  "depthTextureFormat": 35,
+  "renderTarget": {
+    "_$uuid": "../resources/RenderTexture.rendertexture",
+    "_$type": "RenderTexture"
+  },
+  "_$comp": [
+    {
+      "_$type": "0943151a-e93b-408a-bcf2-7732e3e472dd",
+      "scriptPath": "script/ball/ball3d.ts",
+      "camera": {
+        "_$ref": "mu06mbej"
+      },
+      "textureList": [
+        {
+          "_$uuid": "../resources/balltexture/snooker0.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker1.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker2.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker3.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker4.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker5.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker6.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker7.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker8.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker9.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker10.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker11.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker12.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker13.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker14.jpg",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "../resources/balltexture/snooker15.jpg",
+          "_$type": "Texture2D"
+        }
+      ],
+      "renderMesh": {
+        "_$ref": "v8ksl0p8",
+        "_$type": "MeshRenderer"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "v8ksl0p8",
+      "_$type": "Sprite3D",
+      "name": "Sphere",
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "z": -3
+        },
+        "localRotation": {
+          "_$type": "Quaternion",
+          "x": 0.2485330082778034,
+          "y": 0.7025235080173502,
+          "z": -0.2909947649067102,
+          "w": 0.6000117592816576
+        }
+      },
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "../internal/Sphere.lm",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "sharedMaterials": [
+            {
+              "_$uuid": "../Material.lmat",
+              "_$type": "Material"
+            }
+          ],
+          "renderMode": null
+        }
+      ]
+    }
+  ]
+}

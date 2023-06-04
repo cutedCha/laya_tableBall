@@ -1,0 +1,167 @@
+{
+  "_$ver": 1,
+  "_$id": "msa0ai03",
+  "_$type": "Sprite3D",
+  "name": "ball3d",
+  "transform": {
+    "localPosition": {
+      "_$type": "Vector3",
+      "x": 5,
+      "y": 8,
+      "z": 5
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "0943151a-e93b-408a-bcf2-7732e3e472dd",
+      "scriptPath": "script/ball/ball3d.ts",
+      "camera": {
+        "_$ref": "dgkdnmfz"
+      },
+      "textureList": [
+        {
+          "_$uuid": "62b73c77-eb29-405f-b08b-b7b4869e693b",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "140017f2-d494-4f39-9219-e415f9ffb464",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "f2884511-5d51-4969-9bc5-b736d4705b26",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "f97004fc-320f-43a1-b567-42511cb2227c",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "177ab230-39b3-46ee-8b75-ed96494e4978",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "defd6707-9624-4124-bf36-6c621df5f47d",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "99e5bd77-ed41-4b2c-b96f-736bbaff79a1",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "5bc8bf7f-6a35-4e80-94d9-03572847ca94",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "98e704c8-975c-4aab-a9e4-707ddb29b723",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "6f9387de-aabf-460f-a905-8b9594303c2e",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "7fd214a9-5a4d-45ff-a861-33be7ba21f78",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "770e17ca-f9be-493a-9e3c-19d924aae4d1",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "912dd5d9-81d4-4312-872f-2ad6fc28a897",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "1acb128f-77cc-436d-b8f6-6bc20bf2ce14",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "55428e76-8d80-4bce-9d7e-1637294c59f5",
+          "_$type": "Texture2D"
+        },
+        {
+          "_$uuid": "a603a515-9053-476a-be42-b33f2dc494b3",
+          "_$type": "Texture2D"
+        }
+      ],
+      "renderMesh": {
+        "_$ref": "uyv8zaoq",
+        "_$type": "MeshRenderer"
+      },
+      "ballNode": {
+        "_$ref": "uyv8zaoq"
+      },
+      "normalMap": {
+        "_$uuid": "00000000-0000-0000-0001-000000000003",
+        "_$type": "Texture2D"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "uyv8zaoq",
+      "_$type": "Sprite3D",
+      "name": "Sphere",
+      "_$comp": [
+        {
+          "_$type": "MeshFilter",
+          "sharedMesh": {
+            "_$uuid": "f1e48cc9-d67d-4196-92dd-77d9ee2f076c",
+            "_$type": "Mesh"
+          }
+        },
+        {
+          "_$type": "MeshRenderer",
+          "sharedMaterials": [
+            {
+              "_$uuid": "6f90bbb0-bcb2-4311-8a9d-3d8277522098",
+              "_$type": "Material"
+            }
+          ],
+          "renderMode": null
+        }
+      ]
+    },
+    {
+      "_$id": "dgkdnmfz",
+      "_$type": "Camera",
+      "name": "Camera",
+      "transform": {
+        "localPosition": {
+          "_$type": "Vector3",
+          "y": -1
+        },
+        "localRotation": {
+          "_$type": "Quaternion",
+          "x": 4.329780281177466e-17,
+          "y": -0.7071067811865475,
+          "z": 0.7071067811865476,
+          "w": 4.329780281177467e-17
+        }
+      },
+      "orthographic": true,
+      "orthographicVerticalSize": 1,
+      "fieldOfView": 60,
+      "nearPlane": 0.3,
+      "farPlane": 2,
+      "clearFlag": 2,
+      "clearColor": {
+        "_$type": "Color",
+        "r": 0.39215686274509803,
+        "g": 0,
+        "b": 0,
+        "a": 0
+      },
+      "enableHDR": true,
+      "msaa": true,
+      "fxaa": true,
+      "cullingMask": 2147483647,
+      "normalizedViewport": {
+        "_$type": "Viewport",
+        "width": 1,
+        "height": 1
+      },
+      "depthTextureFormat": 35
+    }
+  ]
+}

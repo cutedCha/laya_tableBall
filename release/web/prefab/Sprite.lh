@@ -1,0 +1,23 @@
+{
+  "_$ver": 1,
+  "_$id": "bxtcfhdq",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "x": 524,
+  "y": 276,
+  "width": 25,
+  "height": 25,
+  "texture": {
+    "_$uuid": "../resources/RenderTexture.rendertexture",
+    "_$type": "Texture"
+  },
+  "_$comp": [
+    {
+      "_$type": "06c54030-60e3-451a-a14b-bfb8f72424fd",
+      "scriptPath": "script/ball/ball2d.ts",
+      "sp": {
+        "_$ref": "bxtcfhdq"
+      }
+    }
+  ]
+}

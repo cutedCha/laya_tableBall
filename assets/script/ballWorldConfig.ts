@@ -1,0 +1,22 @@
+export default {
+    ballRadius:12.5,//球刚体的半径
+    mainBallPosition:{//主球的位置
+        x:100,
+        y:223
+    },
+    startBallPos:{//开头球的
+        x:500,
+        y:223,
+    },
+    numRows:5,//其他球的列数
+    deskSize:{//物理世界中桌子的尺寸
+        width:817,
+        height:454
+    },
+    restitution:1,
+    wallSize:{
+        width:100000,
+        height:100000,
+        wallBorder:40//墙体厚度
+    }
+}
