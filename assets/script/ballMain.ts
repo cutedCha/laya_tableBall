@@ -3,6 +3,8 @@ import { ballManager } from "./ball/ballManager";
 import { billordWorldManager } from "./billordWorldManager";
 import { billordCubeBarComm } from "./comm/billordCubeBarComm";
 
+
+
 const { regClass, property } = Laya;
 
 @regClass()
@@ -20,6 +22,7 @@ export class ballMain extends Laya.Script {
     ballManager: ballManager = null
 
     onStart(): void {
+        
         let ballword = this.ballworld = new billordWorldManager
         this.ballManager = this.owner.getComponent(ballManager)
 

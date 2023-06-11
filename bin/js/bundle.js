@@ -5,9 +5,13 @@
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
+  var __name = (target, value2) => __defProp(target, "name", { value: value2, configurable: true });
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  };
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
   };
   var __copyProps = (to, from, except, desc) => {
     if (from && typeof from === "object" || typeof from === "function") {
@@ -27,8 +31,8 @@
   ));
   var __decorateClass = (decorators, target, key, kind) => {
     var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key) : target;
-    for (var i = decorators.length - 1, decorator; i >= 0; i--)
-      if (decorator = decorators[i])
+    for (var i2 = decorators.length - 1, decorator; i2 >= 0; i2--)
+      if (decorator = decorators[i2])
         result = (kind ? decorator(target, key, result) : decorator(result)) || result;
     if (kind && result)
       __defProp(target, key, result);
@@ -36,16 +40,16 @@
   };
   var __async = (__this, __arguments, generator) => {
     return new Promise((resolve, reject) => {
-      var fulfilled = (value) => {
+      var fulfilled = (value2) => {
         try {
-          step(generator.next(value));
+          step(generator.next(value2));
         } catch (e) {
           reject(e);
         }
       };
-      var rejected = (value) => {
+      var rejected = (value2) => {
         try {
-          step(generator.throw(value));
+          step(generator.throw(value2));
         } catch (e) {
           reject(e);
         }
@@ -103,20 +107,20 @@
               }
               Object.defineProperty(exports2, "__esModule", { value: true });
             };
-            __webpack_require__.t = function(value, mode) {
+            __webpack_require__.t = function(value2, mode) {
               if (mode & 1)
-                value = __webpack_require__(value);
+                value2 = __webpack_require__(value2);
               if (mode & 8)
-                return value;
-              if (mode & 4 && typeof value === "object" && value && value.__esModule)
-                return value;
+                return value2;
+              if (mode & 4 && typeof value2 === "object" && value2 && value2.__esModule)
+                return value2;
               var ns = /* @__PURE__ */ Object.create(null);
               __webpack_require__.r(ns);
-              Object.defineProperty(ns, "default", { enumerable: true, value });
-              if (mode & 2 && typeof value != "string")
-                for (var key in value)
+              Object.defineProperty(ns, "default", { enumerable: true, value: value2 });
+              if (mode & 2 && typeof value2 != "string")
+                for (var key in value2)
                   __webpack_require__.d(ns, key, function(key2) {
-                    return value[key2];
+                    return value2[key2];
                   }.bind(null, key));
               return ns;
             };
@@ -162,8 +166,8 @@
                     argsStart = 1;
                     deepClone = true;
                   }
-                  for (var i = argsStart; i < arguments.length; i++) {
-                    var source = arguments[i];
+                  for (var i2 = argsStart; i2 < arguments.length; i2++) {
+                    var source = arguments[i2];
                     if (source) {
                       for (var prop in source) {
                         if (deepClone && source[prop] && source[prop].constructor === Object) {
@@ -196,8 +200,8 @@
                   var values = [];
                   if (Object.keys) {
                     var keys = Object.keys(obj);
-                    for (var i = 0; i < keys.length; i++) {
-                      values.push(obj[keys[i]]);
+                    for (var i2 = 0; i2 < keys.length; i2++) {
+                      values.push(obj[keys[i2]]);
                     }
                     return values;
                   }
@@ -207,21 +211,21 @@
                 };
                 Common.get = function(obj, path, begin, end) {
                   path = path.split(".").slice(begin, end);
-                  for (var i = 0; i < path.length; i += 1) {
-                    obj = obj[path[i]];
+                  for (var i2 = 0; i2 < path.length; i2 += 1) {
+                    obj = obj[path[i2]];
                   }
                   return obj;
                 };
                 Common.set = function(obj, path, val, begin, end) {
-                  var parts = path.split(".").slice(begin, end);
-                  Common.get(obj, path, 0, -1)[parts[parts.length - 1]] = val;
+                  var parts2 = path.split(".").slice(begin, end);
+                  Common.get(obj, path, 0, -1)[parts2[parts2.length - 1]] = val;
                   return val;
                 };
                 Common.shuffle = function(array) {
-                  for (var i = array.length - 1; i > 0; i--) {
-                    var j = Math.floor(Common.random() * (i + 1));
-                    var temp = array[i];
-                    array[i] = array[j];
+                  for (var i2 = array.length - 1; i2 > 0; i2--) {
+                    var j = Math.floor(Common.random() * (i2 + 1));
+                    var temp = array[i2];
+                    array[i2] = array[j];
                     array[j] = temp;
                   }
                   return array;
@@ -247,15 +251,15 @@
                 Common.isString = function(obj) {
                   return toString.call(obj) === "[object String]";
                 };
-                Common.clamp = function(value, min, max) {
-                  if (value < min)
+                Common.clamp = function(value2, min, max) {
+                  if (value2 < min)
                     return min;
-                  if (value > max)
+                  if (value2 > max)
                     return max;
-                  return value;
+                  return value2;
                 };
-                Common.sign = function(value) {
-                  return value < 0 ? -1 : 1;
+                Common.sign = function(value2) {
+                  return value2 < 0 ? -1 : 1;
                 };
                 Common.now = function() {
                   if (typeof window !== "undefined" && window.performance) {
@@ -320,9 +324,9 @@
                 Common.indexOf = function(haystack, needle) {
                   if (haystack.indexOf)
                     return haystack.indexOf(needle);
-                  for (var i = 0; i < haystack.length; i++) {
-                    if (haystack[i] === needle)
-                      return i;
+                  for (var i2 = 0; i2 < haystack.length; i2++) {
+                    if (haystack[i2] === needle)
+                      return i2;
                   }
                   return -1;
                 };
@@ -331,8 +335,8 @@
                     return list.map(func);
                   }
                   var mapped = [];
-                  for (var i = 0; i < list.length; i += 1) {
-                    mapped.push(func(list[i]));
+                  for (var i2 = 0; i2 < list.length; i2 += 1) {
+                    mapped.push(func(list[i2]));
                   }
                   return mapped;
                 };
@@ -348,8 +352,8 @@
                 Common._topologicalSort = function(node, visited, temp, graph, result) {
                   var neighbors = graph[node] || [];
                   temp[node] = true;
-                  for (var i = 0; i < neighbors.length; i += 1) {
-                    var neighbor = neighbors[i];
+                  for (var i2 = 0; i2 < neighbors.length; i2 += 1) {
+                    var neighbor = neighbors[i2];
                     if (temp[neighbor]) {
                       continue;
                     }
@@ -363,8 +367,8 @@
                 };
                 Common.chain = function() {
                   var funcs = [];
-                  for (var i = 0; i < arguments.length; i += 1) {
-                    var func = arguments[i];
+                  for (var i2 = 0; i2 < arguments.length; i2 += 1) {
+                    var func = arguments[i2];
                     if (func._chained) {
                       funcs.push.apply(funcs, func._chained);
                     } else {
@@ -373,11 +377,11 @@
                   }
                   var chain = /* @__PURE__ */ __name(function() {
                     var lastResult, args = new Array(arguments.length);
-                    for (var i2 = 0, l = arguments.length; i2 < l; i2++) {
-                      args[i2] = arguments[i2];
+                    for (var i3 = 0, l = arguments.length; i3 < l; i3++) {
+                      args[i3] = arguments[i3];
                     }
-                    for (i2 = 0; i2 < funcs.length; i2 += 1) {
-                      var result = funcs[i2].apply(lastResult, args);
+                    for (i3 = 0; i3 < funcs.length; i3 += 1) {
+                      var result = funcs[i3].apply(lastResult, args);
                       if (typeof result !== "undefined") {
                         lastResult = result;
                       }
@@ -438,8 +442,8 @@
                   bounds.max.x = -Infinity;
                   bounds.min.y = Infinity;
                   bounds.max.y = -Infinity;
-                  for (var i = 0; i < vertices.length; i++) {
-                    var vertex = vertices[i];
+                  for (var i2 = 0; i2 < vertices.length; i2++) {
+                    var vertex = vertices[i2];
                     if (vertex.x > bounds.max.x)
                       bounds.max.x = vertex.x;
                     if (vertex.x < bounds.min.x)
@@ -584,11 +588,11 @@
               (function() {
                 Vertices.create = function(points, body) {
                   var vertices = [];
-                  for (var i = 0; i < points.length; i++) {
-                    var point = points[i], vertex = {
+                  for (var i2 = 0; i2 < points.length; i2++) {
+                    var point = points[i2], vertex = {
                       x: point.x,
                       y: point.y,
-                      index: i,
+                      index: i2,
                       body,
                       isInternal: false
                     };
@@ -605,27 +609,27 @@
                 };
                 Vertices.centre = function(vertices) {
                   var area = Vertices.area(vertices, true), centre = { x: 0, y: 0 }, cross, temp, j;
-                  for (var i = 0; i < vertices.length; i++) {
-                    j = (i + 1) % vertices.length;
-                    cross = Vector.cross(vertices[i], vertices[j]);
-                    temp = Vector.mult(Vector.add(vertices[i], vertices[j]), cross);
+                  for (var i2 = 0; i2 < vertices.length; i2++) {
+                    j = (i2 + 1) % vertices.length;
+                    cross = Vector.cross(vertices[i2], vertices[j]);
+                    temp = Vector.mult(Vector.add(vertices[i2], vertices[j]), cross);
                     centre = Vector.add(centre, temp);
                   }
                   return Vector.div(centre, 6 * area);
                 };
                 Vertices.mean = function(vertices) {
                   var average = { x: 0, y: 0 };
-                  for (var i = 0; i < vertices.length; i++) {
-                    average.x += vertices[i].x;
-                    average.y += vertices[i].y;
+                  for (var i2 = 0; i2 < vertices.length; i2++) {
+                    average.x += vertices[i2].x;
+                    average.y += vertices[i2].y;
                   }
                   return Vector.div(average, vertices.length);
                 };
                 Vertices.area = function(vertices, signed) {
                   var area = 0, j = vertices.length - 1;
-                  for (var i = 0; i < vertices.length; i++) {
-                    area += (vertices[j].x - vertices[i].x) * (vertices[j].y + vertices[i].y);
-                    j = i;
+                  for (var i2 = 0; i2 < vertices.length; i2++) {
+                    area += (vertices[j].x - vertices[i2].x) * (vertices[j].y + vertices[i2].y);
+                    j = i2;
                   }
                   if (signed)
                     return area / 2;
@@ -643,19 +647,19 @@
                 };
                 Vertices.translate = function(vertices, vector, scalar) {
                   scalar = typeof scalar !== "undefined" ? scalar : 1;
-                  var verticesLength = vertices.length, translateX = vector.x * scalar, translateY = vector.y * scalar, i;
-                  for (i = 0; i < verticesLength; i++) {
-                    vertices[i].x += translateX;
-                    vertices[i].y += translateY;
+                  var verticesLength = vertices.length, translateX = vector.x * scalar, translateY = vector.y * scalar, i2;
+                  for (i2 = 0; i2 < verticesLength; i2++) {
+                    vertices[i2].x += translateX;
+                    vertices[i2].y += translateY;
                   }
                   return vertices;
                 };
                 Vertices.rotate = function(vertices, angle, point) {
                   if (angle === 0)
                     return;
-                  var cos = Math.cos(angle), sin = Math.sin(angle), pointX = point.x, pointY = point.y, verticesLength = vertices.length, vertex, dx, dy, i;
-                  for (i = 0; i < verticesLength; i++) {
-                    vertex = vertices[i];
+                  var cos = Math.cos(angle), sin = Math.sin(angle), pointX = point.x, pointY = point.y, verticesLength = vertices.length, vertex, dx, dy, i2;
+                  for (i2 = 0; i2 < verticesLength; i2++) {
+                    vertex = vertices[i2];
                     dx = vertex.x - pointX;
                     dy = vertex.y - pointY;
                     vertex.x = pointX + (dx * cos - dy * sin);
@@ -665,8 +669,8 @@
                 };
                 Vertices.contains = function(vertices, point) {
                   var pointX = point.x, pointY = point.y, verticesLength = vertices.length, vertex = vertices[verticesLength - 1], nextVertex;
-                  for (var i = 0; i < verticesLength; i++) {
-                    nextVertex = vertices[i];
+                  for (var i2 = 0; i2 < verticesLength; i2++) {
+                    nextVertex = vertices[i2];
                     if ((pointX - vertex.x) * (nextVertex.y - vertex.y) + (pointY - vertex.y) * (vertex.x - nextVertex.x) > 0) {
                       return false;
                     }
@@ -679,11 +683,11 @@
                     return vertices;
                   point = point || Vertices.centre(vertices);
                   var vertex, delta;
-                  for (var i = 0; i < vertices.length; i++) {
-                    vertex = vertices[i];
+                  for (var i2 = 0; i2 < vertices.length; i2++) {
+                    vertex = vertices[i2];
                     delta = Vector.sub(vertex, point);
-                    vertices[i].x = point.x + delta.x * scaleX;
-                    vertices[i].y = point.y + delta.y * scaleY;
+                    vertices[i2].x = point.x + delta.x * scaleX;
+                    vertices[i2].y = point.y + delta.y * scaleY;
                   }
                   return vertices;
                 };
@@ -697,8 +701,8 @@
                   qualityMin = qualityMin || 2;
                   qualityMax = qualityMax || 14;
                   var newVertices = [];
-                  for (var i = 0; i < vertices.length; i++) {
-                    var prevVertex = vertices[i - 1 >= 0 ? i - 1 : vertices.length - 1], vertex = vertices[i], nextVertex = vertices[(i + 1) % vertices.length], currentRadius = radius[i < radius.length ? i : radius.length - 1];
+                  for (var i2 = 0; i2 < vertices.length; i2++) {
+                    var prevVertex = vertices[i2 - 1 >= 0 ? i2 - 1 : vertices.length - 1], vertex = vertices[i2], nextVertex = vertices[(i2 + 1) % vertices.length], currentRadius = radius[i2 < radius.length ? i2 : radius.length - 1];
                     if (currentRadius === 0) {
                       newVertices.push(vertex);
                       continue;
@@ -734,14 +738,14 @@
                   return vertices;
                 };
                 Vertices.isConvex = function(vertices) {
-                  var flag = 0, n = vertices.length, i, j, k, z;
+                  var flag = 0, n = vertices.length, i2, j, k, z;
                   if (n < 3)
                     return null;
-                  for (i = 0; i < n; i++) {
-                    j = (i + 1) % n;
-                    k = (i + 2) % n;
-                    z = (vertices[j].x - vertices[i].x) * (vertices[k].y - vertices[j].y);
-                    z -= (vertices[j].y - vertices[i].y) * (vertices[k].x - vertices[j].x);
+                  for (i2 = 0; i2 < n; i2++) {
+                    j = (i2 + 1) % n;
+                    k = (i2 + 2) % n;
+                    z = (vertices[j].x - vertices[i2].x) * (vertices[k].y - vertices[j].y);
+                    z -= (vertices[j].y - vertices[i2].y) * (vertices[k].x - vertices[j].x);
                     if (z < 0) {
                       flag |= 1;
                     } else if (z > 0) {
@@ -758,21 +762,21 @@
                   }
                 };
                 Vertices.hull = function(vertices) {
-                  var upper = [], lower = [], vertex, i;
+                  var upper = [], lower = [], vertex, i2;
                   vertices = vertices.slice(0);
                   vertices.sort(function(vertexA, vertexB) {
                     var dx = vertexA.x - vertexB.x;
                     return dx !== 0 ? dx : vertexA.y - vertexB.y;
                   });
-                  for (i = 0; i < vertices.length; i += 1) {
-                    vertex = vertices[i];
+                  for (i2 = 0; i2 < vertices.length; i2 += 1) {
+                    vertex = vertices[i2];
                     while (lower.length >= 2 && Vector.cross3(lower[lower.length - 2], lower[lower.length - 1], vertex) <= 0) {
                       lower.pop();
                     }
                     lower.push(vertex);
                   }
-                  for (i = vertices.length - 1; i >= 0; i -= 1) {
-                    vertex = vertices[i];
+                  for (i2 = vertices.length - 1; i2 >= 0; i2 -= 1) {
+                    vertex = vertices[i2];
                     while (upper.length >= 2 && Vector.cross3(upper[upper.length - 2], upper[upper.length - 1], vertex) <= 0) {
                       upper.pop();
                     }
@@ -906,68 +910,68 @@
                   body.render.sprite.xOffset += -(body.bounds.min.x - body.position.x) / (body.bounds.max.x - body.bounds.min.x);
                   body.render.sprite.yOffset += -(body.bounds.min.y - body.position.y) / (body.bounds.max.y - body.bounds.min.y);
                 }, "_initProperties");
-                Body2.set = function(body, settings, value) {
+                Body2.set = function(body, settings, value2) {
                   var property10;
                   if (typeof settings === "string") {
                     property10 = settings;
                     settings = {};
-                    settings[property10] = value;
+                    settings[property10] = value2;
                   }
                   for (property10 in settings) {
                     if (!Object.prototype.hasOwnProperty.call(settings, property10))
                       continue;
-                    value = settings[property10];
+                    value2 = settings[property10];
                     switch (property10) {
                       case "isStatic":
-                        Body2.setStatic(body, value);
+                        Body2.setStatic(body, value2);
                         break;
                       case "isSleeping":
-                        Sleeping.set(body, value);
+                        Sleeping.set(body, value2);
                         break;
                       case "mass":
-                        Body2.setMass(body, value);
+                        Body2.setMass(body, value2);
                         break;
                       case "density":
-                        Body2.setDensity(body, value);
+                        Body2.setDensity(body, value2);
                         break;
                       case "inertia":
-                        Body2.setInertia(body, value);
+                        Body2.setInertia(body, value2);
                         break;
                       case "vertices":
-                        Body2.setVertices(body, value);
+                        Body2.setVertices(body, value2);
                         break;
                       case "position":
-                        Body2.setPosition(body, value);
+                        Body2.setPosition(body, value2);
                         break;
                       case "angle":
-                        Body2.setAngle(body, value);
+                        Body2.setAngle(body, value2);
                         break;
                       case "velocity":
-                        Body2.setVelocity(body, value);
+                        Body2.setVelocity(body, value2);
                         break;
                       case "angularVelocity":
-                        Body2.setAngularVelocity(body, value);
+                        Body2.setAngularVelocity(body, value2);
                         break;
                       case "speed":
-                        Body2.setSpeed(body, value);
+                        Body2.setSpeed(body, value2);
                         break;
                       case "angularSpeed":
-                        Body2.setAngularSpeed(body, value);
+                        Body2.setAngularSpeed(body, value2);
                         break;
                       case "parts":
-                        Body2.setParts(body, value);
+                        Body2.setParts(body, value2);
                         break;
                       case "centre":
-                        Body2.setCentre(body, value);
+                        Body2.setCentre(body, value2);
                         break;
                       default:
-                        body[property10] = value;
+                        body[property10] = value2;
                     }
                   }
                 };
                 Body2.setStatic = function(body, isStatic) {
-                  for (var i = 0; i < body.parts.length; i++) {
-                    var part = body.parts[i];
+                  for (var i2 = 0; i2 < body.parts.length; i2++) {
+                    var part = body.parts[i2];
                     part.isStatic = isStatic;
                     if (isStatic) {
                       part._original = {
@@ -1033,14 +1037,14 @@
                   Vertices.translate(body.vertices, body.position);
                   Bounds.update(body.bounds, body.vertices, body.velocity);
                 };
-                Body2.setParts = function(body, parts, autoHull) {
-                  var i;
-                  parts = parts.slice(0);
+                Body2.setParts = function(body, parts2, autoHull) {
+                  var i2;
+                  parts2 = parts2.slice(0);
                   body.parts.length = 0;
                   body.parts.push(body);
                   body.parent = body;
-                  for (i = 0; i < parts.length; i++) {
-                    var part = parts[i];
+                  for (i2 = 0; i2 < parts2.length; i2++) {
+                    var part = parts2[i2];
                     if (part !== body) {
                       part.parent = body;
                       body.parts.push(part);
@@ -1051,8 +1055,8 @@
                   autoHull = typeof autoHull !== "undefined" ? autoHull : true;
                   if (autoHull) {
                     var vertices = [];
-                    for (i = 0; i < parts.length; i++) {
-                      vertices = vertices.concat(parts[i].vertices);
+                    for (i2 = 0; i2 < parts2.length; i2++) {
+                      vertices = vertices.concat(parts2[i2].vertices);
                     }
                     Vertices.clockwiseSort(vertices);
                     var hull = Vertices.hull(vertices), hullCentre = Vertices.centre(hull);
@@ -1095,8 +1099,8 @@
                     body.positionPrev.x += delta.x;
                     body.positionPrev.y += delta.y;
                   }
-                  for (var i = 0; i < body.parts.length; i++) {
-                    var part = body.parts[i];
+                  for (var i2 = 0; i2 < body.parts.length; i2++) {
+                    var part = body.parts[i2];
                     part.position.x += delta.x;
                     part.position.y += delta.y;
                     Vertices.translate(part.vertices, delta);
@@ -1112,13 +1116,13 @@
                   } else {
                     body.anglePrev += delta;
                   }
-                  for (var i = 0; i < body.parts.length; i++) {
-                    var part = body.parts[i];
+                  for (var i2 = 0; i2 < body.parts.length; i2++) {
+                    var part = body.parts[i2];
                     part.angle += delta;
                     Vertices.rotate(part.vertices, delta, body.position);
                     Axes.rotate(part.axes, delta);
                     Bounds.update(part.bounds, part.vertices, body.velocity);
-                    if (i > 0) {
+                    if (i2 > 0) {
                       Vector.rotateAbout(part.position, delta, body.position, part.position);
                     }
                   }
@@ -1177,8 +1181,8 @@
                 Body2.scale = function(body, scaleX, scaleY, point) {
                   var totalArea = 0, totalInertia = 0;
                   point = point || body.position;
-                  for (var i = 0; i < body.parts.length; i++) {
-                    var part = body.parts[i];
+                  for (var i2 = 0; i2 < body.parts.length; i2++) {
+                    var part = body.parts[i2];
                     Vertices.scale(part.vertices, scaleX, scaleY, point);
                     part.axes = Axes.fromVertices(part.vertices);
                     part.area = Vertices.area(part.vertices);
@@ -1186,7 +1190,7 @@
                     Vertices.translate(part.vertices, { x: -part.position.x, y: -part.position.y });
                     Body2.setInertia(part, Body2._inertiaScale * Vertices.inertia(part.vertices, part.mass));
                     Vertices.translate(part.vertices, { x: part.position.x, y: part.position.y });
-                    if (i > 0) {
+                    if (i2 > 0) {
                       totalArea += part.area;
                       totalInertia += part.inertia;
                     }
@@ -1223,17 +1227,17 @@
                   body.angularVelocity = (body.angle - body.anglePrev) * frictionAir * correction + body.torque / body.inertia * deltaTimeSquared;
                   body.anglePrev = body.angle;
                   body.angle += body.angularVelocity;
-                  for (var i = 0; i < body.parts.length; i++) {
-                    var part = body.parts[i];
+                  for (var i2 = 0; i2 < body.parts.length; i2++) {
+                    var part = body.parts[i2];
                     Vertices.translate(part.vertices, body.velocity);
-                    if (i > 0) {
+                    if (i2 > 0) {
                       part.position.x += body.velocity.x;
                       part.position.y += body.velocity.y;
                     }
                     if (body.angularVelocity !== 0) {
                       Vertices.rotate(part.vertices, body.angularVelocity, body.position);
                       Axes.rotate(part.axes, body.angularVelocity);
-                      if (i > 0) {
+                      if (i2 > 0) {
                         Vector.rotateAbout(part.position, body.angularVelocity, body.position, part.position);
                       }
                     }
@@ -1261,8 +1265,8 @@
                     inertia: 0,
                     centre: { x: 0, y: 0 }
                   };
-                  for (var i = body.parts.length === 1 ? 0 : 1; i < body.parts.length; i++) {
-                    var part = body.parts[i], mass = part.mass !== Infinity ? part.mass : 1;
+                  for (var i2 = body.parts.length === 1 ? 0 : 1; i2 < body.parts.length; i2++) {
+                    var part = body.parts[i2], mass = part.mass !== Infinity ? part.mass : 1;
                     properties.mass += mass;
                     properties.area += part.area;
                     properties.inertia += part.inertia;
@@ -1282,8 +1286,8 @@
               (function() {
                 Events.on = function(object, eventNames, callback) {
                   var names = eventNames.split(" "), name;
-                  for (var i = 0; i < names.length; i++) {
-                    name = names[i];
+                  for (var i2 = 0; i2 < names.length; i2++) {
+                    name = names[i2];
                     object.events = object.events || {};
                     object.events[name] = object.events[name] || [];
                     object.events[name].push(callback);
@@ -1300,15 +1304,15 @@
                     eventNames = Common.keys(object.events).join(" ");
                   }
                   var names = eventNames.split(" ");
-                  for (var i = 0; i < names.length; i++) {
-                    var callbacks = object.events[names[i]], newCallbacks = [];
+                  for (var i2 = 0; i2 < names.length; i2++) {
+                    var callbacks = object.events[names[i2]], newCallbacks = [];
                     if (callback && callbacks) {
                       for (var j = 0; j < callbacks.length; j++) {
                         if (callbacks[j] !== callback)
                           newCallbacks.push(callbacks[j]);
                       }
                     }
-                    object.events[names[i]] = newCallbacks;
+                    object.events[names[i2]] = newCallbacks;
                   }
                 };
                 Events.trigger = function(object, eventNames, event) {
@@ -1318,8 +1322,8 @@
                     if (!event)
                       event = {};
                     names = eventNames.split(" ");
-                    for (var i = 0; i < names.length; i++) {
-                      name = names[i];
+                    for (var i2 = 0; i2 < names.length; i2++) {
+                      name = names[i2];
                       callbacks = events[name];
                       if (callbacks) {
                         eventClone = Common.clone(event, false);
@@ -1373,8 +1377,8 @@
                     Composite.setModified(composite.parent, isModified, updateParents, updateChildren);
                   }
                   if (updateChildren) {
-                    for (var i = 0; i < composite.composites.length; i++) {
-                      var childComposite = composite.composites[i];
+                    for (var i2 = 0; i2 < composite.composites.length; i2++) {
+                      var childComposite = composite.composites[i2];
                       Composite.setModified(childComposite, isModified, updateParents, updateChildren);
                     }
                   }
@@ -1382,8 +1386,8 @@
                 Composite.add = function(composite, object) {
                   var objects = [].concat(object);
                   Events.trigger(composite, "beforeAdd", { object });
-                  for (var i = 0; i < objects.length; i++) {
-                    var obj = objects[i];
+                  for (var i2 = 0; i2 < objects.length; i2++) {
+                    var obj = objects[i2];
                     switch (obj.type) {
                       case "body":
                         if (obj.parent !== obj) {
@@ -1409,8 +1413,8 @@
                 Composite.remove = function(composite, object, deep) {
                   var objects = [].concat(object);
                   Events.trigger(composite, "beforeRemove", { object });
-                  for (var i = 0; i < objects.length; i++) {
-                    var obj = objects[i];
+                  for (var i2 = 0; i2 < objects.length; i2++) {
+                    var obj = objects[i2];
                     switch (obj.type) {
                       case "body":
                         Composite.removeBody(composite, obj, deep);
@@ -1441,8 +1445,8 @@
                     Composite.removeCompositeAt(compositeA, position);
                   }
                   if (deep) {
-                    for (var i = 0; i < compositeA.composites.length; i++) {
-                      Composite.removeComposite(compositeA.composites[i], compositeB, true);
+                    for (var i2 = 0; i2 < compositeA.composites.length; i2++) {
+                      Composite.removeComposite(compositeA.composites[i2], compositeB, true);
                     }
                   }
                   return compositeA;
@@ -1463,8 +1467,8 @@
                     Composite.removeBodyAt(composite, position);
                   }
                   if (deep) {
-                    for (var i = 0; i < composite.composites.length; i++) {
-                      Composite.removeBody(composite.composites[i], body, true);
+                    for (var i2 = 0; i2 < composite.composites.length; i2++) {
+                      Composite.removeBody(composite.composites[i2], body, true);
                     }
                   }
                   return composite;
@@ -1485,8 +1489,8 @@
                     Composite.removeConstraintAt(composite, position);
                   }
                   if (deep) {
-                    for (var i = 0; i < composite.composites.length; i++) {
-                      Composite.removeConstraint(composite.composites[i], constraint, true);
+                    for (var i2 = 0; i2 < composite.composites.length; i2++) {
+                      Composite.removeConstraint(composite.composites[i2], constraint, true);
                     }
                   }
                   return composite;
@@ -1498,8 +1502,8 @@
                 };
                 Composite.clear = function(composite, keepStatic, deep) {
                   if (deep) {
-                    for (var i = 0; i < composite.composites.length; i++) {
-                      Composite.clear(composite.composites[i], keepStatic, true);
+                    for (var i2 = 0; i2 < composite.composites.length; i2++) {
+                      Composite.clear(composite.composites[i2], keepStatic, true);
                     }
                   }
                   if (keepStatic) {
@@ -1519,8 +1523,8 @@
                     return composite.cache.allBodies;
                   }
                   var bodies = [].concat(composite.bodies);
-                  for (var i = 0; i < composite.composites.length; i++)
-                    bodies = bodies.concat(Composite.allBodies(composite.composites[i]));
+                  for (var i2 = 0; i2 < composite.composites.length; i2++)
+                    bodies = bodies.concat(Composite.allBodies(composite.composites[i2]));
                   if (composite.cache) {
                     composite.cache.allBodies = bodies;
                   }
@@ -1531,8 +1535,8 @@
                     return composite.cache.allConstraints;
                   }
                   var constraints = [].concat(composite.constraints);
-                  for (var i = 0; i < composite.composites.length; i++)
-                    constraints = constraints.concat(Composite.allConstraints(composite.composites[i]));
+                  for (var i2 = 0; i2 < composite.composites.length; i2++)
+                    constraints = constraints.concat(Composite.allConstraints(composite.composites[i2]));
                   if (composite.cache) {
                     composite.cache.allConstraints = constraints;
                   }
@@ -1543,8 +1547,8 @@
                     return composite.cache.allComposites;
                   }
                   var composites = [].concat(composite.composites);
-                  for (var i = 0; i < composite.composites.length; i++)
-                    composites = composites.concat(Composite.allComposites(composite.composites[i]));
+                  for (var i2 = 0; i2 < composite.composites.length; i2++)
+                    composites = composites.concat(Composite.allComposites(composite.composites[i2]));
                   if (composite.cache) {
                     composite.cache.allComposites = composites;
                   }
@@ -1577,22 +1581,22 @@
                 };
                 Composite.rebase = function(composite) {
                   var objects = Composite.allBodies(composite).concat(Composite.allConstraints(composite)).concat(Composite.allComposites(composite));
-                  for (var i = 0; i < objects.length; i++) {
-                    objects[i].id = Common.nextId();
+                  for (var i2 = 0; i2 < objects.length; i2++) {
+                    objects[i2].id = Common.nextId();
                   }
                   return composite;
                 };
                 Composite.translate = function(composite, translation, recursive) {
                   var bodies = recursive ? Composite.allBodies(composite) : composite.bodies;
-                  for (var i = 0; i < bodies.length; i++) {
-                    Body2.translate(bodies[i], translation);
+                  for (var i2 = 0; i2 < bodies.length; i2++) {
+                    Body2.translate(bodies[i2], translation);
                   }
                   return composite;
                 };
                 Composite.rotate = function(composite, rotation, point, recursive) {
                   var cos = Math.cos(rotation), sin = Math.sin(rotation), bodies = recursive ? Composite.allBodies(composite) : composite.bodies;
-                  for (var i = 0; i < bodies.length; i++) {
-                    var body = bodies[i], dx = body.position.x - point.x, dy = body.position.y - point.y;
+                  for (var i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2], dx = body.position.x - point.x, dy = body.position.y - point.y;
                     Body2.setPosition(body, {
                       x: point.x + (dx * cos - dy * sin),
                       y: point.y + (dx * sin + dy * cos)
@@ -1603,8 +1607,8 @@
                 };
                 Composite.scale = function(composite, scaleX, scaleY, point, recursive) {
                   var bodies = recursive ? Composite.allBodies(composite) : composite.bodies;
-                  for (var i = 0; i < bodies.length; i++) {
-                    var body = bodies[i], dx = body.position.x - point.x, dy = body.position.y - point.y;
+                  for (var i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2], dx = body.position.x - point.x, dy = body.position.y - point.y;
                     Body2.setPosition(body, {
                       x: point.x + dx * scaleX,
                       y: point.y + dy * scaleY
@@ -1615,8 +1619,8 @@
                 };
                 Composite.bounds = function(composite) {
                   var bodies = Composite.allBodies(composite), vertices = [];
-                  for (var i = 0; i < bodies.length; i += 1) {
-                    var body = bodies[i];
+                  for (var i2 = 0; i2 < bodies.length; i2 += 1) {
+                    var body = bodies[i2];
                     vertices.push(body.bounds.min, body.bounds.max);
                   }
                   return Bounds.create(vertices);
@@ -1637,8 +1641,8 @@
                 Sleeping._minBias = 0.9;
                 Sleeping.update = function(bodies, delta) {
                   var timeScale = delta / Common._baseDelta, motionSleepThreshold = Sleeping._motionSleepThreshold;
-                  for (var i = 0; i < bodies.length; i++) {
-                    var body = bodies[i], speed = Body2.getSpeed(body), angularSpeed = Body2.getAngularSpeed(body), motion = speed * speed + angularSpeed * angularSpeed;
+                  for (var i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2], speed = Body2.getSpeed(body), angularSpeed = Body2.getAngularSpeed(body), motion = speed * speed + angularSpeed * angularSpeed;
                     if (body.force.x !== 0 || body.force.y !== 0) {
                       Sleeping.set(body, false);
                       continue;
@@ -1657,8 +1661,8 @@
                 };
                 Sleeping.afterCollisions = function(pairs) {
                   var motionSleepThreshold = Sleeping._motionSleepThreshold;
-                  for (var i = 0; i < pairs.length; i++) {
-                    var pair = pairs[i];
+                  for (var i2 = 0; i2 < pairs.length; i2++) {
+                    var pair = pairs[i2];
                     if (!pair.isActive)
                       continue;
                     var collision = pair.collision, bodyA = collision.bodyA.parent, bodyB = collision.bodyB.parent;
@@ -1794,9 +1798,9 @@
                   return collision;
                 };
                 Collision._overlapAxes = function(result, verticesA, verticesB, axes) {
-                  var verticesALength = verticesA.length, verticesBLength = verticesB.length, verticesAX = verticesA[0].x, verticesAY = verticesA[0].y, verticesBX = verticesB[0].x, verticesBY = verticesB[0].y, axesLength = axes.length, overlapMin = Number.MAX_VALUE, overlapAxisNumber = 0, overlap, overlapAB, overlapBA, dot, i, j;
-                  for (i = 0; i < axesLength; i++) {
-                    var axis = axes[i], axisX = axis.x, axisY = axis.y, minA = verticesAX * axisX + verticesAY * axisY, minB = verticesBX * axisX + verticesBY * axisY, maxA = minA, maxB = minB;
+                  var verticesALength = verticesA.length, verticesBLength = verticesB.length, verticesAX = verticesA[0].x, verticesAY = verticesA[0].y, verticesBX = verticesB[0].x, verticesBY = verticesB[0].y, axesLength = axes.length, overlapMin = Number.MAX_VALUE, overlapAxisNumber = 0, overlap, overlapAB, overlapBA, dot, i2, j;
+                  for (i2 = 0; i2 < axesLength; i2++) {
+                    var axis = axes[i2], axisX = axis.x, axisY = axis.y, minA = verticesAX * axisX + verticesAY * axisY, minB = verticesBX * axisX + verticesBY * axisY, maxA = minA, maxB = minB;
                     for (j = 1; j < verticesALength; j += 1) {
                       dot = verticesA[j].x * axisX + verticesA[j].y * axisY;
                       if (dot > maxA) {
@@ -1818,7 +1822,7 @@
                     overlap = overlapAB < overlapBA ? overlapAB : overlapBA;
                     if (overlap < overlapMin) {
                       overlapMin = overlap;
-                      overlapAxisNumber = i;
+                      overlapAxisNumber = i2;
                       if (overlap <= 0) {
                         break;
                       }
@@ -1829,8 +1833,8 @@
                 };
                 Collision._projectToAxis = function(projection, vertices, axis) {
                   var min = vertices[0].x * axis.x + vertices[0].y * axis.y, max = min;
-                  for (var i = 1; i < vertices.length; i += 1) {
-                    var dot = vertices[i].x * axis.x + vertices[i].y * axis.y;
+                  for (var i2 = 1; i2 < vertices.length; i2 += 1) {
+                    var dot = vertices[i2].x * axis.x + vertices[i2].y * axis.y;
                     if (dot > max) {
                       max = dot;
                     } else if (dot < min) {
@@ -1908,8 +1912,8 @@
                   pair.slop = parentA.slop > parentB.slop ? parentA.slop : parentB.slop;
                   collision.pair = pair;
                   activeContacts.length = 0;
-                  for (var i = 0; i < supports.length; i++) {
-                    var support = supports[i], contactId = support.body === parentA ? support.index : parentAVerticesLength + support.index, contact = contacts[contactId];
+                  for (var i2 = 0; i2 < supports.length; i2++) {
+                    var support = supports[i2], contactId = support.body === parentA ? support.index : parentAVerticesLength + support.index, contact = contacts[contactId];
                     if (contact) {
                       activeContacts.push(contact);
                     } else {
@@ -1956,8 +1960,8 @@
                     constraint.pointA = { x: 0, y: 0 };
                   if (constraint.bodyB && !constraint.pointB)
                     constraint.pointB = { x: 0, y: 0 };
-                  var initialPointA = constraint.bodyA ? Vector.add(constraint.bodyA.position, constraint.pointA) : constraint.pointA, initialPointB = constraint.bodyB ? Vector.add(constraint.bodyB.position, constraint.pointB) : constraint.pointB, length = Vector.magnitude(Vector.sub(initialPointA, initialPointB));
-                  constraint.length = typeof constraint.length !== "undefined" ? constraint.length : length;
+                  var initialPointA = constraint.bodyA ? Vector.add(constraint.bodyA.position, constraint.pointA) : constraint.pointA, initialPointB = constraint.bodyB ? Vector.add(constraint.bodyB.position, constraint.pointB) : constraint.pointB, length2 = Vector.magnitude(Vector.sub(initialPointA, initialPointB));
+                  constraint.length = typeof constraint.length !== "undefined" ? constraint.length : length2;
                   constraint.id = constraint.id || Common.nextId();
                   constraint.label = constraint.label || "Constraint";
                   constraint.type = "constraint";
@@ -1984,8 +1988,8 @@
                   return constraint;
                 };
                 Constraint.preSolveAll = function(bodies) {
-                  for (var i = 0; i < bodies.length; i += 1) {
-                    var body = bodies[i], impulse = body.constraintImpulse;
+                  for (var i2 = 0; i2 < bodies.length; i2 += 1) {
+                    var body = bodies[i2], impulse = body.constraintImpulse;
                     if (body.isStatic || impulse.x === 0 && impulse.y === 0 && impulse.angle === 0) {
                       continue;
                     }
@@ -1996,18 +2000,18 @@
                 };
                 Constraint.solveAll = function(constraints, delta) {
                   var timeScale = Common.clamp(delta / Common._baseDelta, 0, 1);
-                  for (var i = 0; i < constraints.length; i += 1) {
-                    var constraint = constraints[i], fixedA = !constraint.bodyA || constraint.bodyA && constraint.bodyA.isStatic, fixedB = !constraint.bodyB || constraint.bodyB && constraint.bodyB.isStatic;
+                  for (var i2 = 0; i2 < constraints.length; i2 += 1) {
+                    var constraint = constraints[i2], fixedA = !constraint.bodyA || constraint.bodyA && constraint.bodyA.isStatic, fixedB = !constraint.bodyB || constraint.bodyB && constraint.bodyB.isStatic;
                     if (fixedA || fixedB) {
-                      Constraint.solve(constraints[i], timeScale);
+                      Constraint.solve(constraints[i2], timeScale);
                     }
                   }
-                  for (i = 0; i < constraints.length; i += 1) {
-                    constraint = constraints[i];
+                  for (i2 = 0; i2 < constraints.length; i2 += 1) {
+                    constraint = constraints[i2];
                     fixedA = !constraint.bodyA || constraint.bodyA && constraint.bodyA.isStatic;
                     fixedB = !constraint.bodyB || constraint.bodyB && constraint.bodyB.isStatic;
                     if (!fixedA && !fixedB) {
-                      Constraint.solve(constraints[i], timeScale);
+                      Constraint.solve(constraints[i2], timeScale);
                     }
                   }
                 };
@@ -2074,8 +2078,8 @@
                   }
                 };
                 Constraint.postSolveAll = function(bodies) {
-                  for (var i = 0; i < bodies.length; i++) {
-                    var body = bodies[i], impulse = body.constraintImpulse;
+                  for (var i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2], impulse = body.constraintImpulse;
                     if (body.isStatic || impulse.x === 0 && impulse.y === 0 && impulse.angle === 0) {
                       continue;
                     }
@@ -2125,10 +2129,10 @@
               (function() {
                 Axes.fromVertices = function(vertices) {
                   var axes = {};
-                  for (var i = 0; i < vertices.length; i++) {
-                    var j = (i + 1) % vertices.length, normal = Vector.normalise({
-                      x: vertices[j].y - vertices[i].y,
-                      y: vertices[i].x - vertices[j].x
+                  for (var i2 = 0; i2 < vertices.length; i2++) {
+                    var j = (i2 + 1) % vertices.length, normal = Vector.normalise({
+                      x: vertices[j].y - vertices[i2].y,
+                      y: vertices[i2].x - vertices[j].x
                     }), gradient = normal.y === 0 ? Infinity : normal.x / normal.y;
                     gradient = gradient.toFixed(3).toString();
                     axes[gradient] = normal;
@@ -2139,8 +2143,8 @@
                   if (angle === 0)
                     return;
                   var cos = Math.cos(angle), sin = Math.sin(angle);
-                  for (var i = 0; i < axes.length; i++) {
-                    var axis = axes[i], xx;
+                  for (var i2 = 0; i2 < axes.length; i2++) {
+                    var axis = axes[i2], xx;
                     xx = axis.x * cos - axis.y * sin;
                     axis.y = axis.x * sin + axis.y * cos;
                     axis.x = xx;
@@ -2224,8 +2228,8 @@
                   if (sides < 3)
                     return Bodies2.circle(x, y, radius, options);
                   var theta = 2 * Math.PI / sides, path = "", offset = theta * 0.5;
-                  for (var i = 0; i < sides; i += 1) {
-                    var angle = offset + i * theta, xx = Math.cos(angle) * radius, yy = Math.sin(angle) * radius;
+                  for (var i2 = 0; i2 < sides; i2 += 1) {
+                    var angle = offset + i2 * theta, xx = Math.cos(angle) * radius, yy = Math.sin(angle) * radius;
                     path += "L " + xx.toFixed(3) + " " + yy.toFixed(3) + " ";
                   }
                   var polygon = {
@@ -2247,10 +2251,10 @@
                   return Body2.create(Common.extend({}, polygon, options));
                 };
                 Bodies2.fromVertices = function(x, y, vertexSets, options, flagInternal, removeCollinear, minimumArea, removeDuplicatePoints) {
-                  var decomp = Common.getDecomp(), canDecomp, body, parts, isConvex, isConcave, vertices, i, j, k, v, z;
+                  var decomp = Common.getDecomp(), canDecomp, body, parts2, isConvex, isConcave, vertices, i2, j, k, v, z;
                   canDecomp = Boolean(decomp && decomp.quickDecomp);
                   options = options || {};
-                  parts = [];
+                  parts2 = [];
                   flagInternal = typeof flagInternal !== "undefined" ? flagInternal : false;
                   removeCollinear = typeof removeCollinear !== "undefined" ? removeCollinear : 0.01;
                   minimumArea = typeof minimumArea !== "undefined" ? minimumArea : 10;
@@ -2273,7 +2277,7 @@
                       } else {
                         vertices = Vertices.hull(vertices);
                       }
-                      parts.push({
+                      parts2.push({
                         position: { x, y },
                         vertices
                       });
@@ -2287,8 +2291,8 @@
                       if (removeDuplicatePoints !== false && decomp.removeDuplicatePoints)
                         decomp.removeDuplicatePoints(concave, removeDuplicatePoints);
                       var decomposed = decomp.quickDecomp(concave);
-                      for (i = 0; i < decomposed.length; i++) {
-                        var chunk = decomposed[i];
+                      for (i2 = 0; i2 < decomposed.length; i2++) {
+                        var chunk = decomposed[i2];
                         var chunkVertices = chunk.map(function(vertices2) {
                           return {
                             x: vertices2[0],
@@ -2297,22 +2301,22 @@
                         });
                         if (minimumArea > 0 && Vertices.area(chunkVertices) < minimumArea)
                           continue;
-                        parts.push({
+                        parts2.push({
                           position: Vertices.centre(chunkVertices),
                           vertices: chunkVertices
                         });
                       }
                     }
                   }
-                  for (i = 0; i < parts.length; i++) {
-                    parts[i] = Body2.create(Common.extend(parts[i], options));
+                  for (i2 = 0; i2 < parts2.length; i2++) {
+                    parts2[i2] = Body2.create(Common.extend(parts2[i2], options));
                   }
                   if (flagInternal) {
                     var coincident_max_dist = 5;
-                    for (i = 0; i < parts.length; i++) {
-                      var partA = parts[i];
-                      for (j = i + 1; j < parts.length; j++) {
-                        var partB = parts[j];
+                    for (i2 = 0; i2 < parts2.length; i2++) {
+                      var partA = parts2[i2];
+                      for (j = i2 + 1; j < parts2.length; j++) {
+                        var partB = parts2[j];
                         if (Bounds.overlaps(partA.bounds, partB.bounds)) {
                           var pav = partA.vertices, pbv = partB.vertices;
                           for (k = 0; k < partA.vertices.length; k++) {
@@ -2328,12 +2332,12 @@
                       }
                     }
                   }
-                  if (parts.length > 1) {
-                    body = Body2.create(Common.extend({ parts: parts.slice(0) }, options));
+                  if (parts2.length > 1) {
+                    body = Body2.create(Common.extend({ parts: parts2.slice(0) }, options));
                     Body2.setPosition(body, { x, y });
                     return body;
                   } else {
-                    return parts[0];
+                    return parts2[0];
                   }
                 };
               })();
@@ -2360,11 +2364,11 @@
                   detector.bodies = [];
                 };
                 Detector.collisions = function(detector) {
-                  var collisions = [], pairs = detector.pairs, bodies = detector.bodies, bodiesLength = bodies.length, canCollide = Detector.canCollide, collides = Collision.collides, i, j;
+                  var collisions = [], pairs = detector.pairs, bodies = detector.bodies, bodiesLength = bodies.length, canCollide = Detector.canCollide, collides = Collision.collides, i2, j;
                   bodies.sort(Detector._compareBoundsX);
-                  for (i = 0; i < bodiesLength; i++) {
-                    var bodyA = bodies[i], boundsA = bodyA.bounds, boundXMax = bodyA.bounds.max.x, boundYMax = bodyA.bounds.max.y, boundYMin = bodyA.bounds.min.y, bodyAStatic = bodyA.isStatic || bodyA.isSleeping, partsALength = bodyA.parts.length, partsASingle = partsALength === 1;
-                    for (j = i + 1; j < bodiesLength; j++) {
+                  for (i2 = 0; i2 < bodiesLength; i2++) {
+                    var bodyA = bodies[i2], boundsA = bodyA.bounds, boundXMax = bodyA.bounds.max.x, boundYMax = bodyA.bounds.max.y, boundYMin = bodyA.bounds.min.y, bodyAStatic = bodyA.isStatic || bodyA.isSleeping, partsALength = bodyA.parts.length, partsASingle = partsALength === 1;
+                    for (j = i2 + 1; j < bodiesLength; j++) {
                       var bodyB = bodies[j], boundsB = bodyB.bounds;
                       if (boundsB.min.x > boundXMax) {
                         break;
@@ -2587,13 +2591,13 @@
                     return;
                   }
                   var dependencies = Plugin.dependencies(module3), sortedDependencies = Common.topologicalSort(dependencies), status = [];
-                  for (var i = 0; i < sortedDependencies.length; i += 1) {
-                    if (sortedDependencies[i] === module3.name) {
+                  for (var i2 = 0; i2 < sortedDependencies.length; i2 += 1) {
+                    if (sortedDependencies[i2] === module3.name) {
                       continue;
                     }
-                    var plugin = Plugin.resolve(sortedDependencies[i]);
+                    var plugin = Plugin.resolve(sortedDependencies[i2]);
                     if (!plugin) {
-                      status.push("\u274C " + sortedDependencies[i]);
+                      status.push("\u274C " + sortedDependencies[i2]);
                       continue;
                     }
                     if (Plugin.isUsed(module3, plugin.name)) {
@@ -2656,8 +2660,8 @@
                     }
                     return parsed.name;
                   });
-                  for (var i = 0; i < tracked[name].length; i += 1) {
-                    Plugin.dependencies(tracked[name][i], tracked);
+                  for (var i2 = 0; i2 < tracked[name].length; i2 += 1) {
+                    Plugin.dependencies(tracked[name][i2], tracked);
                   }
                   return tracked;
                 };
@@ -2682,20 +2686,20 @@
                   if (!pattern.test(range)) {
                     Common.warn("Plugin.versionParse:", range, "is not a valid version or range.");
                   }
-                  var parts = pattern.exec(range);
-                  var major = Number(parts[4]);
-                  var minor = Number(parts[5]);
-                  var patch = Number(parts[6]);
+                  var parts2 = pattern.exec(range);
+                  var major = Number(parts2[4]);
+                  var minor = Number(parts2[5]);
+                  var patch = Number(parts2[6]);
                   return {
-                    isRange: Boolean(parts[1] || parts[2]),
-                    version: parts[3],
+                    isRange: Boolean(parts2[1] || parts2[2]),
+                    version: parts2[3],
                     range,
-                    operator: parts[1] || parts[2] || "",
+                    operator: parts2[1] || parts2[2] || "",
                     major,
                     minor,
                     patch,
                     parts: [major, minor, patch],
-                    prerelease: parts[7],
+                    prerelease: parts2[7],
                     number: major * 1e8 + minor * 1e4 + patch
                   };
                 };
@@ -2792,7 +2796,7 @@
                 };
                 Engine2.update = function(engine, delta) {
                   var startTime = Common.now();
-                  var world = engine.world, detector = engine.detector, pairs = engine.pairs, timing = engine.timing, timestamp = timing.timestamp, i;
+                  var world = engine.world, detector = engine.detector, pairs = engine.pairs, timing = engine.timing, timestamp = timing.timestamp, i2;
                   delta = typeof delta !== "undefined" ? delta : Common._baseDelta;
                   delta *= timing.timeScale;
                   timing.timestamp += delta;
@@ -2814,7 +2818,7 @@
                     Engine2._bodiesUpdate(allBodies, delta);
                   }
                   Constraint.preSolveAll(allBodies);
-                  for (i = 0; i < engine.constraintIterations; i++) {
+                  for (i2 = 0; i2 < engine.constraintIterations; i2++) {
                     Constraint.solveAll(allConstraints, delta);
                   }
                   Constraint.postSolveAll(allBodies);
@@ -2827,17 +2831,17 @@
                     Events.trigger(engine, "collisionStart", { pairs: pairs.collisionStart });
                   var positionDamping = Common.clamp(20 / engine.positionIterations, 0, 1);
                   Resolver.preSolvePosition(pairs.list);
-                  for (i = 0; i < engine.positionIterations; i++) {
+                  for (i2 = 0; i2 < engine.positionIterations; i2++) {
                     Resolver.solvePosition(pairs.list, delta, positionDamping);
                   }
                   Resolver.postSolvePosition(allBodies);
                   Constraint.preSolveAll(allBodies);
-                  for (i = 0; i < engine.constraintIterations; i++) {
+                  for (i2 = 0; i2 < engine.constraintIterations; i2++) {
                     Constraint.solveAll(allConstraints, delta);
                   }
                   Constraint.postSolveAll(allBodies);
                   Resolver.preSolveVelocity(pairs.list);
-                  for (i = 0; i < engine.velocityIterations; i++) {
+                  for (i2 = 0; i2 < engine.velocityIterations; i2++) {
                     Resolver.solveVelocity(pairs.list, delta);
                   }
                   Engine2._bodiesUpdateVelocities(allBodies);
@@ -2856,8 +2860,8 @@
                     engineA.world = engineB.world;
                     Engine2.clear(engineA);
                     var bodies = Composite.allBodies(engineA.world);
-                    for (var i = 0; i < bodies.length; i++) {
-                      var body = bodies[i];
+                    for (var i2 = 0; i2 < bodies.length; i2++) {
+                      var body = bodies[i2];
                       Sleeping.set(body, false);
                       body.id = Common.nextId();
                     }
@@ -2869,8 +2873,8 @@
                 };
                 Engine2._bodiesClearForces = function(bodies) {
                   var bodiesLength = bodies.length;
-                  for (var i = 0; i < bodiesLength; i++) {
-                    var body = bodies[i];
+                  for (var i2 = 0; i2 < bodiesLength; i2++) {
+                    var body = bodies[i2];
                     body.force.x = 0;
                     body.force.y = 0;
                     body.torque = 0;
@@ -2881,8 +2885,8 @@
                   if (gravity.x === 0 && gravity.y === 0 || gravityScale === 0) {
                     return;
                   }
-                  for (var i = 0; i < bodiesLength; i++) {
-                    var body = bodies[i];
+                  for (var i2 = 0; i2 < bodiesLength; i2++) {
+                    var body = bodies[i2];
                     if (body.isStatic || body.isSleeping)
                       continue;
                     body.force.y += body.mass * gravity.y * gravityScale;
@@ -2891,8 +2895,8 @@
                 };
                 Engine2._bodiesUpdate = function(bodies, delta) {
                   var bodiesLength = bodies.length;
-                  for (var i = 0; i < bodiesLength; i++) {
-                    var body = bodies[i];
+                  for (var i2 = 0; i2 < bodiesLength; i2++) {
+                    var body = bodies[i2];
                     if (body.isStatic || body.isSleeping)
                       continue;
                     Body2.update(body, delta);
@@ -2900,8 +2904,8 @@
                 };
                 Engine2._bodiesUpdateVelocities = function(bodies) {
                   var bodiesLength = bodies.length;
-                  for (var i = 0; i < bodiesLength; i++) {
-                    Body2.updateVelocities(bodies[i]);
+                  for (var i2 = 0; i2 < bodiesLength; i2++) {
+                    Body2.updateVelocities(bodies[i2]);
                   }
                 };
               })();
@@ -2922,9 +2926,9 @@
                 Resolver._frictionNormalMultiplier = 5;
                 Resolver._frictionMaxStatic = Number.MAX_VALUE;
                 Resolver.preSolvePosition = function(pairs) {
-                  var i, pair, activeCount, pairsLength = pairs.length;
-                  for (i = 0; i < pairsLength; i++) {
-                    pair = pairs[i];
+                  var i2, pair, activeCount, pairsLength = pairs.length;
+                  for (i2 = 0; i2 < pairsLength; i2++) {
+                    pair = pairs[i2];
                     if (!pair.isActive)
                       continue;
                     activeCount = pair.activeContacts.length;
@@ -2933,9 +2937,9 @@
                   }
                 };
                 Resolver.solvePosition = function(pairs, delta, damping) {
-                  var i, pair, collision, bodyA, bodyB, normal, contactShare, positionImpulse, positionDampen = Resolver._positionDampen * (damping || 1), slopDampen = Common.clamp(delta / Common._baseDelta, 0, 1), pairsLength = pairs.length;
-                  for (i = 0; i < pairsLength; i++) {
-                    pair = pairs[i];
+                  var i2, pair, collision, bodyA, bodyB, normal, contactShare, positionImpulse, positionDampen = Resolver._positionDampen * (damping || 1), slopDampen = Common.clamp(delta / Common._baseDelta, 0, 1), pairsLength = pairs.length;
+                  for (i2 = 0; i2 < pairsLength; i2++) {
+                    pair = pairs[i2];
                     if (!pair.isActive || pair.isSensor)
                       continue;
                     collision = pair.collision;
@@ -2944,8 +2948,8 @@
                     normal = collision.normal;
                     pair.separation = normal.x * (bodyB.positionImpulse.x + collision.penetration.x - bodyA.positionImpulse.x) + normal.y * (bodyB.positionImpulse.y + collision.penetration.y - bodyA.positionImpulse.y);
                   }
-                  for (i = 0; i < pairsLength; i++) {
-                    pair = pairs[i];
+                  for (i2 = 0; i2 < pairsLength; i2++) {
+                    pair = pairs[i2];
                     if (!pair.isActive || pair.isSensor)
                       continue;
                     collision = pair.collision;
@@ -2969,8 +2973,8 @@
                 };
                 Resolver.postSolvePosition = function(bodies) {
                   var positionWarming = Resolver._positionWarming, bodiesLength = bodies.length, verticesTranslate = Vertices.translate, boundsUpdate = Bounds.update;
-                  for (var i = 0; i < bodiesLength; i++) {
-                    var body = bodies[i], positionImpulse = body.positionImpulse, positionImpulseX = positionImpulse.x, positionImpulseY = positionImpulse.y, velocity = body.velocity;
+                  for (var i2 = 0; i2 < bodiesLength; i2++) {
+                    var body = bodies[i2], positionImpulse = body.positionImpulse, positionImpulseX = positionImpulse.x, positionImpulseY = positionImpulse.y, velocity = body.velocity;
                     body.totalContacts = 0;
                     if (positionImpulseX !== 0 || positionImpulseY !== 0) {
                       for (var j = 0; j < body.parts.length; j++) {
@@ -2993,9 +2997,9 @@
                   }
                 };
                 Resolver.preSolveVelocity = function(pairs) {
-                  var pairsLength = pairs.length, i, j;
-                  for (i = 0; i < pairsLength; i++) {
-                    var pair = pairs[i];
+                  var pairsLength = pairs.length, i2, j;
+                  for (i2 = 0; i2 < pairsLength; i2++) {
+                    var pair = pairs[i2];
                     if (!pair.isActive || pair.isSensor)
                       continue;
                     var contacts = pair.activeContacts, contactsLength = contacts.length, collision = pair.collision, bodyA = collision.parentA, bodyB = collision.parentB, normal = collision.normal, tangent = collision.tangent;
@@ -3018,9 +3022,9 @@
                   }
                 };
                 Resolver.solveVelocity = function(pairs, delta) {
-                  var timeScale = delta / Common._baseDelta, timeScaleSquared = timeScale * timeScale, timeScaleCubed = timeScaleSquared * timeScale, restingThresh = -Resolver._restingThresh * timeScale, restingThreshTangent = Resolver._restingThreshTangent, frictionNormalMultiplier = Resolver._frictionNormalMultiplier * timeScale, frictionMaxStatic = Resolver._frictionMaxStatic, pairsLength = pairs.length, tangentImpulse, maxFriction, i, j;
-                  for (i = 0; i < pairsLength; i++) {
-                    var pair = pairs[i];
+                  var timeScale = delta / Common._baseDelta, timeScaleSquared = timeScale * timeScale, timeScaleCubed = timeScaleSquared * timeScale, restingThresh = -Resolver._restingThresh * timeScale, restingThreshTangent = Resolver._restingThreshTangent, frictionNormalMultiplier = Resolver._frictionNormalMultiplier * timeScale, frictionMaxStatic = Resolver._frictionMaxStatic, pairsLength = pairs.length, tangentImpulse, maxFriction, i2, j;
+                  for (i2 = 0; i2 < pairsLength; i2++) {
+                    var pair = pairs[i2];
                     if (!pair.isActive || pair.isSensor)
                       continue;
                     var collision = pair.collision, bodyA = collision.parentA, bodyB = collision.parentB, bodyAVelocity = bodyA.velocity, bodyBVelocity = bodyB.velocity, normalX = collision.normal.x, normalY = collision.normal.y, tangentX = collision.tangent.x, tangentY = collision.tangent.y, contacts = pair.activeContacts, contactsLength = contacts.length, contactShare = 1 / contactsLength, inverseMassTotal = bodyA.inverseMass + bodyB.inverseMass, friction = pair.friction * pair.frictionStatic * frictionNormalMultiplier;
@@ -3109,15 +3113,15 @@
                   }, options);
                 };
                 Pairs.update = function(pairs, collisions, timestamp) {
-                  var pairsList = pairs.list, pairsListLength = pairsList.length, pairsTable = pairs.table, collisionsLength = collisions.length, collisionStart = pairs.collisionStart, collisionEnd = pairs.collisionEnd, collisionActive = pairs.collisionActive, collision, pairIndex, pair, i;
+                  var pairsList = pairs.list, pairsListLength = pairsList.length, pairsTable = pairs.table, collisionsLength = collisions.length, collisionStart = pairs.collisionStart, collisionEnd = pairs.collisionEnd, collisionActive = pairs.collisionActive, collision, pairIndex, pair, i2;
                   collisionStart.length = 0;
                   collisionEnd.length = 0;
                   collisionActive.length = 0;
-                  for (i = 0; i < pairsListLength; i++) {
-                    pairsList[i].confirmedActive = false;
+                  for (i2 = 0; i2 < pairsListLength; i2++) {
+                    pairsList[i2].confirmedActive = false;
                   }
-                  for (i = 0; i < collisionsLength; i++) {
-                    collision = collisions[i];
+                  for (i2 = 0; i2 < collisionsLength; i2++) {
+                    collision = collisions[i2];
                     pair = collision.pair;
                     if (pair) {
                       if (pair.isActive) {
@@ -3136,18 +3140,18 @@
                   }
                   var removePairIndex = [];
                   pairsListLength = pairsList.length;
-                  for (i = 0; i < pairsListLength; i++) {
-                    pair = pairsList[i];
+                  for (i2 = 0; i2 < pairsListLength; i2++) {
+                    pair = pairsList[i2];
                     if (!pair.confirmedActive) {
                       Pair.setActive(pair, false, timestamp);
                       collisionEnd.push(pair);
                       if (!pair.collision.bodyA.isSleeping && !pair.collision.bodyB.isSleeping) {
-                        removePairIndex.push(i);
+                        removePairIndex.push(i2);
                       }
                     }
                   }
-                  for (i = 0; i < removePairIndex.length; i++) {
-                    pairIndex = removePairIndex[i] - i;
+                  for (i2 = 0; i2 < removePairIndex.length; i2++) {
+                    pairIndex = removePairIndex[i2] - i2;
                     pair = pairsList[pairIndex];
                     pairsList.splice(pairIndex, 1);
                     delete pairsTable[pair.id];
@@ -3237,11 +3241,11 @@
               var deprecated = Common.deprecated;
               (function() {
                 Composites.stack = function(xx, yy, columns, rows, columnGap, rowGap, callback) {
-                  var stack = Composite.create({ label: "Stack" }), x = xx, y = yy, lastBody, i = 0;
+                  var stack = Composite.create({ label: "Stack" }), x = xx, y = yy, lastBody, i2 = 0;
                   for (var row = 0; row < rows; row++) {
                     var maxHeight = 0;
                     for (var column = 0; column < columns; column++) {
-                      var body = callback(x, y, column, row, lastBody, i);
+                      var body = callback(x, y, column, row, lastBody, i2);
                       if (body) {
                         var bodyHeight = body.bounds.max.y - body.bounds.min.y, bodyWidth = body.bounds.max.x - body.bounds.min.x;
                         if (bodyHeight > maxHeight)
@@ -3250,7 +3254,7 @@
                         x = body.bounds.max.x + columnGap;
                         Composite.addBody(stack, body);
                         lastBody = body;
-                        i += 1;
+                        i2 += 1;
                       } else {
                         x += columnGap;
                       }
@@ -3262,8 +3266,8 @@
                 };
                 Composites.chain = function(composite, xOffsetA, yOffsetA, xOffsetB, yOffsetB, options) {
                   var bodies = composite.bodies;
-                  for (var i = 1; i < bodies.length; i++) {
-                    var bodyA = bodies[i - 1], bodyB = bodies[i], bodyAHeight = bodyA.bounds.max.y - bodyA.bounds.min.y, bodyAWidth = bodyA.bounds.max.x - bodyA.bounds.min.x, bodyBHeight = bodyB.bounds.max.y - bodyB.bounds.min.y, bodyBWidth = bodyB.bounds.max.x - bodyB.bounds.min.x;
+                  for (var i2 = 1; i2 < bodies.length; i2++) {
+                    var bodyA = bodies[i2 - 1], bodyB = bodies[i2], bodyAHeight = bodyA.bounds.max.y - bodyA.bounds.min.y, bodyAWidth = bodyA.bounds.max.x - bodyA.bounds.min.x, bodyBHeight = bodyB.bounds.max.y - bodyB.bounds.min.y, bodyBWidth = bodyB.bounds.max.x - bodyB.bounds.min.x;
                     var defaults = {
                       bodyA,
                       pointA: { x: bodyAWidth * xOffsetA, y: bodyAHeight * yOffsetA },
@@ -3304,7 +3308,7 @@
                   return composite;
                 };
                 Composites.pyramid = function(xx, yy, columns, rows, columnGap, rowGap, callback) {
-                  return Composites.stack(xx, yy, columns, rows, columnGap, rowGap, function(x, y, column, row, lastBody, i) {
+                  return Composites.stack(xx, yy, columns, rows, columnGap, rowGap, function(x, y, column, row, lastBody, i2) {
                     var actualRows = Math.min(rows, Math.ceil(columns / 2)), lastBodyWidth = lastBody ? lastBody.bounds.max.x - lastBody.bounds.min.x : 0;
                     if (row > actualRows)
                       return;
@@ -3312,22 +3316,22 @@
                     var start = row, end = columns - 1 - row;
                     if (column < start || column > end)
                       return;
-                    if (i === 1) {
+                    if (i2 === 1) {
                       Body2.translate(lastBody, { x: (column + (columns % 2 === 1 ? 1 : -1)) * lastBodyWidth, y: 0 });
                     }
                     var xOffset = lastBody ? column * lastBodyWidth : 0;
-                    return callback(xx + xOffset + column * columnGap, y, column, row, lastBody, i);
+                    return callback(xx + xOffset + column * columnGap, y, column, row, lastBody, i2);
                   });
                 };
-                Composites.newtonsCradle = function(xx, yy, number, size, length) {
+                Composites.newtonsCradle = function(xx, yy, number, size, length2) {
                   var newtonsCradle = Composite.create({ label: "Newtons Cradle" });
-                  for (var i = 0; i < number; i++) {
+                  for (var i2 = 0; i2 < number; i2++) {
                     var separation = 1.9, circle = Bodies2.circle(
-                      xx + i * (size * separation),
-                      yy + length,
+                      xx + i2 * (size * separation),
+                      yy + length2,
                       size,
                       { inertia: Infinity, restitution: 1, friction: 0, frictionAir: 1e-4, slop: 1 }
-                    ), constraint = Constraint.create({ pointA: { x: xx + i * (size * separation), y: yy }, bodyB: circle });
+                    ), constraint = Constraint.create({ pointA: { x: xx + i2 * (size * separation), y: yy }, bodyB: circle });
                     Composite.addBody(newtonsCradle, circle);
                     Composite.addConstraint(newtonsCradle, constraint);
                   }
@@ -3412,9 +3416,9 @@
                   return Common.extend(defaults, options);
                 };
                 Grid.update = function(grid, bodies, engine, forceUpdate) {
-                  var i, col, row, world = engine.world, buckets = grid.buckets, bucket, bucketId, gridChanged = false;
-                  for (i = 0; i < bodies.length; i++) {
-                    var body = bodies[i];
+                  var i2, col, row, world = engine.world, buckets = grid.buckets, bucket, bucketId, gridChanged = false;
+                  for (i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2];
                     if (body.isSleeping && !forceUpdate)
                       continue;
                     if (world.bounds && (body.bounds.max.x < world.bounds.min.x || body.bounds.min.x > world.bounds.max.x || body.bounds.max.y < world.bounds.min.y || body.bounds.min.y > world.bounds.max.y))
@@ -3482,9 +3486,9 @@
                   return bucket;
                 };
                 Grid._bucketAddBody = function(grid, bucket, body) {
-                  var gridPairs = grid.pairs, pairId = Pair.id, bucketLength = bucket.length, i;
-                  for (i = 0; i < bucketLength; i++) {
-                    var bodyB = bucket[i];
+                  var gridPairs = grid.pairs, pairId = Pair.id, bucketLength = bucket.length, i2;
+                  for (i2 = 0; i2 < bucketLength; i2++) {
+                    var bodyB = bucket[i2];
                     if (body.id === bodyB.id || body.isStatic && bodyB.isStatic)
                       continue;
                     var id = pairId(body, bodyB), pair = gridPairs[id];
@@ -3497,11 +3501,11 @@
                   bucket.push(body);
                 };
                 Grid._bucketRemoveBody = function(grid, bucket, body) {
-                  var gridPairs = grid.pairs, pairId = Pair.id, i;
+                  var gridPairs = grid.pairs, pairId = Pair.id, i2;
                   bucket.splice(Common.indexOf(bucket, body), 1);
                   var bucketLength = bucket.length;
-                  for (i = 0; i < bucketLength; i++) {
-                    var pair = gridPairs[pairId(body, bucket[i])];
+                  for (i2 = 0; i2 < bucketLength; i2++) {
+                    var pair = gridPairs[pairId(body, bucket[i2])];
                     if (pair)
                       pair[2] -= 1;
                   }
@@ -3583,8 +3587,8 @@
                   var mouse = mouseConstraint.mouse, constraint = mouseConstraint.constraint, body = mouseConstraint.body;
                   if (mouse.button === 0) {
                     if (!constraint.bodyB) {
-                      for (var i = 0; i < bodies.length; i++) {
-                        body = bodies[i];
+                      for (var i2 = 0; i2 < bodies.length; i2++) {
+                        body = bodies[i2];
                         if (Bounds.contains(body.bounds, mouse.position) && Detector.canCollide(body.collisionFilter, mouseConstraint.collisionFilter)) {
                           for (var j = body.parts.length > 1 ? 1 : 0; j < body.parts.length; j++) {
                             var part = body.parts[j];
@@ -3636,8 +3640,8 @@
               (function() {
                 Query.collides = function(body, bodies) {
                   var collisions = [], bodiesLength = bodies.length, bounds = body.bounds, collides = Collision.collides, overlaps = Bounds.overlaps;
-                  for (var i = 0; i < bodiesLength; i++) {
-                    var bodyA = bodies[i], partsALength = bodyA.parts.length, partsAStart = partsALength === 1 ? 0 : 1;
+                  for (var i2 = 0; i2 < bodiesLength; i2++) {
+                    var bodyA = bodies[i2], partsALength = bodyA.parts.length, partsAStart = partsALength === 1 ? 0 : 1;
                     if (overlaps(bodyA.bounds, bounds)) {
                       for (var j = partsAStart; j < partsALength; j++) {
                         var part = bodyA.parts[j];
@@ -3656,16 +3660,16 @@
                 Query.ray = function(bodies, startPoint, endPoint, rayWidth) {
                   rayWidth = rayWidth || 1e-100;
                   var rayAngle = Vector.angle(startPoint, endPoint), rayLength = Vector.magnitude(Vector.sub(startPoint, endPoint)), rayX = (endPoint.x + startPoint.x) * 0.5, rayY = (endPoint.y + startPoint.y) * 0.5, ray = Bodies2.rectangle(rayX, rayY, rayLength, rayWidth, { angle: rayAngle }), collisions = Query.collides(ray, bodies);
-                  for (var i = 0; i < collisions.length; i += 1) {
-                    var collision = collisions[i];
+                  for (var i2 = 0; i2 < collisions.length; i2 += 1) {
+                    var collision = collisions[i2];
                     collision.body = collision.bodyB = collision.bodyA;
                   }
                   return collisions;
                 };
                 Query.region = function(bodies, bounds, outside) {
                   var result = [];
-                  for (var i = 0; i < bodies.length; i++) {
-                    var body = bodies[i], overlaps = Bounds.overlaps(body.bounds, bounds);
+                  for (var i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2], overlaps = Bounds.overlaps(body.bounds, bounds);
                     if (overlaps && !outside || !overlaps && outside)
                       result.push(body);
                   }
@@ -3673,8 +3677,8 @@
                 };
                 Query.point = function(bodies, point) {
                   var result = [];
-                  for (var i = 0; i < bodies.length; i++) {
-                    var body = bodies[i];
+                  for (var i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2];
                     if (Bounds.contains(body.bounds, point)) {
                       for (var j = body.parts.length === 1 ? 0 : 1; j < body.parts.length; j++) {
                         var part = body.parts[j];
@@ -3829,8 +3833,8 @@
                     min: { x: Infinity, y: Infinity },
                     max: { x: -Infinity, y: -Infinity }
                   };
-                  for (var i = 0; i < objects.length; i += 1) {
-                    var object = objects[i], min = object.bounds ? object.bounds.min : object.min || object.position || object, max = object.bounds ? object.bounds.max : object.max || object.position || object;
+                  for (var i2 = 0; i2 < objects.length; i2 += 1) {
+                    var object = objects[i2], min = object.bounds ? object.bounds.min : object.min || object.position || object, max = object.bounds ? object.bounds.max : object.max || object.position || object;
                     if (min && max) {
                       if (min.x < bounds.min.x)
                         bounds.min.x = min.x;
@@ -3888,7 +3892,7 @@
                 };
                 Render2.world = function(render, time) {
                   var startTime = Common.now(), engine = render.engine, world = engine.world, canvas = render.canvas, context = render.context, options = render.options, timing = render.timing;
-                  var allBodies = Composite.allBodies(world), allConstraints = Composite.allConstraints(world), background = options.wireframes ? options.wireframeBackground : options.background, bodies = [], constraints = [], i;
+                  var allBodies = Composite.allBodies(world), allConstraints = Composite.allConstraints(world), background = options.wireframes ? options.wireframeBackground : options.background, bodies = [], constraints = [], i2;
                   var event = {
                     timestamp: engine.timing.timestamp
                   };
@@ -3900,13 +3904,13 @@
                   context.fillRect(0, 0, canvas.width, canvas.height);
                   context.globalCompositeOperation = "source-over";
                   if (options.hasBounds) {
-                    for (i = 0; i < allBodies.length; i++) {
-                      var body = allBodies[i];
+                    for (i2 = 0; i2 < allBodies.length; i2++) {
+                      var body = allBodies[i2];
                       if (Bounds.overlaps(body.bounds, render.bounds))
                         bodies.push(body);
                     }
-                    for (i = 0; i < allConstraints.length; i++) {
-                      var constraint = allConstraints[i], bodyA = constraint.bodyA, bodyB = constraint.bodyB, pointAWorld = constraint.pointA, pointBWorld = constraint.pointB;
+                    for (i2 = 0; i2 < allConstraints.length; i2++) {
+                      var constraint = allConstraints[i2], bodyA = constraint.bodyA, bodyB = constraint.bodyB, pointAWorld = constraint.pointA, pointBWorld = constraint.pointB;
                       if (bodyA)
                         pointAWorld = Vector.add(bodyA.position, constraint.pointA);
                       if (bodyB)
@@ -3964,12 +3968,12 @@
                   timing.lastElapsed = Common.now() - startTime;
                 };
                 Render2.stats = function(render, context, time) {
-                  var engine = render.engine, world = engine.world, bodies = Composite.allBodies(world), parts = 0, width = 55, height = 44, x = 0, y = 0;
-                  for (var i = 0; i < bodies.length; i += 1) {
-                    parts += bodies[i].parts.length;
+                  var engine = render.engine, world = engine.world, bodies = Composite.allBodies(world), parts2 = 0, width = 55, height = 44, x = 0, y = 0;
+                  for (var i2 = 0; i2 < bodies.length; i2 += 1) {
+                    parts2 += bodies[i2].parts.length;
                   }
                   var sections = {
-                    "Part": parts,
+                    "Part": parts2,
                     "Body": bodies.length,
                     "Cons": Composite.allConstraints(world).length,
                     "Comp": Composite.allComposites(world).length,
@@ -4004,8 +4008,8 @@
                     deltaHistory.length,
                     Math.round(fps) + " fps",
                     fps / Render2._goodFps,
-                    function(i) {
-                      return deltaHistory[i] / deltaMean - 1;
+                    function(i2) {
+                      return deltaHistory[i2] / deltaMean - 1;
                     }
                   );
                   Render2.status(
@@ -4017,8 +4021,8 @@
                     engineDeltaHistory.length,
                     lastEngineDelta.toFixed(2) + " dt",
                     Render2._goodDelta / lastEngineDelta,
-                    function(i) {
-                      return engineDeltaHistory[i] / engineDeltaMean - 1;
+                    function(i2) {
+                      return engineDeltaHistory[i2] / engineDeltaMean - 1;
                     }
                   );
                   Render2.status(
@@ -4030,8 +4034,8 @@
                     engineElapsedHistory.length,
                     engineElapsedMean.toFixed(2) + " ut",
                     1 - engineElapsedMean / Render2._goodFps,
-                    function(i) {
-                      return engineElapsedHistory[i] / engineElapsedMean - 1;
+                    function(i2) {
+                      return engineElapsedHistory[i2] / engineElapsedMean - 1;
                     }
                   );
                   Render2.status(
@@ -4043,8 +4047,8 @@
                     elapsedHistory.length,
                     elapsedMean.toFixed(2) + " rt",
                     1 - elapsedMean / Render2._goodFps,
-                    function(i) {
-                      return elapsedHistory[i] / elapsedMean - 1;
+                    function(i2) {
+                      return elapsedHistory[i2] / elapsedMean - 1;
                     }
                   );
                   Render2.status(
@@ -4056,8 +4060,8 @@
                     timestampElapsedHistory.length,
                     rateMean.toFixed(2) + " x",
                     rateMean * rateMean * rateMean,
-                    function(i) {
-                      return (timestampElapsedHistory[i] / deltaHistory[i] / rateMean || 0) - 1;
+                    function(i2) {
+                      return (timestampElapsedHistory[i2] / deltaHistory[i2] / rateMean || 0) - 1;
                     }
                   );
                 };
@@ -4068,8 +4072,8 @@
                   context.fillRect(x, y + 7, width, 1);
                   context.beginPath();
                   context.moveTo(x, y + 7 - height * Common.clamp(0.4 * plotY(0), -2, 2));
-                  for (var i = 0; i < width; i += 1) {
-                    context.lineTo(x + i, y + 7 - (i < count ? height * Common.clamp(0.4 * plotY(i), -2, 2) : 0));
+                  for (var i2 = 0; i2 < width; i2 += 1) {
+                    context.lineTo(x + i2, y + 7 - (i2 < count ? height * Common.clamp(0.4 * plotY(i2), -2, 2) : 0));
                   }
                   context.stroke();
                   context.fillStyle = "hsl(" + Common.clamp(25 + 95 * indicator, 0, 120) + ",100%,60%)";
@@ -4082,8 +4086,8 @@
                 };
                 Render2.constraints = function(constraints, context) {
                   var c = context;
-                  for (var i = 0; i < constraints.length; i++) {
-                    var constraint = constraints[i];
+                  for (var i2 = 0; i2 < constraints.length; i2++) {
+                    var constraint = constraints[i2];
                     if (!constraint.render.visible || !constraint.pointA || !constraint.pointB)
                       continue;
                     var bodyA = constraint.bodyA, bodyB = constraint.bodyB, start, end;
@@ -4132,9 +4136,9 @@
                   }
                 };
                 Render2.bodies = function(render, bodies, context) {
-                  var c = context, engine = render.engine, options = render.options, showInternalEdges = options.showInternalEdges || !options.wireframes, body, part, i, k;
-                  for (i = 0; i < bodies.length; i++) {
-                    body = bodies[i];
+                  var c = context, engine = render.engine, options = render.options, showInternalEdges = options.showInternalEdges || !options.wireframes, body, part, i2, k;
+                  for (i2 = 0; i2 < bodies.length; i2++) {
+                    body = bodies[i2];
                     if (!body.render.visible)
                       continue;
                     for (k = body.parts.length > 1 ? 1 : 0; k < body.parts.length; k++) {
@@ -4198,10 +4202,10 @@
                   }
                 };
                 Render2.bodyWireframes = function(render, bodies, context) {
-                  var c = context, showInternalEdges = render.options.showInternalEdges, body, part, i, j, k;
+                  var c = context, showInternalEdges = render.options.showInternalEdges, body, part, i2, j, k;
                   c.beginPath();
-                  for (i = 0; i < bodies.length; i++) {
-                    body = bodies[i];
+                  for (i2 = 0; i2 < bodies.length; i2++) {
+                    body = bodies[i2];
                     if (!body.render.visible)
                       continue;
                     for (k = body.parts.length > 1 ? 1 : 0; k < body.parts.length; k++) {
@@ -4225,10 +4229,10 @@
                   c.stroke();
                 };
                 Render2.bodyConvexHulls = function(render, bodies, context) {
-                  var c = context, body, part, i, j, k;
+                  var c = context, body, part, i2, j, k;
                   c.beginPath();
-                  for (i = 0; i < bodies.length; i++) {
-                    body = bodies[i];
+                  for (i2 = 0; i2 < bodies.length; i2++) {
+                    body = bodies[i2];
                     if (!body.render.visible || body.parts.length === 1)
                       continue;
                     c.moveTo(body.vertices[0].x, body.vertices[0].y);
@@ -4242,14 +4246,14 @@
                   c.stroke();
                 };
                 Render2.vertexNumbers = function(render, bodies, context) {
-                  var c = context, i, j, k;
-                  for (i = 0; i < bodies.length; i++) {
-                    var parts = bodies[i].parts;
-                    for (k = parts.length > 1 ? 1 : 0; k < parts.length; k++) {
-                      var part = parts[k];
+                  var c = context, i2, j, k;
+                  for (i2 = 0; i2 < bodies.length; i2++) {
+                    var parts2 = bodies[i2].parts;
+                    for (k = parts2.length > 1 ? 1 : 0; k < parts2.length; k++) {
+                      var part = parts2[k];
                       for (j = 0; j < part.vertices.length; j++) {
                         c.fillStyle = "rgba(255,255,255,0.2)";
-                        c.fillText(i + "_" + j, part.position.x + (part.vertices[j].x - part.position.x) * 0.8, part.position.y + (part.vertices[j].y - part.position.y) * 0.8);
+                        c.fillText(i2 + "_" + j, part.position.x + (part.vertices[j].x - part.position.x) * 0.8, part.position.y + (part.vertices[j].y - part.position.y) * 0.8);
                       }
                     }
                   }
@@ -4262,12 +4266,12 @@
                 Render2.bodyBounds = function(render, bodies, context) {
                   var c = context, engine = render.engine, options = render.options;
                   c.beginPath();
-                  for (var i = 0; i < bodies.length; i++) {
-                    var body = bodies[i];
+                  for (var i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2];
                     if (body.render.visible) {
-                      var parts = bodies[i].parts;
-                      for (var j = parts.length > 1 ? 1 : 0; j < parts.length; j++) {
-                        var part = parts[j];
+                      var parts2 = bodies[i2].parts;
+                      for (var j = parts2.length > 1 ? 1 : 0; j < parts2.length; j++) {
+                        var part = parts2[j];
                         c.rect(part.bounds.min.x, part.bounds.min.y, part.bounds.max.x - part.bounds.min.x, part.bounds.max.y - part.bounds.min.y);
                       }
                     }
@@ -4281,15 +4285,15 @@
                   c.stroke();
                 };
                 Render2.bodyAxes = function(render, bodies, context) {
-                  var c = context, engine = render.engine, options = render.options, part, i, j, k;
+                  var c = context, engine = render.engine, options = render.options, part, i2, j, k;
                   c.beginPath();
-                  for (i = 0; i < bodies.length; i++) {
-                    var body = bodies[i], parts = body.parts;
+                  for (i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2], parts2 = body.parts;
                     if (!body.render.visible)
                       continue;
                     if (options.showAxes) {
-                      for (j = parts.length > 1 ? 1 : 0; j < parts.length; j++) {
-                        part = parts[j];
+                      for (j = parts2.length > 1 ? 1 : 0; j < parts2.length; j++) {
+                        part = parts2[j];
                         for (k = 0; k < part.axes.length; k++) {
                           var axis = part.axes[k];
                           c.moveTo(part.position.x, part.position.y);
@@ -4297,8 +4301,8 @@
                         }
                       }
                     } else {
-                      for (j = parts.length > 1 ? 1 : 0; j < parts.length; j++) {
-                        part = parts[j];
+                      for (j = parts2.length > 1 ? 1 : 0; j < parts2.length; j++) {
+                        part = parts2[j];
                         for (k = 0; k < part.axes.length; k++) {
                           c.moveTo(part.position.x, part.position.y);
                           c.lineTo(
@@ -4321,10 +4325,10 @@
                   c.globalCompositeOperation = "source-over";
                 };
                 Render2.bodyPositions = function(render, bodies, context) {
-                  var c = context, engine = render.engine, options = render.options, body, part, i, k;
+                  var c = context, engine = render.engine, options = render.options, body, part, i2, k;
                   c.beginPath();
-                  for (i = 0; i < bodies.length; i++) {
-                    body = bodies[i];
+                  for (i2 = 0; i2 < bodies.length; i2++) {
+                    body = bodies[i2];
                     if (!body.render.visible)
                       continue;
                     for (k = 0; k < body.parts.length; k++) {
@@ -4340,8 +4344,8 @@
                   }
                   c.fill();
                   c.beginPath();
-                  for (i = 0; i < bodies.length; i++) {
-                    body = bodies[i];
+                  for (i2 = 0; i2 < bodies.length; i2++) {
+                    body = bodies[i2];
                     if (body.render.visible) {
                       c.arc(body.positionPrev.x, body.positionPrev.y, 2, 0, 2 * Math.PI, false);
                       c.closePath();
@@ -4353,8 +4357,8 @@
                 Render2.bodyVelocity = function(render, bodies, context) {
                   var c = context;
                   c.beginPath();
-                  for (var i = 0; i < bodies.length; i++) {
-                    var body = bodies[i];
+                  for (var i2 = 0; i2 < bodies.length; i2++) {
+                    var body = bodies[i2];
                     if (!body.render.visible)
                       continue;
                     var velocity = Body2.getVelocity(body);
@@ -4366,13 +4370,13 @@
                   c.stroke();
                 };
                 Render2.bodyIds = function(render, bodies, context) {
-                  var c = context, i, j;
-                  for (i = 0; i < bodies.length; i++) {
-                    if (!bodies[i].render.visible)
+                  var c = context, i2, j;
+                  for (i2 = 0; i2 < bodies.length; i2++) {
+                    if (!bodies[i2].render.visible)
                       continue;
-                    var parts = bodies[i].parts;
-                    for (j = parts.length > 1 ? 1 : 0; j < parts.length; j++) {
-                      var part = parts[j];
+                    var parts2 = bodies[i2].parts;
+                    for (j = parts2.length > 1 ? 1 : 0; j < parts2.length; j++) {
+                      var part = parts2[j];
                       c.font = "12px Arial";
                       c.fillStyle = "rgba(255,255,255,0.5)";
                       c.fillText(part.id, part.position.x + 10, part.position.y - 10);
@@ -4380,10 +4384,10 @@
                   }
                 };
                 Render2.collisions = function(render, pairs, context) {
-                  var c = context, options = render.options, pair, collision, corrected, bodyA, bodyB, i, j;
+                  var c = context, options = render.options, pair, collision, corrected, bodyA, bodyB, i2, j;
                   c.beginPath();
-                  for (i = 0; i < pairs.length; i++) {
-                    pair = pairs[i];
+                  for (i2 = 0; i2 < pairs.length; i2++) {
+                    pair = pairs[i2];
                     if (!pair.isActive)
                       continue;
                     collision = pair.collision;
@@ -4399,8 +4403,8 @@
                   }
                   c.fill();
                   c.beginPath();
-                  for (i = 0; i < pairs.length; i++) {
-                    pair = pairs[i];
+                  for (i2 = 0; i2 < pairs.length; i2++) {
+                    pair = pairs[i2];
                     if (!pair.isActive)
                       continue;
                     collision = pair.collision;
@@ -4427,10 +4431,10 @@
                   c.stroke();
                 };
                 Render2.separations = function(render, pairs, context) {
-                  var c = context, options = render.options, pair, collision, corrected, bodyA, bodyB, i, j;
+                  var c = context, options = render.options, pair, collision, corrected, bodyA, bodyB, i2, j;
                   c.beginPath();
-                  for (i = 0; i < pairs.length; i++) {
-                    pair = pairs[i];
+                  for (i2 = 0; i2 < pairs.length; i2++) {
+                    pair = pairs[i2];
                     if (!pair.isActive)
                       continue;
                     collision = pair.collision;
@@ -4465,8 +4469,8 @@
                     context.scale(1 / boundsScaleX, 1 / boundsScaleY);
                     context.translate(-render.bounds.min.x, -render.bounds.min.y);
                   }
-                  for (var i = 0; i < selected.length; i++) {
-                    var item = selected[i].data;
+                  for (var i2 = 0; i2 < selected.length; i2++) {
+                    var item = selected[i2].data;
                     context.translate(0.5, 0.5);
                     context.lineWidth = 1;
                     context.strokeStyle = "rgba(255,165,0,0.9)";
@@ -4537,8 +4541,8 @@
                 }, "_updateTiming");
                 var _mean = /* @__PURE__ */ __name(function(values) {
                   var result = 0;
-                  for (var i = 0; i < values.length; i += 1) {
-                    result += values[i];
+                  for (var i2 = 0; i2 < values.length; i2 += 1) {
+                    result += values[i2];
                   }
                   return result / values.length || 0;
                 }, "_mean");
@@ -4698,7 +4702,7 @@
                   if (typeof window !== "undefined" && !("SVGPathSeg" in window)) {
                     Common.warn("Svg.pathToVertices: SVGPathSeg not defined, a polyfill is required.");
                   }
-                  var i, il, total, point, segment, segments, segmentsQueue, lastSegment, lastPoint, segmentIndex, points = [], lx, ly, length = 0, x = 0, y = 0;
+                  var i2, il, total, point, segment, segments, segmentsQueue, lastSegment, lastPoint, segmentIndex, points = [], lx, ly, length2 = 0, x = 0, y = 0;
                   sampleLength = sampleLength || 15;
                   var addPoint = /* @__PURE__ */ __name(function(px, py, pathSegType) {
                     var isRelative = pathSegType % 2 === 1 && pathSegType > 1;
@@ -4748,11 +4752,11 @@
                   Svg._svgPathToAbsolute(path);
                   total = path.getTotalLength();
                   segments = [];
-                  for (i = 0; i < path.pathSegList.numberOfItems; i += 1)
-                    segments.push(path.pathSegList.getItem(i));
+                  for (i2 = 0; i2 < path.pathSegList.numberOfItems; i2 += 1)
+                    segments.push(path.pathSegList.getItem(i2));
                   segmentsQueue = segments.concat();
-                  while (length < total) {
-                    segmentIndex = path.getPathSegAtLength(length);
+                  while (length2 < total) {
+                    segmentIndex = path.getPathSegAtLength(length2);
                     segment = segments[segmentIndex];
                     if (segment != lastSegment) {
                       while (segmentsQueue.length && segmentsQueue[0] != segment)
@@ -4765,20 +4769,20 @@
                       case "S":
                       case "Q":
                       case "A":
-                        point = path.getPointAtLength(length);
+                        point = path.getPointAtLength(length2);
                         addPoint(point.x, point.y, 0);
                         break;
                     }
-                    length += sampleLength;
+                    length2 += sampleLength;
                   }
-                  for (i = 0, il = segmentsQueue.length; i < il; ++i)
-                    addSegmentPoint(segmentsQueue[i]);
+                  for (i2 = 0, il = segmentsQueue.length; i2 < il; ++i2)
+                    addSegmentPoint(segmentsQueue[i2]);
                   return points;
                 };
                 Svg._svgPathToAbsolute = function(path) {
                   var x0, y0, x1, y1, x2, y2, segs = path.pathSegList, x = 0, y = 0, len = segs.numberOfItems;
-                  for (var i = 0; i < len; ++i) {
-                    var seg = segs.getItem(i), segType = seg.pathSegTypeAsLetter;
+                  for (var i2 = 0; i2 < len; ++i2) {
+                    var seg = segs.getItem(i2), segType = seg.pathSegTypeAsLetter;
                     if (/[MLHVCSQTA]/.test(segType)) {
                       if ("x" in seg)
                         x = seg.x;
@@ -4799,31 +4803,31 @@
                         y += seg.y;
                       switch (segType) {
                         case "m":
-                          segs.replaceItem(path.createSVGPathSegMovetoAbs(x, y), i);
+                          segs.replaceItem(path.createSVGPathSegMovetoAbs(x, y), i2);
                           break;
                         case "l":
-                          segs.replaceItem(path.createSVGPathSegLinetoAbs(x, y), i);
+                          segs.replaceItem(path.createSVGPathSegLinetoAbs(x, y), i2);
                           break;
                         case "h":
-                          segs.replaceItem(path.createSVGPathSegLinetoHorizontalAbs(x), i);
+                          segs.replaceItem(path.createSVGPathSegLinetoHorizontalAbs(x), i2);
                           break;
                         case "v":
-                          segs.replaceItem(path.createSVGPathSegLinetoVerticalAbs(y), i);
+                          segs.replaceItem(path.createSVGPathSegLinetoVerticalAbs(y), i2);
                           break;
                         case "c":
-                          segs.replaceItem(path.createSVGPathSegCurvetoCubicAbs(x, y, x1, y1, x2, y2), i);
+                          segs.replaceItem(path.createSVGPathSegCurvetoCubicAbs(x, y, x1, y1, x2, y2), i2);
                           break;
                         case "s":
-                          segs.replaceItem(path.createSVGPathSegCurvetoCubicSmoothAbs(x, y, x2, y2), i);
+                          segs.replaceItem(path.createSVGPathSegCurvetoCubicSmoothAbs(x, y, x2, y2), i2);
                           break;
                         case "q":
-                          segs.replaceItem(path.createSVGPathSegCurvetoQuadraticAbs(x, y, x1, y1), i);
+                          segs.replaceItem(path.createSVGPathSegCurvetoQuadraticAbs(x, y, x1, y1), i2);
                           break;
                         case "t":
-                          segs.replaceItem(path.createSVGPathSegCurvetoQuadraticSmoothAbs(x, y), i);
+                          segs.replaceItem(path.createSVGPathSegCurvetoQuadraticSmoothAbs(x, y), i2);
                           break;
                         case "a":
-                          segs.replaceItem(path.createSVGPathSegArcAbs(x, y, seg.r1, seg.r2, seg.angle, seg.largeArcFlag, seg.sweepFlag), i);
+                          segs.replaceItem(path.createSVGPathSegArcAbs(x, y, seg.r1, seg.r2, seg.angle, seg.largeArcFlag, seg.sweepFlag), i2);
                           break;
                         case "z":
                         case "Z":
@@ -5150,11 +5154,11 @@
      * @param {Laya.Vector2} pos 球的位置 
      * @param value 
      */
-    insertBall(pos, value) {
-      let ball3d2 = this.ball3dManager.insertValue(value);
+    insertBall(pos, value2) {
+      let ball3d2 = this.ball3dManager.insertValue(value2);
       let ball2d2 = this.ball2dManager.insertValue(pos);
-      ball2d2.setTexture(this.ball3dManager.ballTextueKv[value]);
-      this.ballKv[value] = {
+      ball2d2.setTexture(this.ball3dManager.ballTextueKv[value2]);
+      this.ballKv[value2] = {
         ball2d: ball2d2,
         ball3d: ball3d2
       };
@@ -5298,9 +5302,9 @@
         var ballsInRow = row + 1;
         var rowStartX = startX;
         var rowStartY = startY - row * ballRadius;
-        for (var i = 0; i < ballsInRow; i++) {
+        for (var i2 = 0; i2 < ballsInRow; i2++) {
           var x = rowStartX + (row - numRows / 2) * ballRadius * 2;
-          var y = rowStartY + i * ballRadius * 2;
+          var y = rowStartY + i2 * ballRadius * 2;
           var ball = import_matter_js.Bodies.circle(x, y, ballRadius, {
             restitution
             // 调整回弹系数以控制球的弹跳
@@ -5446,7 +5450,3135 @@
     regClass6("b3360337-ccae-48c7-959d-4cab4466807e", "script/comm/billordCubeBarComm.ts")
   ], billordCubeBarComm);
 
+  // node_modules/engine.io-parser/build/esm/commons.js
+  var PACKET_TYPES = /* @__PURE__ */ Object.create(null);
+  PACKET_TYPES["open"] = "0";
+  PACKET_TYPES["close"] = "1";
+  PACKET_TYPES["ping"] = "2";
+  PACKET_TYPES["pong"] = "3";
+  PACKET_TYPES["message"] = "4";
+  PACKET_TYPES["upgrade"] = "5";
+  PACKET_TYPES["noop"] = "6";
+  var PACKET_TYPES_REVERSE = /* @__PURE__ */ Object.create(null);
+  Object.keys(PACKET_TYPES).forEach((key) => {
+    PACKET_TYPES_REVERSE[PACKET_TYPES[key]] = key;
+  });
+  var ERROR_PACKET = { type: "error", data: "parser error" };
+
+  // node_modules/engine.io-parser/build/esm/encodePacket.browser.js
+  var withNativeBlob = typeof Blob === "function" || typeof Blob !== "undefined" && Object.prototype.toString.call(Blob) === "[object BlobConstructor]";
+  var withNativeArrayBuffer = typeof ArrayBuffer === "function";
+  var isView = /* @__PURE__ */ __name((obj) => {
+    return typeof ArrayBuffer.isView === "function" ? ArrayBuffer.isView(obj) : obj && obj.buffer instanceof ArrayBuffer;
+  }, "isView");
+  var encodePacket = /* @__PURE__ */ __name(({ type, data }, supportsBinary, callback) => {
+    if (withNativeBlob && data instanceof Blob) {
+      if (supportsBinary) {
+        return callback(data);
+      } else {
+        return encodeBlobAsBase64(data, callback);
+      }
+    } else if (withNativeArrayBuffer && (data instanceof ArrayBuffer || isView(data))) {
+      if (supportsBinary) {
+        return callback(data);
+      } else {
+        return encodeBlobAsBase64(new Blob([data]), callback);
+      }
+    }
+    return callback(PACKET_TYPES[type] + (data || ""));
+  }, "encodePacket");
+  var encodeBlobAsBase64 = /* @__PURE__ */ __name((data, callback) => {
+    const fileReader = new FileReader();
+    fileReader.onload = function() {
+      const content = fileReader.result.split(",")[1];
+      callback("b" + (content || ""));
+    };
+    return fileReader.readAsDataURL(data);
+  }, "encodeBlobAsBase64");
+  var encodePacket_browser_default = encodePacket;
+
+  // node_modules/engine.io-parser/build/esm/contrib/base64-arraybuffer.js
+  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  var lookup = typeof Uint8Array === "undefined" ? [] : new Uint8Array(256);
+  for (let i2 = 0; i2 < chars.length; i2++) {
+    lookup[chars.charCodeAt(i2)] = i2;
+  }
+  var decode = /* @__PURE__ */ __name((base64) => {
+    let bufferLength = base64.length * 0.75, len = base64.length, i2, p = 0, encoded1, encoded2, encoded3, encoded4;
+    if (base64[base64.length - 1] === "=") {
+      bufferLength--;
+      if (base64[base64.length - 2] === "=") {
+        bufferLength--;
+      }
+    }
+    const arraybuffer = new ArrayBuffer(bufferLength), bytes = new Uint8Array(arraybuffer);
+    for (i2 = 0; i2 < len; i2 += 4) {
+      encoded1 = lookup[base64.charCodeAt(i2)];
+      encoded2 = lookup[base64.charCodeAt(i2 + 1)];
+      encoded3 = lookup[base64.charCodeAt(i2 + 2)];
+      encoded4 = lookup[base64.charCodeAt(i2 + 3)];
+      bytes[p++] = encoded1 << 2 | encoded2 >> 4;
+      bytes[p++] = (encoded2 & 15) << 4 | encoded3 >> 2;
+      bytes[p++] = (encoded3 & 3) << 6 | encoded4 & 63;
+    }
+    return arraybuffer;
+  }, "decode");
+
+  // node_modules/engine.io-parser/build/esm/decodePacket.browser.js
+  var withNativeArrayBuffer2 = typeof ArrayBuffer === "function";
+  var decodePacket = /* @__PURE__ */ __name((encodedPacket, binaryType) => {
+    if (typeof encodedPacket !== "string") {
+      return {
+        type: "message",
+        data: mapBinary(encodedPacket, binaryType)
+      };
+    }
+    const type = encodedPacket.charAt(0);
+    if (type === "b") {
+      return {
+        type: "message",
+        data: decodeBase64Packet(encodedPacket.substring(1), binaryType)
+      };
+    }
+    const packetType = PACKET_TYPES_REVERSE[type];
+    if (!packetType) {
+      return ERROR_PACKET;
+    }
+    return encodedPacket.length > 1 ? {
+      type: PACKET_TYPES_REVERSE[type],
+      data: encodedPacket.substring(1)
+    } : {
+      type: PACKET_TYPES_REVERSE[type]
+    };
+  }, "decodePacket");
+  var decodeBase64Packet = /* @__PURE__ */ __name((data, binaryType) => {
+    if (withNativeArrayBuffer2) {
+      const decoded = decode(data);
+      return mapBinary(decoded, binaryType);
+    } else {
+      return { base64: true, data };
+    }
+  }, "decodeBase64Packet");
+  var mapBinary = /* @__PURE__ */ __name((data, binaryType) => {
+    switch (binaryType) {
+      case "blob":
+        return data instanceof ArrayBuffer ? new Blob([data]) : data;
+      case "arraybuffer":
+      default:
+        return data;
+    }
+  }, "mapBinary");
+  var decodePacket_browser_default = decodePacket;
+
+  // node_modules/engine.io-parser/build/esm/index.js
+  var SEPARATOR = String.fromCharCode(30);
+  var encodePayload = /* @__PURE__ */ __name((packets, callback) => {
+    const length2 = packets.length;
+    const encodedPackets = new Array(length2);
+    let count = 0;
+    packets.forEach((packet, i2) => {
+      encodePacket_browser_default(packet, false, (encodedPacket) => {
+        encodedPackets[i2] = encodedPacket;
+        if (++count === length2) {
+          callback(encodedPackets.join(SEPARATOR));
+        }
+      });
+    });
+  }, "encodePayload");
+  var decodePayload = /* @__PURE__ */ __name((encodedPayload, binaryType) => {
+    const encodedPackets = encodedPayload.split(SEPARATOR);
+    const packets = [];
+    for (let i2 = 0; i2 < encodedPackets.length; i2++) {
+      const decodedPacket = decodePacket_browser_default(encodedPackets[i2], binaryType);
+      packets.push(decodedPacket);
+      if (decodedPacket.type === "error") {
+        break;
+      }
+    }
+    return packets;
+  }, "decodePayload");
+  var protocol = 4;
+
+  // node_modules/@socket.io/component-emitter/index.mjs
+  function Emitter(obj) {
+    if (obj)
+      return mixin(obj);
+  }
+  __name(Emitter, "Emitter");
+  function mixin(obj) {
+    for (var key in Emitter.prototype) {
+      obj[key] = Emitter.prototype[key];
+    }
+    return obj;
+  }
+  __name(mixin, "mixin");
+  Emitter.prototype.on = Emitter.prototype.addEventListener = function(event, fn) {
+    this._callbacks = this._callbacks || {};
+    (this._callbacks["$" + event] = this._callbacks["$" + event] || []).push(fn);
+    return this;
+  };
+  Emitter.prototype.once = function(event, fn) {
+    function on2() {
+      this.off(event, on2);
+      fn.apply(this, arguments);
+    }
+    __name(on2, "on");
+    on2.fn = fn;
+    this.on(event, on2);
+    return this;
+  };
+  Emitter.prototype.off = Emitter.prototype.removeListener = Emitter.prototype.removeAllListeners = Emitter.prototype.removeEventListener = function(event, fn) {
+    this._callbacks = this._callbacks || {};
+    if (0 == arguments.length) {
+      this._callbacks = {};
+      return this;
+    }
+    var callbacks = this._callbacks["$" + event];
+    if (!callbacks)
+      return this;
+    if (1 == arguments.length) {
+      delete this._callbacks["$" + event];
+      return this;
+    }
+    var cb;
+    for (var i2 = 0; i2 < callbacks.length; i2++) {
+      cb = callbacks[i2];
+      if (cb === fn || cb.fn === fn) {
+        callbacks.splice(i2, 1);
+        break;
+      }
+    }
+    if (callbacks.length === 0) {
+      delete this._callbacks["$" + event];
+    }
+    return this;
+  };
+  Emitter.prototype.emit = function(event) {
+    this._callbacks = this._callbacks || {};
+    var args = new Array(arguments.length - 1), callbacks = this._callbacks["$" + event];
+    for (var i2 = 1; i2 < arguments.length; i2++) {
+      args[i2 - 1] = arguments[i2];
+    }
+    if (callbacks) {
+      callbacks = callbacks.slice(0);
+      for (var i2 = 0, len = callbacks.length; i2 < len; ++i2) {
+        callbacks[i2].apply(this, args);
+      }
+    }
+    return this;
+  };
+  Emitter.prototype.emitReserved = Emitter.prototype.emit;
+  Emitter.prototype.listeners = function(event) {
+    this._callbacks = this._callbacks || {};
+    return this._callbacks["$" + event] || [];
+  };
+  Emitter.prototype.hasListeners = function(event) {
+    return !!this.listeners(event).length;
+  };
+
+  // node_modules/engine.io-client/build/esm/globalThis.browser.js
+  var globalThisShim = (() => {
+    if (typeof self !== "undefined") {
+      return self;
+    } else if (typeof window !== "undefined") {
+      return window;
+    } else {
+      return Function("return this")();
+    }
+  })();
+
+  // node_modules/engine.io-client/build/esm/util.js
+  function pick(obj, ...attr) {
+    return attr.reduce((acc, k) => {
+      if (obj.hasOwnProperty(k)) {
+        acc[k] = obj[k];
+      }
+      return acc;
+    }, {});
+  }
+  __name(pick, "pick");
+  var NATIVE_SET_TIMEOUT = globalThisShim.setTimeout;
+  var NATIVE_CLEAR_TIMEOUT = globalThisShim.clearTimeout;
+  function installTimerFunctions(obj, opts) {
+    if (opts.useNativeTimers) {
+      obj.setTimeoutFn = NATIVE_SET_TIMEOUT.bind(globalThisShim);
+      obj.clearTimeoutFn = NATIVE_CLEAR_TIMEOUT.bind(globalThisShim);
+    } else {
+      obj.setTimeoutFn = globalThisShim.setTimeout.bind(globalThisShim);
+      obj.clearTimeoutFn = globalThisShim.clearTimeout.bind(globalThisShim);
+    }
+  }
+  __name(installTimerFunctions, "installTimerFunctions");
+  var BASE64_OVERHEAD = 1.33;
+  function byteLength(obj) {
+    if (typeof obj === "string") {
+      return utf8Length(obj);
+    }
+    return Math.ceil((obj.byteLength || obj.size) * BASE64_OVERHEAD);
+  }
+  __name(byteLength, "byteLength");
+  function utf8Length(str) {
+    let c = 0, length2 = 0;
+    for (let i2 = 0, l = str.length; i2 < l; i2++) {
+      c = str.charCodeAt(i2);
+      if (c < 128) {
+        length2 += 1;
+      } else if (c < 2048) {
+        length2 += 2;
+      } else if (c < 55296 || c >= 57344) {
+        length2 += 3;
+      } else {
+        i2++;
+        length2 += 4;
+      }
+    }
+    return length2;
+  }
+  __name(utf8Length, "utf8Length");
+
+  // node_modules/engine.io-client/build/esm/transport.js
+  var TransportError = class extends Error {
+    constructor(reason, description, context) {
+      super(reason);
+      this.description = description;
+      this.context = context;
+      this.type = "TransportError";
+    }
+  };
+  __name(TransportError, "TransportError");
+  var Transport = class extends Emitter {
+    /**
+     * Transport abstract constructor.
+     *
+     * @param {Object} opts - options
+     * @protected
+     */
+    constructor(opts) {
+      super();
+      this.writable = false;
+      installTimerFunctions(this, opts);
+      this.opts = opts;
+      this.query = opts.query;
+      this.socket = opts.socket;
+    }
+    /**
+     * Emits an error.
+     *
+     * @param {String} reason
+     * @param description
+     * @param context - the error context
+     * @return {Transport} for chaining
+     * @protected
+     */
+    onError(reason, description, context) {
+      super.emitReserved("error", new TransportError(reason, description, context));
+      return this;
+    }
+    /**
+     * Opens the transport.
+     */
+    open() {
+      this.readyState = "opening";
+      this.doOpen();
+      return this;
+    }
+    /**
+     * Closes the transport.
+     */
+    close() {
+      if (this.readyState === "opening" || this.readyState === "open") {
+        this.doClose();
+        this.onClose();
+      }
+      return this;
+    }
+    /**
+     * Sends multiple packets.
+     *
+     * @param {Array} packets
+     */
+    send(packets) {
+      if (this.readyState === "open") {
+        this.write(packets);
+      } else {
+      }
+    }
+    /**
+     * Called upon open
+     *
+     * @protected
+     */
+    onOpen() {
+      this.readyState = "open";
+      this.writable = true;
+      super.emitReserved("open");
+    }
+    /**
+     * Called with data.
+     *
+     * @param {String} data
+     * @protected
+     */
+    onData(data) {
+      const packet = decodePacket_browser_default(data, this.socket.binaryType);
+      this.onPacket(packet);
+    }
+    /**
+     * Called with a decoded packet.
+     *
+     * @protected
+     */
+    onPacket(packet) {
+      super.emitReserved("packet", packet);
+    }
+    /**
+     * Called upon close.
+     *
+     * @protected
+     */
+    onClose(details) {
+      this.readyState = "closed";
+      super.emitReserved("close", details);
+    }
+    /**
+     * Pauses the transport, in order not to lose packets during an upgrade.
+     *
+     * @param onPause
+     */
+    pause(onPause) {
+    }
+  };
+  __name(Transport, "Transport");
+
+  // node_modules/engine.io-client/build/esm/contrib/yeast.js
+  var alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_".split("");
+  var length = 64;
+  var map = {};
+  var seed = 0;
+  var i = 0;
+  var prev;
+  function encode(num) {
+    let encoded = "";
+    do {
+      encoded = alphabet[num % length] + encoded;
+      num = Math.floor(num / length);
+    } while (num > 0);
+    return encoded;
+  }
+  __name(encode, "encode");
+  function yeast() {
+    const now = encode(+/* @__PURE__ */ new Date());
+    if (now !== prev)
+      return seed = 0, prev = now;
+    return now + "." + encode(seed++);
+  }
+  __name(yeast, "yeast");
+  for (; i < length; i++)
+    map[alphabet[i]] = i;
+
+  // node_modules/engine.io-client/build/esm/contrib/parseqs.js
+  function encode2(obj) {
+    let str = "";
+    for (let i2 in obj) {
+      if (obj.hasOwnProperty(i2)) {
+        if (str.length)
+          str += "&";
+        str += encodeURIComponent(i2) + "=" + encodeURIComponent(obj[i2]);
+      }
+    }
+    return str;
+  }
+  __name(encode2, "encode");
+  function decode2(qs) {
+    let qry = {};
+    let pairs = qs.split("&");
+    for (let i2 = 0, l = pairs.length; i2 < l; i2++) {
+      let pair = pairs[i2].split("=");
+      qry[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+    }
+    return qry;
+  }
+  __name(decode2, "decode");
+
+  // node_modules/engine.io-client/build/esm/contrib/has-cors.js
+  var value = false;
+  try {
+    value = typeof XMLHttpRequest !== "undefined" && "withCredentials" in new XMLHttpRequest();
+  } catch (err) {
+  }
+  var hasCORS = value;
+
+  // node_modules/engine.io-client/build/esm/transports/xmlhttprequest.browser.js
+  function XHR(opts) {
+    const xdomain = opts.xdomain;
+    try {
+      if ("undefined" !== typeof XMLHttpRequest && (!xdomain || hasCORS)) {
+        return new XMLHttpRequest();
+      }
+    } catch (e) {
+    }
+    if (!xdomain) {
+      try {
+        return new globalThisShim[["Active"].concat("Object").join("X")]("Microsoft.XMLHTTP");
+      } catch (e) {
+      }
+    }
+  }
+  __name(XHR, "XHR");
+
+  // node_modules/engine.io-client/build/esm/transports/polling.js
+  function empty() {
+  }
+  __name(empty, "empty");
+  var hasXHR2 = function() {
+    const xhr = new XHR({
+      xdomain: false
+    });
+    return null != xhr.responseType;
+  }();
+  var Polling = class extends Transport {
+    /**
+     * XHR Polling constructor.
+     *
+     * @param {Object} opts
+     * @package
+     */
+    constructor(opts) {
+      super(opts);
+      this.polling = false;
+      if (typeof location !== "undefined") {
+        const isSSL = "https:" === location.protocol;
+        let port = location.port;
+        if (!port) {
+          port = isSSL ? "443" : "80";
+        }
+        this.xd = typeof location !== "undefined" && opts.hostname !== location.hostname || port !== opts.port;
+        this.xs = opts.secure !== isSSL;
+      }
+      const forceBase64 = opts && opts.forceBase64;
+      this.supportsBinary = hasXHR2 && !forceBase64;
+    }
+    get name() {
+      return "polling";
+    }
+    /**
+     * Opens the socket (triggers polling). We write a PING message to determine
+     * when the transport is open.
+     *
+     * @protected
+     */
+    doOpen() {
+      this.poll();
+    }
+    /**
+     * Pauses polling.
+     *
+     * @param {Function} onPause - callback upon buffers are flushed and transport is paused
+     * @package
+     */
+    pause(onPause) {
+      this.readyState = "pausing";
+      const pause = /* @__PURE__ */ __name(() => {
+        this.readyState = "paused";
+        onPause();
+      }, "pause");
+      if (this.polling || !this.writable) {
+        let total = 0;
+        if (this.polling) {
+          total++;
+          this.once("pollComplete", function() {
+            --total || pause();
+          });
+        }
+        if (!this.writable) {
+          total++;
+          this.once("drain", function() {
+            --total || pause();
+          });
+        }
+      } else {
+        pause();
+      }
+    }
+    /**
+     * Starts polling cycle.
+     *
+     * @private
+     */
+    poll() {
+      this.polling = true;
+      this.doPoll();
+      this.emitReserved("poll");
+    }
+    /**
+     * Overloads onData to detect payloads.
+     *
+     * @protected
+     */
+    onData(data) {
+      const callback = /* @__PURE__ */ __name((packet) => {
+        if ("opening" === this.readyState && packet.type === "open") {
+          this.onOpen();
+        }
+        if ("close" === packet.type) {
+          this.onClose({ description: "transport closed by the server" });
+          return false;
+        }
+        this.onPacket(packet);
+      }, "callback");
+      decodePayload(data, this.socket.binaryType).forEach(callback);
+      if ("closed" !== this.readyState) {
+        this.polling = false;
+        this.emitReserved("pollComplete");
+        if ("open" === this.readyState) {
+          this.poll();
+        } else {
+        }
+      }
+    }
+    /**
+     * For polling, send a close packet.
+     *
+     * @protected
+     */
+    doClose() {
+      const close = /* @__PURE__ */ __name(() => {
+        this.write([{ type: "close" }]);
+      }, "close");
+      if ("open" === this.readyState) {
+        close();
+      } else {
+        this.once("open", close);
+      }
+    }
+    /**
+     * Writes a packets payload.
+     *
+     * @param {Array} packets - data packets
+     * @protected
+     */
+    write(packets) {
+      this.writable = false;
+      encodePayload(packets, (data) => {
+        this.doWrite(data, () => {
+          this.writable = true;
+          this.emitReserved("drain");
+        });
+      });
+    }
+    /**
+     * Generates uri for connection.
+     *
+     * @private
+     */
+    uri() {
+      let query = this.query || {};
+      const schema = this.opts.secure ? "https" : "http";
+      let port = "";
+      if (false !== this.opts.timestampRequests) {
+        query[this.opts.timestampParam] = yeast();
+      }
+      if (!this.supportsBinary && !query.sid) {
+        query.b64 = 1;
+      }
+      if (this.opts.port && ("https" === schema && Number(this.opts.port) !== 443 || "http" === schema && Number(this.opts.port) !== 80)) {
+        port = ":" + this.opts.port;
+      }
+      const encodedQuery = encode2(query);
+      const ipv6 = this.opts.hostname.indexOf(":") !== -1;
+      return schema + "://" + (ipv6 ? "[" + this.opts.hostname + "]" : this.opts.hostname) + port + this.opts.path + (encodedQuery.length ? "?" + encodedQuery : "");
+    }
+    /**
+     * Creates a request.
+     *
+     * @param {String} method
+     * @private
+     */
+    request(opts = {}) {
+      Object.assign(opts, { xd: this.xd, xs: this.xs }, this.opts);
+      return new Request(this.uri(), opts);
+    }
+    /**
+     * Sends data.
+     *
+     * @param {String} data to send.
+     * @param {Function} called upon flush.
+     * @private
+     */
+    doWrite(data, fn) {
+      const req = this.request({
+        method: "POST",
+        data
+      });
+      req.on("success", fn);
+      req.on("error", (xhrStatus, context) => {
+        this.onError("xhr post error", xhrStatus, context);
+      });
+    }
+    /**
+     * Starts a poll cycle.
+     *
+     * @private
+     */
+    doPoll() {
+      const req = this.request();
+      req.on("data", this.onData.bind(this));
+      req.on("error", (xhrStatus, context) => {
+        this.onError("xhr poll error", xhrStatus, context);
+      });
+      this.pollXhr = req;
+    }
+  };
+  __name(Polling, "Polling");
+  var Request = class extends Emitter {
+    /**
+     * Request constructor
+     *
+     * @param {Object} options
+     * @package
+     */
+    constructor(uri, opts) {
+      super();
+      installTimerFunctions(this, opts);
+      this.opts = opts;
+      this.method = opts.method || "GET";
+      this.uri = uri;
+      this.async = false !== opts.async;
+      this.data = void 0 !== opts.data ? opts.data : null;
+      this.create();
+    }
+    /**
+     * Creates the XHR object and sends the request.
+     *
+     * @private
+     */
+    create() {
+      const opts = pick(this.opts, "agent", "pfx", "key", "passphrase", "cert", "ca", "ciphers", "rejectUnauthorized", "autoUnref");
+      opts.xdomain = !!this.opts.xd;
+      opts.xscheme = !!this.opts.xs;
+      const xhr = this.xhr = new XHR(opts);
+      try {
+        xhr.open(this.method, this.uri, this.async);
+        try {
+          if (this.opts.extraHeaders) {
+            xhr.setDisableHeaderCheck && xhr.setDisableHeaderCheck(true);
+            for (let i2 in this.opts.extraHeaders) {
+              if (this.opts.extraHeaders.hasOwnProperty(i2)) {
+                xhr.setRequestHeader(i2, this.opts.extraHeaders[i2]);
+              }
+            }
+          }
+        } catch (e) {
+        }
+        if ("POST" === this.method) {
+          try {
+            xhr.setRequestHeader("Content-type", "text/plain;charset=UTF-8");
+          } catch (e) {
+          }
+        }
+        try {
+          xhr.setRequestHeader("Accept", "*/*");
+        } catch (e) {
+        }
+        if ("withCredentials" in xhr) {
+          xhr.withCredentials = this.opts.withCredentials;
+        }
+        if (this.opts.requestTimeout) {
+          xhr.timeout = this.opts.requestTimeout;
+        }
+        xhr.onreadystatechange = () => {
+          if (4 !== xhr.readyState)
+            return;
+          if (200 === xhr.status || 1223 === xhr.status) {
+            this.onLoad();
+          } else {
+            this.setTimeoutFn(() => {
+              this.onError(typeof xhr.status === "number" ? xhr.status : 0);
+            }, 0);
+          }
+        };
+        xhr.send(this.data);
+      } catch (e) {
+        this.setTimeoutFn(() => {
+          this.onError(e);
+        }, 0);
+        return;
+      }
+      if (typeof document !== "undefined") {
+        this.index = Request.requestsCount++;
+        Request.requests[this.index] = this;
+      }
+    }
+    /**
+     * Called upon error.
+     *
+     * @private
+     */
+    onError(err) {
+      this.emitReserved("error", err, this.xhr);
+      this.cleanup(true);
+    }
+    /**
+     * Cleans up house.
+     *
+     * @private
+     */
+    cleanup(fromError) {
+      if ("undefined" === typeof this.xhr || null === this.xhr) {
+        return;
+      }
+      this.xhr.onreadystatechange = empty;
+      if (fromError) {
+        try {
+          this.xhr.abort();
+        } catch (e) {
+        }
+      }
+      if (typeof document !== "undefined") {
+        delete Request.requests[this.index];
+      }
+      this.xhr = null;
+    }
+    /**
+     * Called upon load.
+     *
+     * @private
+     */
+    onLoad() {
+      const data = this.xhr.responseText;
+      if (data !== null) {
+        this.emitReserved("data", data);
+        this.emitReserved("success");
+        this.cleanup();
+      }
+    }
+    /**
+     * Aborts the request.
+     *
+     * @package
+     */
+    abort() {
+      this.cleanup();
+    }
+  };
+  __name(Request, "Request");
+  Request.requestsCount = 0;
+  Request.requests = {};
+  if (typeof document !== "undefined") {
+    if (typeof attachEvent === "function") {
+      attachEvent("onunload", unloadHandler);
+    } else if (typeof addEventListener === "function") {
+      const terminationEvent = "onpagehide" in globalThisShim ? "pagehide" : "unload";
+      addEventListener(terminationEvent, unloadHandler, false);
+    }
+  }
+  function unloadHandler() {
+    for (let i2 in Request.requests) {
+      if (Request.requests.hasOwnProperty(i2)) {
+        Request.requests[i2].abort();
+      }
+    }
+  }
+  __name(unloadHandler, "unloadHandler");
+
+  // node_modules/engine.io-client/build/esm/transports/websocket-constructor.browser.js
+  var nextTick = (() => {
+    const isPromiseAvailable = typeof Promise === "function" && typeof Promise.resolve === "function";
+    if (isPromiseAvailable) {
+      return (cb) => Promise.resolve().then(cb);
+    } else {
+      return (cb, setTimeoutFn) => setTimeoutFn(cb, 0);
+    }
+  })();
+  var WebSocket = globalThisShim.WebSocket || globalThisShim.MozWebSocket;
+  var usingBrowserWebSocket = true;
+  var defaultBinaryType = "arraybuffer";
+
+  // node_modules/engine.io-client/build/esm/transports/websocket.js
+  var isReactNative = typeof navigator !== "undefined" && typeof navigator.product === "string" && navigator.product.toLowerCase() === "reactnative";
+  var WS = class extends Transport {
+    /**
+     * WebSocket transport constructor.
+     *
+     * @param {Object} opts - connection options
+     * @protected
+     */
+    constructor(opts) {
+      super(opts);
+      this.supportsBinary = !opts.forceBase64;
+    }
+    get name() {
+      return "websocket";
+    }
+    doOpen() {
+      if (!this.check()) {
+        return;
+      }
+      const uri = this.uri();
+      const protocols = this.opts.protocols;
+      const opts = isReactNative ? {} : pick(this.opts, "agent", "perMessageDeflate", "pfx", "key", "passphrase", "cert", "ca", "ciphers", "rejectUnauthorized", "localAddress", "protocolVersion", "origin", "maxPayload", "family", "checkServerIdentity");
+      if (this.opts.extraHeaders) {
+        opts.headers = this.opts.extraHeaders;
+      }
+      try {
+        this.ws = usingBrowserWebSocket && !isReactNative ? protocols ? new WebSocket(uri, protocols) : new WebSocket(uri) : new WebSocket(uri, protocols, opts);
+      } catch (err) {
+        return this.emitReserved("error", err);
+      }
+      this.ws.binaryType = this.socket.binaryType || defaultBinaryType;
+      this.addEventListeners();
+    }
+    /**
+     * Adds event listeners to the socket
+     *
+     * @private
+     */
+    addEventListeners() {
+      this.ws.onopen = () => {
+        if (this.opts.autoUnref) {
+          this.ws._socket.unref();
+        }
+        this.onOpen();
+      };
+      this.ws.onclose = (closeEvent) => this.onClose({
+        description: "websocket connection closed",
+        context: closeEvent
+      });
+      this.ws.onmessage = (ev) => this.onData(ev.data);
+      this.ws.onerror = (e) => this.onError("websocket error", e);
+    }
+    write(packets) {
+      this.writable = false;
+      for (let i2 = 0; i2 < packets.length; i2++) {
+        const packet = packets[i2];
+        const lastPacket = i2 === packets.length - 1;
+        encodePacket_browser_default(packet, this.supportsBinary, (data) => {
+          const opts = {};
+          if (!usingBrowserWebSocket) {
+            if (packet.options) {
+              opts.compress = packet.options.compress;
+            }
+            if (this.opts.perMessageDeflate) {
+              const len = (
+                // @ts-ignore
+                "string" === typeof data ? Buffer.byteLength(data) : data.length
+              );
+              if (len < this.opts.perMessageDeflate.threshold) {
+                opts.compress = false;
+              }
+            }
+          }
+          try {
+            if (usingBrowserWebSocket) {
+              this.ws.send(data);
+            } else {
+              this.ws.send(data, opts);
+            }
+          } catch (e) {
+          }
+          if (lastPacket) {
+            nextTick(() => {
+              this.writable = true;
+              this.emitReserved("drain");
+            }, this.setTimeoutFn);
+          }
+        });
+      }
+    }
+    doClose() {
+      if (typeof this.ws !== "undefined") {
+        this.ws.close();
+        this.ws = null;
+      }
+    }
+    /**
+     * Generates uri for connection.
+     *
+     * @private
+     */
+    uri() {
+      let query = this.query || {};
+      const schema = this.opts.secure ? "wss" : "ws";
+      let port = "";
+      if (this.opts.port && ("wss" === schema && Number(this.opts.port) !== 443 || "ws" === schema && Number(this.opts.port) !== 80)) {
+        port = ":" + this.opts.port;
+      }
+      if (this.opts.timestampRequests) {
+        query[this.opts.timestampParam] = yeast();
+      }
+      if (!this.supportsBinary) {
+        query.b64 = 1;
+      }
+      const encodedQuery = encode2(query);
+      const ipv6 = this.opts.hostname.indexOf(":") !== -1;
+      return schema + "://" + (ipv6 ? "[" + this.opts.hostname + "]" : this.opts.hostname) + port + this.opts.path + (encodedQuery.length ? "?" + encodedQuery : "");
+    }
+    /**
+     * Feature detection for WebSocket.
+     *
+     * @return {Boolean} whether this transport is available.
+     * @private
+     */
+    check() {
+      return !!WebSocket;
+    }
+  };
+  __name(WS, "WS");
+
+  // node_modules/engine.io-client/build/esm/transports/index.js
+  var transports = {
+    websocket: WS,
+    polling: Polling
+  };
+
+  // node_modules/engine.io-client/build/esm/contrib/parseuri.js
+  var re = /^(?:(?![^:@\/?#]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@\/?#]*)(?::([^:@\/?#]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/;
+  var parts = [
+    "source",
+    "protocol",
+    "authority",
+    "userInfo",
+    "user",
+    "password",
+    "host",
+    "port",
+    "relative",
+    "path",
+    "directory",
+    "file",
+    "query",
+    "anchor"
+  ];
+  function parse(str) {
+    const src = str, b = str.indexOf("["), e = str.indexOf("]");
+    if (b != -1 && e != -1) {
+      str = str.substring(0, b) + str.substring(b, e).replace(/:/g, ";") + str.substring(e, str.length);
+    }
+    let m = re.exec(str || ""), uri = {}, i2 = 14;
+    while (i2--) {
+      uri[parts[i2]] = m[i2] || "";
+    }
+    if (b != -1 && e != -1) {
+      uri.source = src;
+      uri.host = uri.host.substring(1, uri.host.length - 1).replace(/;/g, ":");
+      uri.authority = uri.authority.replace("[", "").replace("]", "").replace(/;/g, ":");
+      uri.ipv6uri = true;
+    }
+    uri.pathNames = pathNames(uri, uri["path"]);
+    uri.queryKey = queryKey(uri, uri["query"]);
+    return uri;
+  }
+  __name(parse, "parse");
+  function pathNames(obj, path) {
+    const regx = /\/{2,9}/g, names = path.replace(regx, "/").split("/");
+    if (path.slice(0, 1) == "/" || path.length === 0) {
+      names.splice(0, 1);
+    }
+    if (path.slice(-1) == "/") {
+      names.splice(names.length - 1, 1);
+    }
+    return names;
+  }
+  __name(pathNames, "pathNames");
+  function queryKey(uri, query) {
+    const data = {};
+    query.replace(/(?:^|&)([^&=]*)=?([^&]*)/g, function($0, $1, $2) {
+      if ($1) {
+        data[$1] = $2;
+      }
+    });
+    return data;
+  }
+  __name(queryKey, "queryKey");
+
+  // node_modules/engine.io-client/build/esm/socket.js
+  var Socket = class extends Emitter {
+    /**
+     * Socket constructor.
+     *
+     * @param {String|Object} uri - uri or options
+     * @param {Object} opts - options
+     */
+    constructor(uri, opts = {}) {
+      super();
+      this.writeBuffer = [];
+      if (uri && "object" === typeof uri) {
+        opts = uri;
+        uri = null;
+      }
+      if (uri) {
+        uri = parse(uri);
+        opts.hostname = uri.host;
+        opts.secure = uri.protocol === "https" || uri.protocol === "wss";
+        opts.port = uri.port;
+        if (uri.query)
+          opts.query = uri.query;
+      } else if (opts.host) {
+        opts.hostname = parse(opts.host).host;
+      }
+      installTimerFunctions(this, opts);
+      this.secure = null != opts.secure ? opts.secure : typeof location !== "undefined" && "https:" === location.protocol;
+      if (opts.hostname && !opts.port) {
+        opts.port = this.secure ? "443" : "80";
+      }
+      this.hostname = opts.hostname || (typeof location !== "undefined" ? location.hostname : "localhost");
+      this.port = opts.port || (typeof location !== "undefined" && location.port ? location.port : this.secure ? "443" : "80");
+      this.transports = opts.transports || ["polling", "websocket"];
+      this.writeBuffer = [];
+      this.prevBufferLen = 0;
+      this.opts = Object.assign({
+        path: "/engine.io",
+        agent: false,
+        withCredentials: false,
+        upgrade: true,
+        timestampParam: "t",
+        rememberUpgrade: false,
+        addTrailingSlash: true,
+        rejectUnauthorized: true,
+        perMessageDeflate: {
+          threshold: 1024
+        },
+        transportOptions: {},
+        closeOnBeforeunload: true
+      }, opts);
+      this.opts.path = this.opts.path.replace(/\/$/, "") + (this.opts.addTrailingSlash ? "/" : "");
+      if (typeof this.opts.query === "string") {
+        this.opts.query = decode2(this.opts.query);
+      }
+      this.id = null;
+      this.upgrades = null;
+      this.pingInterval = null;
+      this.pingTimeout = null;
+      this.pingTimeoutTimer = null;
+      if (typeof addEventListener === "function") {
+        if (this.opts.closeOnBeforeunload) {
+          this.beforeunloadEventListener = () => {
+            if (this.transport) {
+              this.transport.removeAllListeners();
+              this.transport.close();
+            }
+          };
+          addEventListener("beforeunload", this.beforeunloadEventListener, false);
+        }
+        if (this.hostname !== "localhost") {
+          this.offlineEventListener = () => {
+            this.onClose("transport close", {
+              description: "network connection lost"
+            });
+          };
+          addEventListener("offline", this.offlineEventListener, false);
+        }
+      }
+      this.open();
+    }
+    /**
+     * Creates transport of the given type.
+     *
+     * @param {String} name - transport name
+     * @return {Transport}
+     * @private
+     */
+    createTransport(name) {
+      const query = Object.assign({}, this.opts.query);
+      query.EIO = protocol;
+      query.transport = name;
+      if (this.id)
+        query.sid = this.id;
+      const opts = Object.assign({}, this.opts.transportOptions[name], this.opts, {
+        query,
+        socket: this,
+        hostname: this.hostname,
+        secure: this.secure,
+        port: this.port
+      });
+      return new transports[name](opts);
+    }
+    /**
+     * Initializes transport to use and starts probe.
+     *
+     * @private
+     */
+    open() {
+      let transport;
+      if (this.opts.rememberUpgrade && Socket.priorWebsocketSuccess && this.transports.indexOf("websocket") !== -1) {
+        transport = "websocket";
+      } else if (0 === this.transports.length) {
+        this.setTimeoutFn(() => {
+          this.emitReserved("error", "No transports available");
+        }, 0);
+        return;
+      } else {
+        transport = this.transports[0];
+      }
+      this.readyState = "opening";
+      try {
+        transport = this.createTransport(transport);
+      } catch (e) {
+        this.transports.shift();
+        this.open();
+        return;
+      }
+      transport.open();
+      this.setTransport(transport);
+    }
+    /**
+     * Sets the current transport. Disables the existing one (if any).
+     *
+     * @private
+     */
+    setTransport(transport) {
+      if (this.transport) {
+        this.transport.removeAllListeners();
+      }
+      this.transport = transport;
+      transport.on("drain", this.onDrain.bind(this)).on("packet", this.onPacket.bind(this)).on("error", this.onError.bind(this)).on("close", (reason) => this.onClose("transport close", reason));
+    }
+    /**
+     * Probes a transport.
+     *
+     * @param {String} name - transport name
+     * @private
+     */
+    probe(name) {
+      let transport = this.createTransport(name);
+      let failed = false;
+      Socket.priorWebsocketSuccess = false;
+      const onTransportOpen = /* @__PURE__ */ __name(() => {
+        if (failed)
+          return;
+        transport.send([{ type: "ping", data: "probe" }]);
+        transport.once("packet", (msg) => {
+          if (failed)
+            return;
+          if ("pong" === msg.type && "probe" === msg.data) {
+            this.upgrading = true;
+            this.emitReserved("upgrading", transport);
+            if (!transport)
+              return;
+            Socket.priorWebsocketSuccess = "websocket" === transport.name;
+            this.transport.pause(() => {
+              if (failed)
+                return;
+              if ("closed" === this.readyState)
+                return;
+              cleanup();
+              this.setTransport(transport);
+              transport.send([{ type: "upgrade" }]);
+              this.emitReserved("upgrade", transport);
+              transport = null;
+              this.upgrading = false;
+              this.flush();
+            });
+          } else {
+            const err = new Error("probe error");
+            err.transport = transport.name;
+            this.emitReserved("upgradeError", err);
+          }
+        });
+      }, "onTransportOpen");
+      function freezeTransport() {
+        if (failed)
+          return;
+        failed = true;
+        cleanup();
+        transport.close();
+        transport = null;
+      }
+      __name(freezeTransport, "freezeTransport");
+      const onerror = /* @__PURE__ */ __name((err) => {
+        const error = new Error("probe error: " + err);
+        error.transport = transport.name;
+        freezeTransport();
+        this.emitReserved("upgradeError", error);
+      }, "onerror");
+      function onTransportClose() {
+        onerror("transport closed");
+      }
+      __name(onTransportClose, "onTransportClose");
+      function onclose() {
+        onerror("socket closed");
+      }
+      __name(onclose, "onclose");
+      function onupgrade(to) {
+        if (transport && to.name !== transport.name) {
+          freezeTransport();
+        }
+      }
+      __name(onupgrade, "onupgrade");
+      const cleanup = /* @__PURE__ */ __name(() => {
+        transport.removeListener("open", onTransportOpen);
+        transport.removeListener("error", onerror);
+        transport.removeListener("close", onTransportClose);
+        this.off("close", onclose);
+        this.off("upgrading", onupgrade);
+      }, "cleanup");
+      transport.once("open", onTransportOpen);
+      transport.once("error", onerror);
+      transport.once("close", onTransportClose);
+      this.once("close", onclose);
+      this.once("upgrading", onupgrade);
+      transport.open();
+    }
+    /**
+     * Called when connection is deemed open.
+     *
+     * @private
+     */
+    onOpen() {
+      this.readyState = "open";
+      Socket.priorWebsocketSuccess = "websocket" === this.transport.name;
+      this.emitReserved("open");
+      this.flush();
+      if ("open" === this.readyState && this.opts.upgrade) {
+        let i2 = 0;
+        const l = this.upgrades.length;
+        for (; i2 < l; i2++) {
+          this.probe(this.upgrades[i2]);
+        }
+      }
+    }
+    /**
+     * Handles a packet.
+     *
+     * @private
+     */
+    onPacket(packet) {
+      if ("opening" === this.readyState || "open" === this.readyState || "closing" === this.readyState) {
+        this.emitReserved("packet", packet);
+        this.emitReserved("heartbeat");
+        switch (packet.type) {
+          case "open":
+            this.onHandshake(JSON.parse(packet.data));
+            break;
+          case "ping":
+            this.resetPingTimeout();
+            this.sendPacket("pong");
+            this.emitReserved("ping");
+            this.emitReserved("pong");
+            break;
+          case "error":
+            const err = new Error("server error");
+            err.code = packet.data;
+            this.onError(err);
+            break;
+          case "message":
+            this.emitReserved("data", packet.data);
+            this.emitReserved("message", packet.data);
+            break;
+        }
+      } else {
+      }
+    }
+    /**
+     * Called upon handshake completion.
+     *
+     * @param {Object} data - handshake obj
+     * @private
+     */
+    onHandshake(data) {
+      this.emitReserved("handshake", data);
+      this.id = data.sid;
+      this.transport.query.sid = data.sid;
+      this.upgrades = this.filterUpgrades(data.upgrades);
+      this.pingInterval = data.pingInterval;
+      this.pingTimeout = data.pingTimeout;
+      this.maxPayload = data.maxPayload;
+      this.onOpen();
+      if ("closed" === this.readyState)
+        return;
+      this.resetPingTimeout();
+    }
+    /**
+     * Sets and resets ping timeout timer based on server pings.
+     *
+     * @private
+     */
+    resetPingTimeout() {
+      this.clearTimeoutFn(this.pingTimeoutTimer);
+      this.pingTimeoutTimer = this.setTimeoutFn(() => {
+        this.onClose("ping timeout");
+      }, this.pingInterval + this.pingTimeout);
+      if (this.opts.autoUnref) {
+        this.pingTimeoutTimer.unref();
+      }
+    }
+    /**
+     * Called on `drain` event
+     *
+     * @private
+     */
+    onDrain() {
+      this.writeBuffer.splice(0, this.prevBufferLen);
+      this.prevBufferLen = 0;
+      if (0 === this.writeBuffer.length) {
+        this.emitReserved("drain");
+      } else {
+        this.flush();
+      }
+    }
+    /**
+     * Flush write buffers.
+     *
+     * @private
+     */
+    flush() {
+      if ("closed" !== this.readyState && this.transport.writable && !this.upgrading && this.writeBuffer.length) {
+        const packets = this.getWritablePackets();
+        this.transport.send(packets);
+        this.prevBufferLen = packets.length;
+        this.emitReserved("flush");
+      }
+    }
+    /**
+     * Ensure the encoded size of the writeBuffer is below the maxPayload value sent by the server (only for HTTP
+     * long-polling)
+     *
+     * @private
+     */
+    getWritablePackets() {
+      const shouldCheckPayloadSize = this.maxPayload && this.transport.name === "polling" && this.writeBuffer.length > 1;
+      if (!shouldCheckPayloadSize) {
+        return this.writeBuffer;
+      }
+      let payloadSize = 1;
+      for (let i2 = 0; i2 < this.writeBuffer.length; i2++) {
+        const data = this.writeBuffer[i2].data;
+        if (data) {
+          payloadSize += byteLength(data);
+        }
+        if (i2 > 0 && payloadSize > this.maxPayload) {
+          return this.writeBuffer.slice(0, i2);
+        }
+        payloadSize += 2;
+      }
+      return this.writeBuffer;
+    }
+    /**
+     * Sends a message.
+     *
+     * @param {String} msg - message.
+     * @param {Object} options.
+     * @param {Function} callback function.
+     * @return {Socket} for chaining.
+     */
+    write(msg, options, fn) {
+      this.sendPacket("message", msg, options, fn);
+      return this;
+    }
+    send(msg, options, fn) {
+      this.sendPacket("message", msg, options, fn);
+      return this;
+    }
+    /**
+     * Sends a packet.
+     *
+     * @param {String} type: packet type.
+     * @param {String} data.
+     * @param {Object} options.
+     * @param {Function} fn - callback function.
+     * @private
+     */
+    sendPacket(type, data, options, fn) {
+      if ("function" === typeof data) {
+        fn = data;
+        data = void 0;
+      }
+      if ("function" === typeof options) {
+        fn = options;
+        options = null;
+      }
+      if ("closing" === this.readyState || "closed" === this.readyState) {
+        return;
+      }
+      options = options || {};
+      options.compress = false !== options.compress;
+      const packet = {
+        type,
+        data,
+        options
+      };
+      this.emitReserved("packetCreate", packet);
+      this.writeBuffer.push(packet);
+      if (fn)
+        this.once("flush", fn);
+      this.flush();
+    }
+    /**
+     * Closes the connection.
+     */
+    close() {
+      const close = /* @__PURE__ */ __name(() => {
+        this.onClose("forced close");
+        this.transport.close();
+      }, "close");
+      const cleanupAndClose = /* @__PURE__ */ __name(() => {
+        this.off("upgrade", cleanupAndClose);
+        this.off("upgradeError", cleanupAndClose);
+        close();
+      }, "cleanupAndClose");
+      const waitForUpgrade = /* @__PURE__ */ __name(() => {
+        this.once("upgrade", cleanupAndClose);
+        this.once("upgradeError", cleanupAndClose);
+      }, "waitForUpgrade");
+      if ("opening" === this.readyState || "open" === this.readyState) {
+        this.readyState = "closing";
+        if (this.writeBuffer.length) {
+          this.once("drain", () => {
+            if (this.upgrading) {
+              waitForUpgrade();
+            } else {
+              close();
+            }
+          });
+        } else if (this.upgrading) {
+          waitForUpgrade();
+        } else {
+          close();
+        }
+      }
+      return this;
+    }
+    /**
+     * Called upon transport error
+     *
+     * @private
+     */
+    onError(err) {
+      Socket.priorWebsocketSuccess = false;
+      this.emitReserved("error", err);
+      this.onClose("transport error", err);
+    }
+    /**
+     * Called upon transport close.
+     *
+     * @private
+     */
+    onClose(reason, description) {
+      if ("opening" === this.readyState || "open" === this.readyState || "closing" === this.readyState) {
+        this.clearTimeoutFn(this.pingTimeoutTimer);
+        this.transport.removeAllListeners("close");
+        this.transport.close();
+        this.transport.removeAllListeners();
+        if (typeof removeEventListener === "function") {
+          removeEventListener("beforeunload", this.beforeunloadEventListener, false);
+          removeEventListener("offline", this.offlineEventListener, false);
+        }
+        this.readyState = "closed";
+        this.id = null;
+        this.emitReserved("close", reason, description);
+        this.writeBuffer = [];
+        this.prevBufferLen = 0;
+      }
+    }
+    /**
+     * Filters upgrades, returning only those matching client transports.
+     *
+     * @param {Array} upgrades - server upgrades
+     * @private
+     */
+    filterUpgrades(upgrades) {
+      const filteredUpgrades = [];
+      let i2 = 0;
+      const j = upgrades.length;
+      for (; i2 < j; i2++) {
+        if (~this.transports.indexOf(upgrades[i2]))
+          filteredUpgrades.push(upgrades[i2]);
+      }
+      return filteredUpgrades;
+    }
+  };
+  __name(Socket, "Socket");
+  Socket.protocol = protocol;
+
+  // node_modules/engine.io-client/build/esm/index.js
+  var protocol2 = Socket.protocol;
+
+  // node_modules/socket.io-client/build/esm/url.js
+  function url(uri, path = "", loc) {
+    let obj = uri;
+    loc = loc || typeof location !== "undefined" && location;
+    if (null == uri)
+      uri = loc.protocol + "//" + loc.host;
+    if (typeof uri === "string") {
+      if ("/" === uri.charAt(0)) {
+        if ("/" === uri.charAt(1)) {
+          uri = loc.protocol + uri;
+        } else {
+          uri = loc.host + uri;
+        }
+      }
+      if (!/^(https?|wss?):\/\//.test(uri)) {
+        if ("undefined" !== typeof loc) {
+          uri = loc.protocol + "//" + uri;
+        } else {
+          uri = "https://" + uri;
+        }
+      }
+      obj = parse(uri);
+    }
+    if (!obj.port) {
+      if (/^(http|ws)$/.test(obj.protocol)) {
+        obj.port = "80";
+      } else if (/^(http|ws)s$/.test(obj.protocol)) {
+        obj.port = "443";
+      }
+    }
+    obj.path = obj.path || "/";
+    const ipv6 = obj.host.indexOf(":") !== -1;
+    const host = ipv6 ? "[" + obj.host + "]" : obj.host;
+    obj.id = obj.protocol + "://" + host + ":" + obj.port + path;
+    obj.href = obj.protocol + "://" + host + (loc && loc.port === obj.port ? "" : ":" + obj.port);
+    return obj;
+  }
+  __name(url, "url");
+
+  // node_modules/socket.io-parser/build/esm/index.js
+  var esm_exports = {};
+  __export(esm_exports, {
+    Decoder: () => Decoder,
+    Encoder: () => Encoder,
+    PacketType: () => PacketType,
+    protocol: () => protocol3
+  });
+
+  // node_modules/socket.io-parser/build/esm/is-binary.js
+  var withNativeArrayBuffer3 = typeof ArrayBuffer === "function";
+  var isView2 = /* @__PURE__ */ __name((obj) => {
+    return typeof ArrayBuffer.isView === "function" ? ArrayBuffer.isView(obj) : obj.buffer instanceof ArrayBuffer;
+  }, "isView");
+  var toString2 = Object.prototype.toString;
+  var withNativeBlob2 = typeof Blob === "function" || typeof Blob !== "undefined" && toString2.call(Blob) === "[object BlobConstructor]";
+  var withNativeFile = typeof File === "function" || typeof File !== "undefined" && toString2.call(File) === "[object FileConstructor]";
+  function isBinary(obj) {
+    return withNativeArrayBuffer3 && (obj instanceof ArrayBuffer || isView2(obj)) || withNativeBlob2 && obj instanceof Blob || withNativeFile && obj instanceof File;
+  }
+  __name(isBinary, "isBinary");
+  function hasBinary(obj, toJSON) {
+    if (!obj || typeof obj !== "object") {
+      return false;
+    }
+    if (Array.isArray(obj)) {
+      for (let i2 = 0, l = obj.length; i2 < l; i2++) {
+        if (hasBinary(obj[i2])) {
+          return true;
+        }
+      }
+      return false;
+    }
+    if (isBinary(obj)) {
+      return true;
+    }
+    if (obj.toJSON && typeof obj.toJSON === "function" && arguments.length === 1) {
+      return hasBinary(obj.toJSON(), true);
+    }
+    for (const key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key) && hasBinary(obj[key])) {
+        return true;
+      }
+    }
+    return false;
+  }
+  __name(hasBinary, "hasBinary");
+
+  // node_modules/socket.io-parser/build/esm/binary.js
+  function deconstructPacket(packet) {
+    const buffers = [];
+    const packetData = packet.data;
+    const pack = packet;
+    pack.data = _deconstructPacket(packetData, buffers);
+    pack.attachments = buffers.length;
+    return { packet: pack, buffers };
+  }
+  __name(deconstructPacket, "deconstructPacket");
+  function _deconstructPacket(data, buffers) {
+    if (!data)
+      return data;
+    if (isBinary(data)) {
+      const placeholder = { _placeholder: true, num: buffers.length };
+      buffers.push(data);
+      return placeholder;
+    } else if (Array.isArray(data)) {
+      const newData = new Array(data.length);
+      for (let i2 = 0; i2 < data.length; i2++) {
+        newData[i2] = _deconstructPacket(data[i2], buffers);
+      }
+      return newData;
+    } else if (typeof data === "object" && !(data instanceof Date)) {
+      const newData = {};
+      for (const key in data) {
+        if (Object.prototype.hasOwnProperty.call(data, key)) {
+          newData[key] = _deconstructPacket(data[key], buffers);
+        }
+      }
+      return newData;
+    }
+    return data;
+  }
+  __name(_deconstructPacket, "_deconstructPacket");
+  function reconstructPacket(packet, buffers) {
+    packet.data = _reconstructPacket(packet.data, buffers);
+    delete packet.attachments;
+    return packet;
+  }
+  __name(reconstructPacket, "reconstructPacket");
+  function _reconstructPacket(data, buffers) {
+    if (!data)
+      return data;
+    if (data && data._placeholder === true) {
+      const isIndexValid = typeof data.num === "number" && data.num >= 0 && data.num < buffers.length;
+      if (isIndexValid) {
+        return buffers[data.num];
+      } else {
+        throw new Error("illegal attachments");
+      }
+    } else if (Array.isArray(data)) {
+      for (let i2 = 0; i2 < data.length; i2++) {
+        data[i2] = _reconstructPacket(data[i2], buffers);
+      }
+    } else if (typeof data === "object") {
+      for (const key in data) {
+        if (Object.prototype.hasOwnProperty.call(data, key)) {
+          data[key] = _reconstructPacket(data[key], buffers);
+        }
+      }
+    }
+    return data;
+  }
+  __name(_reconstructPacket, "_reconstructPacket");
+
+  // node_modules/socket.io-parser/build/esm/index.js
+  var RESERVED_EVENTS = [
+    "connect",
+    "connect_error",
+    "disconnect",
+    "disconnecting",
+    "newListener",
+    "removeListener"
+    // used by the Node.js EventEmitter
+  ];
+  var protocol3 = 5;
+  var PacketType;
+  (function(PacketType2) {
+    PacketType2[PacketType2["CONNECT"] = 0] = "CONNECT";
+    PacketType2[PacketType2["DISCONNECT"] = 1] = "DISCONNECT";
+    PacketType2[PacketType2["EVENT"] = 2] = "EVENT";
+    PacketType2[PacketType2["ACK"] = 3] = "ACK";
+    PacketType2[PacketType2["CONNECT_ERROR"] = 4] = "CONNECT_ERROR";
+    PacketType2[PacketType2["BINARY_EVENT"] = 5] = "BINARY_EVENT";
+    PacketType2[PacketType2["BINARY_ACK"] = 6] = "BINARY_ACK";
+  })(PacketType || (PacketType = {}));
+  var Encoder = class {
+    /**
+     * Encoder constructor
+     *
+     * @param {function} replacer - custom replacer to pass down to JSON.parse
+     */
+    constructor(replacer) {
+      this.replacer = replacer;
+    }
+    /**
+     * Encode a packet as a single string if non-binary, or as a
+     * buffer sequence, depending on packet type.
+     *
+     * @param {Object} obj - packet object
+     */
+    encode(obj) {
+      if (obj.type === PacketType.EVENT || obj.type === PacketType.ACK) {
+        if (hasBinary(obj)) {
+          return this.encodeAsBinary({
+            type: obj.type === PacketType.EVENT ? PacketType.BINARY_EVENT : PacketType.BINARY_ACK,
+            nsp: obj.nsp,
+            data: obj.data,
+            id: obj.id
+          });
+        }
+      }
+      return [this.encodeAsString(obj)];
+    }
+    /**
+     * Encode packet as string.
+     */
+    encodeAsString(obj) {
+      let str = "" + obj.type;
+      if (obj.type === PacketType.BINARY_EVENT || obj.type === PacketType.BINARY_ACK) {
+        str += obj.attachments + "-";
+      }
+      if (obj.nsp && "/" !== obj.nsp) {
+        str += obj.nsp + ",";
+      }
+      if (null != obj.id) {
+        str += obj.id;
+      }
+      if (null != obj.data) {
+        str += JSON.stringify(obj.data, this.replacer);
+      }
+      return str;
+    }
+    /**
+     * Encode packet as 'buffer sequence' by removing blobs, and
+     * deconstructing packet into object with placeholders and
+     * a list of buffers.
+     */
+    encodeAsBinary(obj) {
+      const deconstruction = deconstructPacket(obj);
+      const pack = this.encodeAsString(deconstruction.packet);
+      const buffers = deconstruction.buffers;
+      buffers.unshift(pack);
+      return buffers;
+    }
+  };
+  __name(Encoder, "Encoder");
+  function isObject(value2) {
+    return Object.prototype.toString.call(value2) === "[object Object]";
+  }
+  __name(isObject, "isObject");
+  var Decoder = class extends Emitter {
+    /**
+     * Decoder constructor
+     *
+     * @param {function} reviver - custom reviver to pass down to JSON.stringify
+     */
+    constructor(reviver) {
+      super();
+      this.reviver = reviver;
+    }
+    /**
+     * Decodes an encoded packet string into packet JSON.
+     *
+     * @param {String} obj - encoded packet
+     */
+    add(obj) {
+      let packet;
+      if (typeof obj === "string") {
+        if (this.reconstructor) {
+          throw new Error("got plaintext data when reconstructing a packet");
+        }
+        packet = this.decodeString(obj);
+        const isBinaryEvent = packet.type === PacketType.BINARY_EVENT;
+        if (isBinaryEvent || packet.type === PacketType.BINARY_ACK) {
+          packet.type = isBinaryEvent ? PacketType.EVENT : PacketType.ACK;
+          this.reconstructor = new BinaryReconstructor(packet);
+          if (packet.attachments === 0) {
+            super.emitReserved("decoded", packet);
+          }
+        } else {
+          super.emitReserved("decoded", packet);
+        }
+      } else if (isBinary(obj) || obj.base64) {
+        if (!this.reconstructor) {
+          throw new Error("got binary data when not reconstructing a packet");
+        } else {
+          packet = this.reconstructor.takeBinaryData(obj);
+          if (packet) {
+            this.reconstructor = null;
+            super.emitReserved("decoded", packet);
+          }
+        }
+      } else {
+        throw new Error("Unknown type: " + obj);
+      }
+    }
+    /**
+     * Decode a packet String (JSON data)
+     *
+     * @param {String} str
+     * @return {Object} packet
+     */
+    decodeString(str) {
+      let i2 = 0;
+      const p = {
+        type: Number(str.charAt(0))
+      };
+      if (PacketType[p.type] === void 0) {
+        throw new Error("unknown packet type " + p.type);
+      }
+      if (p.type === PacketType.BINARY_EVENT || p.type === PacketType.BINARY_ACK) {
+        const start = i2 + 1;
+        while (str.charAt(++i2) !== "-" && i2 != str.length) {
+        }
+        const buf = str.substring(start, i2);
+        if (buf != Number(buf) || str.charAt(i2) !== "-") {
+          throw new Error("Illegal attachments");
+        }
+        p.attachments = Number(buf);
+      }
+      if ("/" === str.charAt(i2 + 1)) {
+        const start = i2 + 1;
+        while (++i2) {
+          const c = str.charAt(i2);
+          if ("," === c)
+            break;
+          if (i2 === str.length)
+            break;
+        }
+        p.nsp = str.substring(start, i2);
+      } else {
+        p.nsp = "/";
+      }
+      const next = str.charAt(i2 + 1);
+      if ("" !== next && Number(next) == next) {
+        const start = i2 + 1;
+        while (++i2) {
+          const c = str.charAt(i2);
+          if (null == c || Number(c) != c) {
+            --i2;
+            break;
+          }
+          if (i2 === str.length)
+            break;
+        }
+        p.id = Number(str.substring(start, i2 + 1));
+      }
+      if (str.charAt(++i2)) {
+        const payload = this.tryParse(str.substr(i2));
+        if (Decoder.isPayloadValid(p.type, payload)) {
+          p.data = payload;
+        } else {
+          throw new Error("invalid payload");
+        }
+      }
+      return p;
+    }
+    tryParse(str) {
+      try {
+        return JSON.parse(str, this.reviver);
+      } catch (e) {
+        return false;
+      }
+    }
+    static isPayloadValid(type, payload) {
+      switch (type) {
+        case PacketType.CONNECT:
+          return isObject(payload);
+        case PacketType.DISCONNECT:
+          return payload === void 0;
+        case PacketType.CONNECT_ERROR:
+          return typeof payload === "string" || isObject(payload);
+        case PacketType.EVENT:
+        case PacketType.BINARY_EVENT:
+          return Array.isArray(payload) && (typeof payload[0] === "number" || typeof payload[0] === "string" && RESERVED_EVENTS.indexOf(payload[0]) === -1);
+        case PacketType.ACK:
+        case PacketType.BINARY_ACK:
+          return Array.isArray(payload);
+      }
+    }
+    /**
+     * Deallocates a parser's resources
+     */
+    destroy() {
+      if (this.reconstructor) {
+        this.reconstructor.finishedReconstruction();
+        this.reconstructor = null;
+      }
+    }
+  };
+  __name(Decoder, "Decoder");
+  var BinaryReconstructor = class {
+    constructor(packet) {
+      this.packet = packet;
+      this.buffers = [];
+      this.reconPack = packet;
+    }
+    /**
+     * Method to be called when binary data received from connection
+     * after a BINARY_EVENT packet.
+     *
+     * @param {Buffer | ArrayBuffer} binData - the raw binary data received
+     * @return {null | Object} returns null if more binary data is expected or
+     *   a reconstructed packet object if all buffers have been received.
+     */
+    takeBinaryData(binData) {
+      this.buffers.push(binData);
+      if (this.buffers.length === this.reconPack.attachments) {
+        const packet = reconstructPacket(this.reconPack, this.buffers);
+        this.finishedReconstruction();
+        return packet;
+      }
+      return null;
+    }
+    /**
+     * Cleans up binary packet reconstruction variables.
+     */
+    finishedReconstruction() {
+      this.reconPack = null;
+      this.buffers = [];
+    }
+  };
+  __name(BinaryReconstructor, "BinaryReconstructor");
+
+  // node_modules/socket.io-client/build/esm/on.js
+  function on(obj, ev, fn) {
+    obj.on(ev, fn);
+    return /* @__PURE__ */ __name(function subDestroy() {
+      obj.off(ev, fn);
+    }, "subDestroy");
+  }
+  __name(on, "on");
+
+  // node_modules/socket.io-client/build/esm/socket.js
+  var RESERVED_EVENTS2 = Object.freeze({
+    connect: 1,
+    connect_error: 1,
+    disconnect: 1,
+    disconnecting: 1,
+    // EventEmitter reserved events: https://nodejs.org/api/events.html#events_event_newlistener
+    newListener: 1,
+    removeListener: 1
+  });
+  var Socket2 = class extends Emitter {
+    /**
+     * `Socket` constructor.
+     */
+    constructor(io, nsp, opts) {
+      super();
+      this.connected = false;
+      this.recovered = false;
+      this.receiveBuffer = [];
+      this.sendBuffer = [];
+      this._queue = [];
+      this._queueSeq = 0;
+      this.ids = 0;
+      this.acks = {};
+      this.flags = {};
+      this.io = io;
+      this.nsp = nsp;
+      if (opts && opts.auth) {
+        this.auth = opts.auth;
+      }
+      this._opts = Object.assign({}, opts);
+      if (this.io._autoConnect)
+        this.open();
+    }
+    /**
+     * Whether the socket is currently disconnected
+     *
+     * @example
+     * const socket = io();
+     *
+     * socket.on("connect", () => {
+     *   console.log(socket.disconnected); // false
+     * });
+     *
+     * socket.on("disconnect", () => {
+     *   console.log(socket.disconnected); // true
+     * });
+     */
+    get disconnected() {
+      return !this.connected;
+    }
+    /**
+     * Subscribe to open, close and packet events
+     *
+     * @private
+     */
+    subEvents() {
+      if (this.subs)
+        return;
+      const io = this.io;
+      this.subs = [
+        on(io, "open", this.onopen.bind(this)),
+        on(io, "packet", this.onpacket.bind(this)),
+        on(io, "error", this.onerror.bind(this)),
+        on(io, "close", this.onclose.bind(this))
+      ];
+    }
+    /**
+     * Whether the Socket will try to reconnect when its Manager connects or reconnects.
+     *
+     * @example
+     * const socket = io();
+     *
+     * console.log(socket.active); // true
+     *
+     * socket.on("disconnect", (reason) => {
+     *   if (reason === "io server disconnect") {
+     *     // the disconnection was initiated by the server, you need to manually reconnect
+     *     console.log(socket.active); // false
+     *   }
+     *   // else the socket will automatically try to reconnect
+     *   console.log(socket.active); // true
+     * });
+     */
+    get active() {
+      return !!this.subs;
+    }
+    /**
+     * "Opens" the socket.
+     *
+     * @example
+     * const socket = io({
+     *   autoConnect: false
+     * });
+     *
+     * socket.connect();
+     */
+    connect() {
+      if (this.connected)
+        return this;
+      this.subEvents();
+      if (!this.io["_reconnecting"])
+        this.io.open();
+      if ("open" === this.io._readyState)
+        this.onopen();
+      return this;
+    }
+    /**
+     * Alias for {@link connect()}.
+     */
+    open() {
+      return this.connect();
+    }
+    /**
+     * Sends a `message` event.
+     *
+     * This method mimics the WebSocket.send() method.
+     *
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/send
+     *
+     * @example
+     * socket.send("hello");
+     *
+     * // this is equivalent to
+     * socket.emit("message", "hello");
+     *
+     * @return self
+     */
+    send(...args) {
+      args.unshift("message");
+      this.emit.apply(this, args);
+      return this;
+    }
+    /**
+     * Override `emit`.
+     * If the event is in `events`, it's emitted normally.
+     *
+     * @example
+     * socket.emit("hello", "world");
+     *
+     * // all serializable datastructures are supported (no need to call JSON.stringify)
+     * socket.emit("hello", 1, "2", { 3: ["4"], 5: Uint8Array.from([6]) });
+     *
+     * // with an acknowledgement from the server
+     * socket.emit("hello", "world", (val) => {
+     *   // ...
+     * });
+     *
+     * @return self
+     */
+    emit(ev, ...args) {
+      if (RESERVED_EVENTS2.hasOwnProperty(ev)) {
+        throw new Error('"' + ev.toString() + '" is a reserved event name');
+      }
+      args.unshift(ev);
+      if (this._opts.retries && !this.flags.fromQueue && !this.flags.volatile) {
+        this._addToQueue(args);
+        return this;
+      }
+      const packet = {
+        type: PacketType.EVENT,
+        data: args
+      };
+      packet.options = {};
+      packet.options.compress = this.flags.compress !== false;
+      if ("function" === typeof args[args.length - 1]) {
+        const id = this.ids++;
+        const ack = args.pop();
+        this._registerAckCallback(id, ack);
+        packet.id = id;
+      }
+      const isTransportWritable = this.io.engine && this.io.engine.transport && this.io.engine.transport.writable;
+      const discardPacket = this.flags.volatile && (!isTransportWritable || !this.connected);
+      if (discardPacket) {
+      } else if (this.connected) {
+        this.notifyOutgoingListeners(packet);
+        this.packet(packet);
+      } else {
+        this.sendBuffer.push(packet);
+      }
+      this.flags = {};
+      return this;
+    }
+    /**
+     * @private
+     */
+    _registerAckCallback(id, ack) {
+      var _a;
+      const timeout = (_a = this.flags.timeout) !== null && _a !== void 0 ? _a : this._opts.ackTimeout;
+      if (timeout === void 0) {
+        this.acks[id] = ack;
+        return;
+      }
+      const timer = this.io.setTimeoutFn(() => {
+        delete this.acks[id];
+        for (let i2 = 0; i2 < this.sendBuffer.length; i2++) {
+          if (this.sendBuffer[i2].id === id) {
+            this.sendBuffer.splice(i2, 1);
+          }
+        }
+        ack.call(this, new Error("operation has timed out"));
+      }, timeout);
+      this.acks[id] = (...args) => {
+        this.io.clearTimeoutFn(timer);
+        ack.apply(this, [null, ...args]);
+      };
+    }
+    /**
+     * Emits an event and waits for an acknowledgement
+     *
+     * @example
+     * // without timeout
+     * const response = await socket.emitWithAck("hello", "world");
+     *
+     * // with a specific timeout
+     * try {
+     *   const response = await socket.timeout(1000).emitWithAck("hello", "world");
+     * } catch (err) {
+     *   // the server did not acknowledge the event in the given delay
+     * }
+     *
+     * @return a Promise that will be fulfilled when the server acknowledges the event
+     */
+    emitWithAck(ev, ...args) {
+      const withErr = this.flags.timeout !== void 0 || this._opts.ackTimeout !== void 0;
+      return new Promise((resolve, reject) => {
+        args.push((arg1, arg2) => {
+          if (withErr) {
+            return arg1 ? reject(arg1) : resolve(arg2);
+          } else {
+            return resolve(arg1);
+          }
+        });
+        this.emit(ev, ...args);
+      });
+    }
+    /**
+     * Add the packet to the queue.
+     * @param args
+     * @private
+     */
+    _addToQueue(args) {
+      let ack;
+      if (typeof args[args.length - 1] === "function") {
+        ack = args.pop();
+      }
+      const packet = {
+        id: this._queueSeq++,
+        tryCount: 0,
+        pending: false,
+        args,
+        flags: Object.assign({ fromQueue: true }, this.flags)
+      };
+      args.push((err, ...responseArgs) => {
+        if (packet !== this._queue[0]) {
+          return;
+        }
+        const hasError = err !== null;
+        if (hasError) {
+          if (packet.tryCount > this._opts.retries) {
+            this._queue.shift();
+            if (ack) {
+              ack(err);
+            }
+          }
+        } else {
+          this._queue.shift();
+          if (ack) {
+            ack(null, ...responseArgs);
+          }
+        }
+        packet.pending = false;
+        return this._drainQueue();
+      });
+      this._queue.push(packet);
+      this._drainQueue();
+    }
+    /**
+     * Send the first packet of the queue, and wait for an acknowledgement from the server.
+     * @param force - whether to resend a packet that has not been acknowledged yet
+     *
+     * @private
+     */
+    _drainQueue(force = false) {
+      if (!this.connected || this._queue.length === 0) {
+        return;
+      }
+      const packet = this._queue[0];
+      if (packet.pending && !force) {
+        return;
+      }
+      packet.pending = true;
+      packet.tryCount++;
+      this.flags = packet.flags;
+      this.emit.apply(this, packet.args);
+    }
+    /**
+     * Sends a packet.
+     *
+     * @param packet
+     * @private
+     */
+    packet(packet) {
+      packet.nsp = this.nsp;
+      this.io._packet(packet);
+    }
+    /**
+     * Called upon engine `open`.
+     *
+     * @private
+     */
+    onopen() {
+      if (typeof this.auth == "function") {
+        this.auth((data) => {
+          this._sendConnectPacket(data);
+        });
+      } else {
+        this._sendConnectPacket(this.auth);
+      }
+    }
+    /**
+     * Sends a CONNECT packet to initiate the Socket.IO session.
+     *
+     * @param data
+     * @private
+     */
+    _sendConnectPacket(data) {
+      this.packet({
+        type: PacketType.CONNECT,
+        data: this._pid ? Object.assign({ pid: this._pid, offset: this._lastOffset }, data) : data
+      });
+    }
+    /**
+     * Called upon engine or manager `error`.
+     *
+     * @param err
+     * @private
+     */
+    onerror(err) {
+      if (!this.connected) {
+        this.emitReserved("connect_error", err);
+      }
+    }
+    /**
+     * Called upon engine `close`.
+     *
+     * @param reason
+     * @param description
+     * @private
+     */
+    onclose(reason, description) {
+      this.connected = false;
+      delete this.id;
+      this.emitReserved("disconnect", reason, description);
+    }
+    /**
+     * Called with socket packet.
+     *
+     * @param packet
+     * @private
+     */
+    onpacket(packet) {
+      const sameNamespace = packet.nsp === this.nsp;
+      if (!sameNamespace)
+        return;
+      switch (packet.type) {
+        case PacketType.CONNECT:
+          if (packet.data && packet.data.sid) {
+            this.onconnect(packet.data.sid, packet.data.pid);
+          } else {
+            this.emitReserved("connect_error", new Error("It seems you are trying to reach a Socket.IO server in v2.x with a v3.x client, but they are not compatible (more information here: https://socket.io/docs/v3/migrating-from-2-x-to-3-0/)"));
+          }
+          break;
+        case PacketType.EVENT:
+        case PacketType.BINARY_EVENT:
+          this.onevent(packet);
+          break;
+        case PacketType.ACK:
+        case PacketType.BINARY_ACK:
+          this.onack(packet);
+          break;
+        case PacketType.DISCONNECT:
+          this.ondisconnect();
+          break;
+        case PacketType.CONNECT_ERROR:
+          this.destroy();
+          const err = new Error(packet.data.message);
+          err.data = packet.data.data;
+          this.emitReserved("connect_error", err);
+          break;
+      }
+    }
+    /**
+     * Called upon a server event.
+     *
+     * @param packet
+     * @private
+     */
+    onevent(packet) {
+      const args = packet.data || [];
+      if (null != packet.id) {
+        args.push(this.ack(packet.id));
+      }
+      if (this.connected) {
+        this.emitEvent(args);
+      } else {
+        this.receiveBuffer.push(Object.freeze(args));
+      }
+    }
+    emitEvent(args) {
+      if (this._anyListeners && this._anyListeners.length) {
+        const listeners = this._anyListeners.slice();
+        for (const listener of listeners) {
+          listener.apply(this, args);
+        }
+      }
+      super.emit.apply(this, args);
+      if (this._pid && args.length && typeof args[args.length - 1] === "string") {
+        this._lastOffset = args[args.length - 1];
+      }
+    }
+    /**
+     * Produces an ack callback to emit with an event.
+     *
+     * @private
+     */
+    ack(id) {
+      const self2 = this;
+      let sent = false;
+      return function(...args) {
+        if (sent)
+          return;
+        sent = true;
+        self2.packet({
+          type: PacketType.ACK,
+          id,
+          data: args
+        });
+      };
+    }
+    /**
+     * Called upon a server acknowlegement.
+     *
+     * @param packet
+     * @private
+     */
+    onack(packet) {
+      const ack = this.acks[packet.id];
+      if ("function" === typeof ack) {
+        ack.apply(this, packet.data);
+        delete this.acks[packet.id];
+      } else {
+      }
+    }
+    /**
+     * Called upon server connect.
+     *
+     * @private
+     */
+    onconnect(id, pid) {
+      this.id = id;
+      this.recovered = pid && this._pid === pid;
+      this._pid = pid;
+      this.connected = true;
+      this.emitBuffered();
+      this.emitReserved("connect");
+      this._drainQueue(true);
+    }
+    /**
+     * Emit buffered events (received and emitted).
+     *
+     * @private
+     */
+    emitBuffered() {
+      this.receiveBuffer.forEach((args) => this.emitEvent(args));
+      this.receiveBuffer = [];
+      this.sendBuffer.forEach((packet) => {
+        this.notifyOutgoingListeners(packet);
+        this.packet(packet);
+      });
+      this.sendBuffer = [];
+    }
+    /**
+     * Called upon server disconnect.
+     *
+     * @private
+     */
+    ondisconnect() {
+      this.destroy();
+      this.onclose("io server disconnect");
+    }
+    /**
+     * Called upon forced client/server side disconnections,
+     * this method ensures the manager stops tracking us and
+     * that reconnections don't get triggered for this.
+     *
+     * @private
+     */
+    destroy() {
+      if (this.subs) {
+        this.subs.forEach((subDestroy) => subDestroy());
+        this.subs = void 0;
+      }
+      this.io["_destroy"](this);
+    }
+    /**
+     * Disconnects the socket manually. In that case, the socket will not try to reconnect.
+     *
+     * If this is the last active Socket instance of the {@link Manager}, the low-level connection will be closed.
+     *
+     * @example
+     * const socket = io();
+     *
+     * socket.on("disconnect", (reason) => {
+     *   // console.log(reason); prints "io client disconnect"
+     * });
+     *
+     * socket.disconnect();
+     *
+     * @return self
+     */
+    disconnect() {
+      if (this.connected) {
+        this.packet({ type: PacketType.DISCONNECT });
+      }
+      this.destroy();
+      if (this.connected) {
+        this.onclose("io client disconnect");
+      }
+      return this;
+    }
+    /**
+     * Alias for {@link disconnect()}.
+     *
+     * @return self
+     */
+    close() {
+      return this.disconnect();
+    }
+    /**
+     * Sets the compress flag.
+     *
+     * @example
+     * socket.compress(false).emit("hello");
+     *
+     * @param compress - if `true`, compresses the sending data
+     * @return self
+     */
+    compress(compress) {
+      this.flags.compress = compress;
+      return this;
+    }
+    /**
+     * Sets a modifier for a subsequent event emission that the event message will be dropped when this socket is not
+     * ready to send messages.
+     *
+     * @example
+     * socket.volatile.emit("hello"); // the server may or may not receive it
+     *
+     * @returns self
+     */
+    get volatile() {
+      this.flags.volatile = true;
+      return this;
+    }
+    /**
+     * Sets a modifier for a subsequent event emission that the callback will be called with an error when the
+     * given number of milliseconds have elapsed without an acknowledgement from the server:
+     *
+     * @example
+     * socket.timeout(5000).emit("my-event", (err) => {
+     *   if (err) {
+     *     // the server did not acknowledge the event in the given delay
+     *   }
+     * });
+     *
+     * @returns self
+     */
+    timeout(timeout) {
+      this.flags.timeout = timeout;
+      return this;
+    }
+    /**
+     * Adds a listener that will be fired when any event is emitted. The event name is passed as the first argument to the
+     * callback.
+     *
+     * @example
+     * socket.onAny((event, ...args) => {
+     *   console.log(`got ${event}`);
+     * });
+     *
+     * @param listener
+     */
+    onAny(listener) {
+      this._anyListeners = this._anyListeners || [];
+      this._anyListeners.push(listener);
+      return this;
+    }
+    /**
+     * Adds a listener that will be fired when any event is emitted. The event name is passed as the first argument to the
+     * callback. The listener is added to the beginning of the listeners array.
+     *
+     * @example
+     * socket.prependAny((event, ...args) => {
+     *   console.log(`got event ${event}`);
+     * });
+     *
+     * @param listener
+     */
+    prependAny(listener) {
+      this._anyListeners = this._anyListeners || [];
+      this._anyListeners.unshift(listener);
+      return this;
+    }
+    /**
+     * Removes the listener that will be fired when any event is emitted.
+     *
+     * @example
+     * const catchAllListener = (event, ...args) => {
+     *   console.log(`got event ${event}`);
+     * }
+     *
+     * socket.onAny(catchAllListener);
+     *
+     * // remove a specific listener
+     * socket.offAny(catchAllListener);
+     *
+     * // or remove all listeners
+     * socket.offAny();
+     *
+     * @param listener
+     */
+    offAny(listener) {
+      if (!this._anyListeners) {
+        return this;
+      }
+      if (listener) {
+        const listeners = this._anyListeners;
+        for (let i2 = 0; i2 < listeners.length; i2++) {
+          if (listener === listeners[i2]) {
+            listeners.splice(i2, 1);
+            return this;
+          }
+        }
+      } else {
+        this._anyListeners = [];
+      }
+      return this;
+    }
+    /**
+     * Returns an array of listeners that are listening for any event that is specified. This array can be manipulated,
+     * e.g. to remove listeners.
+     */
+    listenersAny() {
+      return this._anyListeners || [];
+    }
+    /**
+     * Adds a listener that will be fired when any event is emitted. The event name is passed as the first argument to the
+     * callback.
+     *
+     * Note: acknowledgements sent to the server are not included.
+     *
+     * @example
+     * socket.onAnyOutgoing((event, ...args) => {
+     *   console.log(`sent event ${event}`);
+     * });
+     *
+     * @param listener
+     */
+    onAnyOutgoing(listener) {
+      this._anyOutgoingListeners = this._anyOutgoingListeners || [];
+      this._anyOutgoingListeners.push(listener);
+      return this;
+    }
+    /**
+     * Adds a listener that will be fired when any event is emitted. The event name is passed as the first argument to the
+     * callback. The listener is added to the beginning of the listeners array.
+     *
+     * Note: acknowledgements sent to the server are not included.
+     *
+     * @example
+     * socket.prependAnyOutgoing((event, ...args) => {
+     *   console.log(`sent event ${event}`);
+     * });
+     *
+     * @param listener
+     */
+    prependAnyOutgoing(listener) {
+      this._anyOutgoingListeners = this._anyOutgoingListeners || [];
+      this._anyOutgoingListeners.unshift(listener);
+      return this;
+    }
+    /**
+     * Removes the listener that will be fired when any event is emitted.
+     *
+     * @example
+     * const catchAllListener = (event, ...args) => {
+     *   console.log(`sent event ${event}`);
+     * }
+     *
+     * socket.onAnyOutgoing(catchAllListener);
+     *
+     * // remove a specific listener
+     * socket.offAnyOutgoing(catchAllListener);
+     *
+     * // or remove all listeners
+     * socket.offAnyOutgoing();
+     *
+     * @param [listener] - the catch-all listener (optional)
+     */
+    offAnyOutgoing(listener) {
+      if (!this._anyOutgoingListeners) {
+        return this;
+      }
+      if (listener) {
+        const listeners = this._anyOutgoingListeners;
+        for (let i2 = 0; i2 < listeners.length; i2++) {
+          if (listener === listeners[i2]) {
+            listeners.splice(i2, 1);
+            return this;
+          }
+        }
+      } else {
+        this._anyOutgoingListeners = [];
+      }
+      return this;
+    }
+    /**
+     * Returns an array of listeners that are listening for any event that is specified. This array can be manipulated,
+     * e.g. to remove listeners.
+     */
+    listenersAnyOutgoing() {
+      return this._anyOutgoingListeners || [];
+    }
+    /**
+     * Notify the listeners for each packet sent
+     *
+     * @param packet
+     *
+     * @private
+     */
+    notifyOutgoingListeners(packet) {
+      if (this._anyOutgoingListeners && this._anyOutgoingListeners.length) {
+        const listeners = this._anyOutgoingListeners.slice();
+        for (const listener of listeners) {
+          listener.apply(this, packet.data);
+        }
+      }
+    }
+  };
+  __name(Socket2, "Socket");
+
+  // node_modules/socket.io-client/build/esm/contrib/backo2.js
+  function Backoff(opts) {
+    opts = opts || {};
+    this.ms = opts.min || 100;
+    this.max = opts.max || 1e4;
+    this.factor = opts.factor || 2;
+    this.jitter = opts.jitter > 0 && opts.jitter <= 1 ? opts.jitter : 0;
+    this.attempts = 0;
+  }
+  __name(Backoff, "Backoff");
+  Backoff.prototype.duration = function() {
+    var ms = this.ms * Math.pow(this.factor, this.attempts++);
+    if (this.jitter) {
+      var rand = Math.random();
+      var deviation = Math.floor(rand * this.jitter * ms);
+      ms = (Math.floor(rand * 10) & 1) == 0 ? ms - deviation : ms + deviation;
+    }
+    return Math.min(ms, this.max) | 0;
+  };
+  Backoff.prototype.reset = function() {
+    this.attempts = 0;
+  };
+  Backoff.prototype.setMin = function(min) {
+    this.ms = min;
+  };
+  Backoff.prototype.setMax = function(max) {
+    this.max = max;
+  };
+  Backoff.prototype.setJitter = function(jitter) {
+    this.jitter = jitter;
+  };
+
+  // node_modules/socket.io-client/build/esm/manager.js
+  var Manager = class extends Emitter {
+    constructor(uri, opts) {
+      var _a;
+      super();
+      this.nsps = {};
+      this.subs = [];
+      if (uri && "object" === typeof uri) {
+        opts = uri;
+        uri = void 0;
+      }
+      opts = opts || {};
+      opts.path = opts.path || "/socket.io";
+      this.opts = opts;
+      installTimerFunctions(this, opts);
+      this.reconnection(opts.reconnection !== false);
+      this.reconnectionAttempts(opts.reconnectionAttempts || Infinity);
+      this.reconnectionDelay(opts.reconnectionDelay || 1e3);
+      this.reconnectionDelayMax(opts.reconnectionDelayMax || 5e3);
+      this.randomizationFactor((_a = opts.randomizationFactor) !== null && _a !== void 0 ? _a : 0.5);
+      this.backoff = new Backoff({
+        min: this.reconnectionDelay(),
+        max: this.reconnectionDelayMax(),
+        jitter: this.randomizationFactor()
+      });
+      this.timeout(null == opts.timeout ? 2e4 : opts.timeout);
+      this._readyState = "closed";
+      this.uri = uri;
+      const _parser = opts.parser || esm_exports;
+      this.encoder = new _parser.Encoder();
+      this.decoder = new _parser.Decoder();
+      this._autoConnect = opts.autoConnect !== false;
+      if (this._autoConnect)
+        this.open();
+    }
+    reconnection(v) {
+      if (!arguments.length)
+        return this._reconnection;
+      this._reconnection = !!v;
+      return this;
+    }
+    reconnectionAttempts(v) {
+      if (v === void 0)
+        return this._reconnectionAttempts;
+      this._reconnectionAttempts = v;
+      return this;
+    }
+    reconnectionDelay(v) {
+      var _a;
+      if (v === void 0)
+        return this._reconnectionDelay;
+      this._reconnectionDelay = v;
+      (_a = this.backoff) === null || _a === void 0 ? void 0 : _a.setMin(v);
+      return this;
+    }
+    randomizationFactor(v) {
+      var _a;
+      if (v === void 0)
+        return this._randomizationFactor;
+      this._randomizationFactor = v;
+      (_a = this.backoff) === null || _a === void 0 ? void 0 : _a.setJitter(v);
+      return this;
+    }
+    reconnectionDelayMax(v) {
+      var _a;
+      if (v === void 0)
+        return this._reconnectionDelayMax;
+      this._reconnectionDelayMax = v;
+      (_a = this.backoff) === null || _a === void 0 ? void 0 : _a.setMax(v);
+      return this;
+    }
+    timeout(v) {
+      if (!arguments.length)
+        return this._timeout;
+      this._timeout = v;
+      return this;
+    }
+    /**
+     * Starts trying to reconnect if reconnection is enabled and we have not
+     * started reconnecting yet
+     *
+     * @private
+     */
+    maybeReconnectOnOpen() {
+      if (!this._reconnecting && this._reconnection && this.backoff.attempts === 0) {
+        this.reconnect();
+      }
+    }
+    /**
+     * Sets the current transport `socket`.
+     *
+     * @param {Function} fn - optional, callback
+     * @return self
+     * @public
+     */
+    open(fn) {
+      if (~this._readyState.indexOf("open"))
+        return this;
+      this.engine = new Socket(this.uri, this.opts);
+      const socket = this.engine;
+      const self2 = this;
+      this._readyState = "opening";
+      this.skipReconnect = false;
+      const openSubDestroy = on(socket, "open", function() {
+        self2.onopen();
+        fn && fn();
+      });
+      const errorSub = on(socket, "error", (err) => {
+        self2.cleanup();
+        self2._readyState = "closed";
+        this.emitReserved("error", err);
+        if (fn) {
+          fn(err);
+        } else {
+          self2.maybeReconnectOnOpen();
+        }
+      });
+      if (false !== this._timeout) {
+        const timeout = this._timeout;
+        if (timeout === 0) {
+          openSubDestroy();
+        }
+        const timer = this.setTimeoutFn(() => {
+          openSubDestroy();
+          socket.close();
+          socket.emit("error", new Error("timeout"));
+        }, timeout);
+        if (this.opts.autoUnref) {
+          timer.unref();
+        }
+        this.subs.push(/* @__PURE__ */ __name(function subDestroy() {
+          clearTimeout(timer);
+        }, "subDestroy"));
+      }
+      this.subs.push(openSubDestroy);
+      this.subs.push(errorSub);
+      return this;
+    }
+    /**
+     * Alias for open()
+     *
+     * @return self
+     * @public
+     */
+    connect(fn) {
+      return this.open(fn);
+    }
+    /**
+     * Called upon transport open.
+     *
+     * @private
+     */
+    onopen() {
+      this.cleanup();
+      this._readyState = "open";
+      this.emitReserved("open");
+      const socket = this.engine;
+      this.subs.push(on(socket, "ping", this.onping.bind(this)), on(socket, "data", this.ondata.bind(this)), on(socket, "error", this.onerror.bind(this)), on(socket, "close", this.onclose.bind(this)), on(this.decoder, "decoded", this.ondecoded.bind(this)));
+    }
+    /**
+     * Called upon a ping.
+     *
+     * @private
+     */
+    onping() {
+      this.emitReserved("ping");
+    }
+    /**
+     * Called with data.
+     *
+     * @private
+     */
+    ondata(data) {
+      try {
+        this.decoder.add(data);
+      } catch (e) {
+        this.onclose("parse error", e);
+      }
+    }
+    /**
+     * Called when parser fully decodes a packet.
+     *
+     * @private
+     */
+    ondecoded(packet) {
+      nextTick(() => {
+        this.emitReserved("packet", packet);
+      }, this.setTimeoutFn);
+    }
+    /**
+     * Called upon socket error.
+     *
+     * @private
+     */
+    onerror(err) {
+      this.emitReserved("error", err);
+    }
+    /**
+     * Creates a new socket for the given `nsp`.
+     *
+     * @return {Socket}
+     * @public
+     */
+    socket(nsp, opts) {
+      let socket = this.nsps[nsp];
+      if (!socket) {
+        socket = new Socket2(this, nsp, opts);
+        this.nsps[nsp] = socket;
+      } else if (this._autoConnect && !socket.active) {
+        socket.connect();
+      }
+      return socket;
+    }
+    /**
+     * Called upon a socket close.
+     *
+     * @param socket
+     * @private
+     */
+    _destroy(socket) {
+      const nsps = Object.keys(this.nsps);
+      for (const nsp of nsps) {
+        const socket2 = this.nsps[nsp];
+        if (socket2.active) {
+          return;
+        }
+      }
+      this._close();
+    }
+    /**
+     * Writes a packet.
+     *
+     * @param packet
+     * @private
+     */
+    _packet(packet) {
+      const encodedPackets = this.encoder.encode(packet);
+      for (let i2 = 0; i2 < encodedPackets.length; i2++) {
+        this.engine.write(encodedPackets[i2], packet.options);
+      }
+    }
+    /**
+     * Clean up transport subscriptions and packet buffer.
+     *
+     * @private
+     */
+    cleanup() {
+      this.subs.forEach((subDestroy) => subDestroy());
+      this.subs.length = 0;
+      this.decoder.destroy();
+    }
+    /**
+     * Close the current socket.
+     *
+     * @private
+     */
+    _close() {
+      this.skipReconnect = true;
+      this._reconnecting = false;
+      this.onclose("forced close");
+      if (this.engine)
+        this.engine.close();
+    }
+    /**
+     * Alias for close()
+     *
+     * @private
+     */
+    disconnect() {
+      return this._close();
+    }
+    /**
+     * Called upon engine close.
+     *
+     * @private
+     */
+    onclose(reason, description) {
+      this.cleanup();
+      this.backoff.reset();
+      this._readyState = "closed";
+      this.emitReserved("close", reason, description);
+      if (this._reconnection && !this.skipReconnect) {
+        this.reconnect();
+      }
+    }
+    /**
+     * Attempt a reconnection.
+     *
+     * @private
+     */
+    reconnect() {
+      if (this._reconnecting || this.skipReconnect)
+        return this;
+      const self2 = this;
+      if (this.backoff.attempts >= this._reconnectionAttempts) {
+        this.backoff.reset();
+        this.emitReserved("reconnect_failed");
+        this._reconnecting = false;
+      } else {
+        const delay = this.backoff.duration();
+        this._reconnecting = true;
+        const timer = this.setTimeoutFn(() => {
+          if (self2.skipReconnect)
+            return;
+          this.emitReserved("reconnect_attempt", self2.backoff.attempts);
+          if (self2.skipReconnect)
+            return;
+          self2.open((err) => {
+            if (err) {
+              self2._reconnecting = false;
+              self2.reconnect();
+              this.emitReserved("reconnect_error", err);
+            } else {
+              self2.onreconnect();
+            }
+          });
+        }, delay);
+        if (this.opts.autoUnref) {
+          timer.unref();
+        }
+        this.subs.push(/* @__PURE__ */ __name(function subDestroy() {
+          clearTimeout(timer);
+        }, "subDestroy"));
+      }
+    }
+    /**
+     * Called upon successful reconnect.
+     *
+     * @private
+     */
+    onreconnect() {
+      const attempt = this.backoff.attempts;
+      this._reconnecting = false;
+      this.backoff.reset();
+      this.emitReserved("reconnect", attempt);
+    }
+  };
+  __name(Manager, "Manager");
+
+  // node_modules/socket.io-client/build/esm/index.js
+  var cache = {};
+  function lookup2(uri, opts) {
+    if (typeof uri === "object") {
+      opts = uri;
+      uri = void 0;
+    }
+    opts = opts || {};
+    const parsed = url(uri, opts.path || "/socket.io");
+    const source = parsed.source;
+    const id = parsed.id;
+    const path = parsed.path;
+    const sameNamespace = cache[id] && path in cache[id]["nsps"];
+    const newConnection = opts.forceNew || opts["force new connection"] || false === opts.multiplex || sameNamespace;
+    let io;
+    if (newConnection) {
+      io = new Manager(source, opts);
+    } else {
+      if (!cache[id]) {
+        cache[id] = new Manager(source, opts);
+      }
+      io = cache[id];
+    }
+    if (parsed.query && !opts.query) {
+      opts.query = parsed.queryKey;
+    }
+    return io.socket(parsed.path, opts);
+  }
+  __name(lookup2, "lookup");
+  Object.assign(lookup2, {
+    Manager,
+    Socket: Socket2,
+    io: lookup2,
+    connect: lookup2
+  });
+
   // assets/script/ballMain.ts
+  var mgr = new Manager("ws://127.0.0.1:3000", {
+    reconnectionDelayMax: 1e4
+  });
+  mgr.socket("");
   var { regClass: regClass7, property: property7 } = Laya;
   var ballMain = class extends Laya.Script {
     constructor() {
@@ -5462,8 +8594,8 @@
       this.ballManager.initBallManager();
       this.ballManager.insertBall(new Laya.Vector2(ballword.mainBall.position.x, ballword.mainBall.position.y), 1);
       let otherballList = Object.keys(ballword.otherBallKv);
-      for (let i = 0; i < otherballList.length; i++) {
-        let index = Number(otherballList[i]);
+      for (let i2 = 0; i2 < otherballList.length; i2++) {
+        let index = Number(otherballList[i2]);
         let ball = ballword.otherBallKv[index];
         this.ballManager.insertBall(new Laya.Vector2(ball.position.x, ball.position.y), index);
       }
