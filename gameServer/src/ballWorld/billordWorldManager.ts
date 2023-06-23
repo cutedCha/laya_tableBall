@@ -89,10 +89,9 @@ export class billordWorldManager{
                 this.otherBallKv[ball.id] =ball
             }
         }
-    
+        this.otherBallList = objectBalls;
         // 将所有物体添加到世界中
         World.add(engine.world, [...objectBalls]);
-        this.otherBallList = objectBalls;
     }
     createWall(){
         let wallBorder = ballWorldConfig.wallSize.wallBorder

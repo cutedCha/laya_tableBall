@@ -15,19 +15,19 @@ export class ballManager extends Laya.Script {
     ball2dManager:ball2dManager
     ballKv:{[key:number]:ballGroup} = {}
     initBallManager(){
-      this.ball3dManager =  this.owner.getComponent(ball3dManager)
-    this.ball2dManager=     this.owner.getComponent(ball2dManager)
+        this.ball3dManager = this.owner.getComponent(ball3dManager)
+        this.ball2dManager = this.owner.getComponent(ball2dManager)
     }
     /**
      * @param {Laya.Vector2} pos 球的位置 
      * @param value 
      */
-    insertBall(pos:Laya.Vector2,value:number){
+    insertBall(pos:Laya.Vector2,value:number,id:number){
        let ball3d = this.ball3dManager.insertValue(value)
         let ball2d = this.ball2dManager.insertValue(pos)
         // //@ts-ignore
         ball2d.setTexture(this.ball3dManager.ballTextueKv[value])
-       this.ballKv[value] = {
+       this.ballKv[id] = {
         ball2d:ball2d,
         ball3d:ball3d
        }

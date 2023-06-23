@@ -32,7 +32,7 @@
       "y": -137.00000000000003,
       "width": 2000,
       "height": 2000,
-      "skin": "res://00000000-0000-0000-0001-000000000000",
+      "skin": "internal//WhiteTexture.png",
       "color": "#194703"
     },
     {
@@ -43,7 +43,7 @@
       "y": 143.00000000000009,
       "width": 512,
       "height": 313,
-      "skin": "res://c13c1b8e-c516-4a0f-98ad-e356f45f0365",
+      "skin": "atlas/comp/image.png",
       "useSourceSize": true,
       "color": "#ffffff"
     },
@@ -86,7 +86,7 @@
           "overflow": "scroll",
           "leading": 0,
           "padding": "2,6,2,6",
-          "skin": "res://87262606-4dfe-490e-8644-7fd6496c2be7",
+          "skin": "atlas/comp/textinput.png",
           "type": "text",
           "maxChars": 100000,
           "restrict": "",
@@ -134,7 +134,7 @@
           "overflow": "scroll",
           "leading": 0,
           "padding": "2,6,2,6",
-          "skin": "res://87262606-4dfe-490e-8644-7fd6496c2be7",
+          "skin": "atlas/comp/textinput.png",
           "type": "text",
           "maxChars": 100000,
           "restrict": "",
@@ -152,7 +152,7 @@
       "width": 120,
       "height": 40,
       "mouseEnabled": true,
-      "skin": "res://d4cfd6a8-0d0a-475b-ac93-d85eaa646936",
+      "skin": "atlas/comp/button.png",
       "label": "加入游戏",
       "labelSize": 20
     }

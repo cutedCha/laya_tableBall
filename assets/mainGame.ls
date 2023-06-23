@@ -1,6 +1,7 @@
 {
   "_$ver": 1,
   "_$id": "thdaiokf",
+  "_$runtime": "res://716c2f75-99fe-4dd4-b334-ab18ece48381",
   "_$type": "Scene",
   "left": 0,
   "right": 0,
@@ -11,9 +12,7 @@
     {
       "_$type": "8e3b7db3-2492-4e8f-8b42-195285ed59b9",
       "scriptPath": "script/ballMain.ts",
-      "touchNode": {
-        "_$ref": "rscbpsnn"
-      },
+      "touchNode": null,
       "billordCube": {
         "_$ref": "dq8qq0yq",
         "_$type": "b3360337-ccae-48c7-959d-4cab4466807e"
@@ -30,7 +29,7 @@
         "_$ref": "n9gjxcltvl"
       },
       "ballPre": {
-        "_$uuid": "prefab/ball3d.lh",
+        "_$uuid": "3fa2ab21-65ff-48be-a28d-6f3ecbb112f1",
         "_$type": "Prefab"
       }
     },
@@ -41,7 +40,7 @@
         "_$ref": "vsj01h28"
       },
       "ball2d": {
-        "_$uuid": "prefab/Sprite.lh",
+        "_$uuid": "ad5cd4f9-bfd9-4269-9420-1c1c95e2a94e",
         "_$type": "Prefab"
       }
     }
@@ -54,7 +53,7 @@
       "skyRenderer": {
         "meshType": "dome",
         "material": {
-          "_$uuid": "internal/DefaultSkyMaterial.lmat",
+          "_$uuid": "793cffc6-730a-4756-a658-efe98c230292",
           "_$type": "Material"
         }
       },
@@ -130,7 +129,7 @@
       "y": 80,
       "width": 820,
       "height": 480,
-      "skin": "resources/tablex2.png",
+      "skin": "res://8882a997-9fe4-4350-97ec-b1c689aecc81",
       "useSourceSize": true,
       "color": "#ffffff",
       "_$child": [
@@ -161,7 +160,7 @@
               "name": "cube",
               "width": 18,
               "height": 360,
-              "skin": "resources/cuex2.png",
+              "skin": "res://a8a8ef55-55b6-4f03-9c4c-76a5d7ddef29",
               "useSourceSize": true,
               "color": "#ffffff"
             }
@@ -174,6 +173,60 @@
           "x": 101.56283333512414,
           "width": 100,
           "height": 67
+        }
+      ]
+    },
+    {
+      "_$id": "gtwdzohv",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "x": 173,
+      "y": 18,
+      "width": 100,
+      "height": 100,
+      "_$child": [
+        {
+          "_$id": "lvawwhu4",
+          "_$var": true,
+          "_$type": "Label",
+          "name": "roomIdLabel",
+          "width": 120,
+          "height": 28,
+          "text": "Label",
+          "fontSize": 20,
+          "color": "#FFFFFF",
+          "leading": 0,
+          "padding": "0,0,0,0"
+        },
+        {
+          "_$id": "ewn51qlu",
+          "_$var": true,
+          "_$type": "Label",
+          "name": "playerIdLabel",
+          "x": -2,
+          "y": 39.99999999999997,
+          "width": 120,
+          "height": 28,
+          "text": "Label",
+          "fontSize": 20,
+          "color": "#FFFFFF",
+          "leading": 0,
+          "padding": "0,0,0,0"
+        },
+        {
+          "_$id": "sac0hd31",
+          "_$var": true,
+          "_$type": "Label",
+          "name": "playerSeatLabel",
+          "x": -5,
+          "y": 73,
+          "width": 120,
+          "height": 28,
+          "text": "Label",
+          "fontSize": 20,
+          "color": "#FFFFFF",
+          "leading": 0,
+          "padding": "0,0,0,0"
         }
       ]
     }

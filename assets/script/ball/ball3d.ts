@@ -28,7 +28,7 @@ export class ball3d extends Laya.Script {
         let texture = this.textureList[index-1]
 
         material.albedoTexture= texture
-        material.normalTexture= this.normalMap
+        //material.normalTexture= this.normalMap
         this.renderMesh.material = material
         let renderTexture= new RenderTexture(200, 200, RenderTargetFormat.R16G16B16A16, RenderTargetFormat.DEPTHSTENCIL_24_8, false, 1);
         renderTexture.filterMode = Laya.FilterMode.Bilinear

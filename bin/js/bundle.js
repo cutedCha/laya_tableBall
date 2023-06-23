@@ -4868,587 +4868,23 @@
     }
   });
 
-  // assets/script/ball/ball2d.ts
-  var { regClass, property } = Laya;
-  var ball2d = class extends Laya.Script {
-    constructor() {
-      super();
-      this.sp = null;
-    }
-    setTexture(textuer) {
-      this.sp.texture = new Laya.Texture(textuer);
-    }
-    /**
-     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
-     */
-    //onAwake(): void {}
-    /**
-     * 组件被启用后执行，例如节点被添加到舞台后
-     */
-    //onEnable(): void {}
-    /**
-     * 组件被禁用时执行，例如从节点从舞台移除后
-     */
-    //onDisable(): void {}
-    /**
-     * 第一次执行update之前执行，只会执行一次
-     */
-    //onStart(): void {}
-    /**
-     * 手动调用节点销毁时执行
-     */
-    //onDestroy(): void {
-    /**
-     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onUpdate(): void {}
-    /**
-     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onLateUpdate(): void {}
-    /**
-     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
-     */
-    //onMouseClick(): void {}
-  };
-  __name(ball2d, "ball2d");
-  __decorateClass([
-    property(Laya.Sprite)
-  ], ball2d.prototype, "sp", 2);
-  ball2d = __decorateClass([
-    regClass("06c54030-60e3-451a-a14b-bfb8f72424fd", "script/ball/ball2d.ts")
-  ], ball2d);
-
-  // assets/script/ball/ball2dManager.ts
-  var { regClass: regClass2, property: property2 } = Laya;
-  var ball2dManager = class extends Laya.Script {
-    constructor() {
-      super(...arguments);
-      this.scene2dNode = null;
-      this.ball2d = null;
-    }
-    /**
-     * 插入节点
-     * @param index 
-     * @param position 
-     */
-    insertValue(position) {
-      let ball = this.ball2d.create();
-      this.scene2dNode.addChild(ball);
-      ball.pos(position.x, position.y);
-      return ball.getComponent(ball2d);
-    }
-    /**
-     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
-     */
-    //onAwake(): void {}
-    /**
-     * 组件被启用后执行，例如节点被添加到舞台后
-     */
-    //onEnable(): void {}
-    /**
-     * 组件被禁用时执行，例如从节点从舞台移除后
-     */
-    //onDisable(): void {}
-    /**
-     * 第一次执行update之前执行，只会执行一次
-     */
-    //onStart(): void {}
-    /**
-     * 手动调用节点销毁时执行
-     */
-    //onDestroy(): void {
-    /**
-     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onUpdate(): void {}
-    /**
-     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onLateUpdate(): void {}
-    /**
-     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
-     */
-    //onMouseClick(): void {}
-  };
-  __name(ball2dManager, "ball2dManager");
-  __decorateClass([
-    property2(Laya.Node)
-  ], ball2dManager.prototype, "scene2dNode", 2);
-  __decorateClass([
-    property2(Laya.Prefab)
-  ], ball2dManager.prototype, "ball2d", 2);
-  ball2dManager = __decorateClass([
-    regClass2("20bfe878-cd06-49ec-9d52-3521f2c224ff", "script/ball/ball2dManager.ts")
-  ], ball2dManager);
-
-  // assets/script/ball/ball3d.ts
-  var { regClass: regClass3, property: property3 } = Laya;
-  var RenderTexture = Laya.RenderTexture;
-  var RenderTargetFormat = Laya.RenderTargetFormat;
-  var ball3d = class extends Laya.Script {
-    constructor() {
-      super();
-      this.camera = null;
-      this.textureList = [];
-      this.renderMesh = null;
-      this.outRenderTexture = null;
-      this.ballNode = null;
-      this.normalMap = null;
-    }
-    onStart() {
-    }
-    setValue(index) {
-      let material = new Laya.BlinnPhongMaterial();
-      material.renderMode = Laya.MaterialRenderMode.RENDERMODE_TRANSPARENT;
-      material.shininess = 1;
-      let texture = this.textureList[index - 1];
-      material.albedoTexture = texture;
-      material.normalTexture = this.normalMap;
-      this.renderMesh.material = material;
-      let renderTexture = new RenderTexture(200, 200, RenderTargetFormat.R16G16B16A16, RenderTargetFormat.DEPTHSTENCIL_24_8, false, 1);
-      renderTexture.filterMode = Laya.FilterMode.Bilinear;
-      this.camera.renderTarget = renderTexture;
-      this.outRenderTexture = this.camera.renderTarget;
-      this.randomRoute();
-    }
-    randomRoute() {
-      let sp = this.ballNode;
-      sp.transform.rotationEuler = new Laya.Vector3(Math.random() * 360, Math.random() * 360, Math.random() * 360);
-    }
-    /**
-     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
-     */
-    //onAwake(): void {}
-    /**
-     * 组件被启用后执行，例如节点被添加到舞台后
-     */
-    //onEnable(): void {}
-    /**
-     * 组件被禁用时执行，例如从节点从舞台移除后
-     */
-    //onDisable(): void {}
-    /**
-     * 第一次执行update之前执行，只会执行一次
-     */
-    //onStart(): void {}
-    /**
-     * 手动调用节点销毁时执行
-     */
-    //onDestroy(): void {
-    /**
-     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    onUpdate() {
-    }
-    /**
-     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onLateUpdate(): void {}
-    /**
-     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
-     */
-    //onMouseClick(): void {}
-  };
-  __name(ball3d, "ball3d");
-  __decorateClass([
-    property3(Laya.Camera)
-  ], ball3d.prototype, "camera", 2);
-  __decorateClass([
-    property3([Laya.Texture2D])
-  ], ball3d.prototype, "textureList", 2);
-  __decorateClass([
-    property3(Laya.MeshRenderer)
-  ], ball3d.prototype, "renderMesh", 2);
-  __decorateClass([
-    property3(Laya.Node)
-  ], ball3d.prototype, "ballNode", 2);
-  __decorateClass([
-    property3(Laya.Texture2D)
-  ], ball3d.prototype, "normalMap", 2);
-  ball3d = __decorateClass([
-    regClass3("0943151a-e93b-408a-bcf2-7732e3e472dd", "script/ball/ball3d.ts")
-  ], ball3d);
-
-  // assets/script/ball/ball3dManager.ts
-  var { regClass: regClass4, property: property4 } = Laya;
-  var ball3dManager = class extends Laya.Script {
-    constructor() {
-      super();
-      this.scene3d = null;
-      this.ballPre = null;
-      this._addedNum = 0;
-      this.ballTextueKv = {};
-      this.ballCommKv = {};
-    }
-    onStart() {
-    }
-    /** */
-    insertValue(index) {
-      let ball = this.ballPre.create();
-      let ball3dComm = ball.getComponent(ball3d);
-      ball3dComm.setValue(index);
-      this.scene3d.addChild(ball);
-      ball.transform.position = new Laya.Vector3(this._addedNum * 100, 0, 0);
-      this._addedNum += 1;
-      this.ballCommKv[index] = ball3dComm;
-      this.ballTextueKv[index] = ball3dComm.outRenderTexture;
-      return ball3dComm;
-    }
-    /**
-     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
-     */
-    //onAwake(): void {}
-    /**
-     * 组件被启用后执行，例如节点被添加到舞台后
-     */
-    //onEnable(): void {}
-    /**
-     * 组件被禁用时执行，例如从节点从舞台移除后
-     */
-    //onDisable(): void {}
-    /**
-     * 第一次执行update之前执行，只会执行一次
-     */
-    //onStart(): void {}
-    /**
-     * 手动调用节点销毁时执行
-     */
-    //onDestroy(): void {
-    /**
-     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onUpdate(): void {}
-    /**
-     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onLateUpdate(): void {}
-    /**
-     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
-     */
-    //onMouseClick(): void {}
-  };
-  __name(ball3dManager, "ball3dManager");
-  __decorateClass([
-    property4(Laya.Node)
-  ], ball3dManager.prototype, "scene3d", 2);
-  __decorateClass([
-    property4(Laya.Prefab)
-  ], ball3dManager.prototype, "ballPre", 2);
-  ball3dManager = __decorateClass([
-    regClass4("a4d0dee3-5109-4390-913f-a05f8f3256df", "script/ball/ball3dManager.ts")
-  ], ball3dManager);
-
-  // assets/script/ball/ballManager.ts
-  var { regClass: regClass5, property: property5 } = Laya;
-  var ballManager = class extends Laya.Script {
-    constructor() {
-      super();
-      this.ballKv = {};
-    }
-    initBallManager() {
-      this.ball3dManager = this.owner.getComponent(ball3dManager);
-      this.ball2dManager = this.owner.getComponent(ball2dManager);
-    }
-    /**
-     * @param {Laya.Vector2} pos 球的位置 
-     * @param value 
-     */
-    insertBall(pos, value2) {
-      let ball3d2 = this.ball3dManager.insertValue(value2);
-      let ball2d2 = this.ball2dManager.insertValue(pos);
-      ball2d2.setTexture(this.ball3dManager.ballTextueKv[value2]);
-      this.ballKv[value2] = {
-        ball2d: ball2d2,
-        ball3d: ball3d2
-      };
-    }
-    /**
-     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
-     */
-    //onAwake(): void {}
-    /**
-     * 组件被启用后执行，例如节点被添加到舞台后
-     */
-    //onEnable(): void {}
-    /**
-     * 组件被禁用时执行，例如从节点从舞台移除后
-     */
-    //onDisable(): void {}
-    /**
-     * 第一次执行update之前执行，只会执行一次
-     */
-    //onStart(): void {}
-    /**
-     * 手动调用节点销毁时执行
-     */
-    //onDestroy(): void {
-    /**
-     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onUpdate(): void {}
-    /**
-     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onLateUpdate(): void {}
-    /**
-     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
-     */
-    //onMouseClick(): void {}
-  };
-  __name(ballManager, "ballManager");
-  ballManager = __decorateClass([
-    regClass5("81f2ed27-4d13-433c-b35f-73d85b703cd2", "script/ball/ballManager.ts")
-  ], ballManager);
-
-  // assets/script/billordWorldManager.ts
-  var import_matter_js = __toESM(require_matter());
-
-  // assets/script/ballWorldConfig.ts
-  var ballWorldConfig_default = {
-    ballRadius: 12.5,
-    //球刚体的半径
-    mainBallPosition: {
-      //主球的位置
-      x: 100,
-      y: 223
-    },
-    startBallPos: {
-      //开头球的
-      x: 500,
-      y: 223
-    },
-    numRows: 5,
-    //其他球的列数
-    deskSize: {
-      //物理世界中桌子的尺寸
-      width: 820,
-      height: 480
-    },
-    restitution: 1,
-    wallSize: {
-      width: 1e5,
-      height: 1e5,
-      wallBorder: 67
-      //墙体厚度
-    }
+  // assets/script/BillordGlobalConfig.ts
+  var BillordGlobalConfig_default = {
+    ws: "192.168.0.2:3000"
   };
 
-  // assets/script/billordWorldManager.ts
-  var Matter = __toESM(require_matter());
-  var billordWorldManager = class {
-    /**
-     * 
-     * @param isRender nodejs服务器和cocos引擎不需要开启渲染
-     */
-    constructor(isRender = false) {
-      this.otherBallKv = {};
-      this.ballList = [];
-      this.engine = this.createEngine();
-      this.mainBall = this.createMainBall();
-      this.createBall();
-      this.createWall();
-      this.runner = import_matter_js.Runner.create();
-      isRender && this.createRender();
-    }
-    /**
-     * 物理世界启动
-     * @param num 
-     */
-    runTick(num) {
-      Matter.Runner.tick(this.runner, this.engine, num);
-    }
-    createRender() {
-      let width = ballWorldConfig_default.deskSize.width;
-      let height = ballWorldConfig_default.deskSize.height;
-      var render = import_matter_js.Render.create({
-        element: document.body,
-        engine: this.engine,
-        options: {
-          width,
-          height,
-          wireframes: false
-        }
-      });
-      import_matter_js.Render.run(render);
-      return render;
-    }
-    createEngine() {
-      let engine = import_matter_js.Engine.create({
-        gravity: { x: 0, y: 0 }
-        // 关闭重力效果
-      });
-      return engine;
-    }
-    createMainBall() {
-      var restitution = ballWorldConfig_default.restitution;
-      var cueBall = import_matter_js.Bodies.circle(ballWorldConfig_default.mainBallPosition.x, ballWorldConfig_default.mainBallPosition.y, ballWorldConfig_default.ballRadius, {
-        restitution
-        // 调整回弹系数以控制球的弹跳
-      });
-      import_matter_js.World.add(this.engine.world, cueBall);
-      this.ballList.push(cueBall);
-      return cueBall;
-    }
-    createBall() {
-      let engine = this.engine;
-      let ballRadius = ballWorldConfig_default.ballRadius;
-      var objectBalls = [];
-      var numRows = ballWorldConfig_default.numRows;
-      var startX = ballWorldConfig_default.startBallPos.x;
-      var startY = ballWorldConfig_default.startBallPos.y;
-      var restitution = ballWorldConfig_default.restitution;
-      for (var row = 0; row < numRows; row++) {
-        var ballsInRow = row + 1;
-        var rowStartX = startX;
-        var rowStartY = startY - row * ballRadius;
-        for (var i2 = 0; i2 < ballsInRow; i2++) {
-          var x = rowStartX + (row - numRows / 2) * ballRadius * 2;
-          var y = rowStartY + i2 * ballRadius * 2;
-          var ball = import_matter_js.Bodies.circle(x, y, ballRadius, {
-            restitution
-            // 调整回弹系数以控制球的弹跳
-          });
-          objectBalls.push(ball);
-          this.ballList.push(ball);
-          this.otherBallKv[ball.id] = ball;
-        }
+  // assets/script/utils/event/globalObserver.ts
+  var _BillboardEve = class extends Laya.EventDispatcher {
+    static getInstance() {
+      if (!this.instance) {
+        this.instance = new _BillboardEve();
       }
-      import_matter_js.World.add(engine.world, [...objectBalls]);
-    }
-    createWall() {
-      let wallBorder = ballWorldConfig_default.wallSize.wallBorder;
-      let width = ballWorldConfig_default.wallSize.width;
-      let height = ballWorldConfig_default.wallSize.height;
-      let worldWidth = ballWorldConfig_default.deskSize.width;
-      let worldheight = ballWorldConfig_default.deskSize.height;
-      let engine = this.engine;
-      var staticRect = import_matter_js.Bodies.rectangle(0, -height / 2 + wallBorder, width, height, {
-        isStatic: true,
-        restitution: 1
-        // 调整回弹系数以控制球的弹跳
-      });
-      import_matter_js.World.add(engine.world, staticRect);
-      var staticRectBanner = import_matter_js.Bodies.rectangle(0, worldheight + height / 2 - wallBorder, width, height, {
-        isStatic: true,
-        restitution: 1
-        // 调整回弹系数以控制球的弹跳
-      });
-      import_matter_js.World.add(engine.world, staticRectBanner);
-      var staticLeft = import_matter_js.Bodies.rectangle(-width / 2 + wallBorder, 0, width, height, {
-        isStatic: true,
-        restitution: 1
-        // 调整回弹系数以控制球的弹跳
-      });
-      import_matter_js.World.add(engine.world, staticLeft);
-      var staticRight = import_matter_js.Bodies.rectangle(worldWidth + width / 2 - wallBorder, 0, width, height, {
-        isStatic: true,
-        restitution: 1
-        // 调整回弹系数以控制球的弹跳
-      });
-      import_matter_js.World.add(engine.world, staticRight);
-    }
-    runTimeTick() {
-      setInterval(() => {
-        Matter.Runner.tick(this.runner, this.engine, 1e3 / 60);
-      }, 1e3 / 60);
-    }
-    /**
-     * 打球
-     * @param angle 
-     */
-    hitBall(angle) {
-      let angleDir = this.getNormalizedVectorFromAngle(angle);
-      let ball = this.mainBall;
-      var forceMagnitude = 0.05;
-      angleDir.x *= forceMagnitude;
-      angleDir.y *= forceMagnitude;
-      var force = { x: angleDir.x, y: angleDir.y };
-      Matter.Body.applyForce(ball, ball.position, force);
-    }
-    getNormalizedVectorFromAngle(angle) {
-      const degree = angle % 360;
-      const radian = degree * Math.PI / 180;
-      const x = Math.cos(radian);
-      const y = Math.sin(radian);
-      return { x, y };
-    }
-    /**
-     * 在物理世界中施加力
-     * @param normal 
-     * @param hitEnergy 
-     */
-    hitNormal(normal, hitEnergy = 0.03) {
-      let force = normal;
-      normal.x *= hitEnergy;
-      normal.y *= hitEnergy;
-      let ball = this.mainBall;
-      Matter.Body.applyForce(ball, ball.position, force);
+      return this.instance;
     }
   };
-  __name(billordWorldManager, "billordWorldManager");
-
-  // assets/script/comm/billordCubeBarComm.ts
-  var { regClass: regClass6, property: property6 } = Laya;
-  var billordCubeBarComm = class extends Laya.Script {
-    constructor() {
-      super();
-      this.cubeNode = null;
-    }
-    //declare owner : Laya.Sprite3D;
-    onStart() {
-    }
-    runAction() {
-      return new Promise((reslove) => {
-        let tween = new Laya.Tween();
-        tween.from(this.cubeNode, { y: 0 }, 0);
-        tween.to(this.cubeNode, { y: 100 }, 500, null, new Laya.Handler(this, () => {
-          tween.to(this.cubeNode, { y: 0 }, 50, null, new Laya.Handler(this, () => {
-            reslove(null);
-          }));
-        }));
-      });
-    }
-    /**
-     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
-     */
-    //onAwake(): void {}
-    /**
-     * 组件被启用后执行，例如节点被添加到舞台后
-     */
-    //onEnable(): void {}
-    /**
-     * 组件被禁用时执行，例如从节点从舞台移除后
-     */
-    //onDisable(): void {}
-    /**
-     * 第一次执行update之前执行，只会执行一次
-     */
-    //onStart(): void {}
-    /**
-     * 手动调用节点销毁时执行
-     */
-    //onDestroy(): void {
-    /**
-     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onUpdate(): void {}
-    /**
-     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-     */
-    //onLateUpdate(): void {}
-    /**
-     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
-     */
-    //onMouseClick(): void {}
-  };
-  __name(billordCubeBarComm, "billordCubeBarComm");
-  __decorateClass([
-    property6(Laya.Node)
-  ], billordCubeBarComm.prototype, "cubeNode", 2);
-  billordCubeBarComm = __decorateClass([
-    regClass6("b3360337-ccae-48c7-959d-4cab4466807e", "script/comm/billordCubeBarComm.ts")
-  ], billordCubeBarComm);
+  var BillboardEve = _BillboardEve;
+  __name(BillboardEve, "BillboardEve");
+  BillboardEve.instance = null;
 
   // node_modules/engine.io-parser/build/esm/commons.js
   var PACKET_TYPES = /* @__PURE__ */ Object.create(null);
@@ -8574,11 +8010,664 @@
     connect: lookup2
   });
 
+  // assets/script/utils/wsManager.ts
+  var wsManager = class {
+    constructor(host) {
+      this.queryData = {};
+      this.hostUrl = "";
+      this.socket = null;
+      this._firstConnect = false;
+      this.hostUrl = host;
+    }
+    setData(data) {
+      this.queryData = data;
+    }
+    init() {
+      let socket = this.socket = lookup2(`ws://${this.hostUrl}`, {
+        query: this.queryData
+      });
+      socket.on("connect", this.connect);
+      socket.on("message", this.message);
+      socket.on("disconnect", this.disconnect);
+      socket.io.on("reconnect", this.reconnect);
+    }
+    message(data) {
+      billboradGolbal.getInstance().event.event(`${data.msgId}`, data.msgData);
+    }
+    connect() {
+      if (this._firstConnect)
+        return;
+      this._firstConnect = true;
+      billboradGolbal.getInstance().event.event("firstConnect");
+    }
+    disconnect() {
+      billboradGolbal.getInstance().event.event("disConnect");
+    }
+    reconnect() {
+      billboradGolbal.getInstance().event.event("reconnect");
+    }
+    /**
+     * 发送
+     * @param msgId 
+     * @param data 
+     */
+    send(msgId, data) {
+      let msg = {
+        msgData: data,
+        msgId
+      };
+      let socket = this.socket;
+      socket.emit("userMsg", msg);
+    }
+  };
+  __name(wsManager, "wsManager");
+
+  // assets/script/BillordGlobal.ts
+  var _billboradGolbal = class {
+    constructor() {
+      this.ws = null;
+      this.event = null;
+      this.userData = {};
+    }
+    static getInstance() {
+      if (!this.instance) {
+        this.instance = new _billboradGolbal();
+        this.instance.event = new BillboardEve();
+        this.instance.ws = new wsManager(BillordGlobalConfig_default.ws);
+        window["billboradGolbal"] = this.instance;
+      }
+      return this.instance;
+    }
+  };
+  var billboradGolbal = _billboradGolbal;
+  __name(billboradGolbal, "billboradGolbal");
+  billboradGolbal.instance = null;
+
+  // assets/script/ball/ball2d.ts
+  var { regClass, property } = Laya;
+  var ball2d = class extends Laya.Script {
+    constructor() {
+      super();
+      this.sp = null;
+    }
+    setTexture(textuer) {
+      this.sp.texture = new Laya.Texture(textuer);
+    }
+    /**
+     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
+     */
+    //onAwake(): void {}
+    /**
+     * 组件被启用后执行，例如节点被添加到舞台后
+     */
+    //onEnable(): void {}
+    /**
+     * 组件被禁用时执行，例如从节点从舞台移除后
+     */
+    //onDisable(): void {}
+    /**
+     * 第一次执行update之前执行，只会执行一次
+     */
+    //onStart(): void {}
+    /**
+     * 手动调用节点销毁时执行
+     */
+    //onDestroy(): void {
+    /**
+     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onUpdate(): void {}
+    /**
+     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onLateUpdate(): void {}
+    /**
+     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
+     */
+    //onMouseClick(): void {}
+  };
+  __name(ball2d, "ball2d");
+  __decorateClass([
+    property(Laya.Sprite)
+  ], ball2d.prototype, "sp", 2);
+  ball2d = __decorateClass([
+    regClass("06c54030-60e3-451a-a14b-bfb8f72424fd", "script/ball/ball2d.ts")
+  ], ball2d);
+
+  // assets/script/ball/ball2dManager.ts
+  var { regClass: regClass2, property: property2 } = Laya;
+  var ball2dManager = class extends Laya.Script {
+    constructor() {
+      super(...arguments);
+      this.scene2dNode = null;
+      this.ball2d = null;
+    }
+    /**
+     * 插入节点
+     * @param index 
+     * @param position 
+     */
+    insertValue(position) {
+      let ball = this.ball2d.create();
+      this.scene2dNode.addChild(ball);
+      ball.pos(position.x, position.y);
+      return ball.getComponent(ball2d);
+    }
+    /**
+     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
+     */
+    //onAwake(): void {}
+    /**
+     * 组件被启用后执行，例如节点被添加到舞台后
+     */
+    //onEnable(): void {}
+    /**
+     * 组件被禁用时执行，例如从节点从舞台移除后
+     */
+    //onDisable(): void {}
+    /**
+     * 第一次执行update之前执行，只会执行一次
+     */
+    //onStart(): void {}
+    /**
+     * 手动调用节点销毁时执行
+     */
+    //onDestroy(): void {
+    /**
+     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onUpdate(): void {}
+    /**
+     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onLateUpdate(): void {}
+    /**
+     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
+     */
+    //onMouseClick(): void {}
+  };
+  __name(ball2dManager, "ball2dManager");
+  __decorateClass([
+    property2(Laya.Node)
+  ], ball2dManager.prototype, "scene2dNode", 2);
+  __decorateClass([
+    property2(Laya.Prefab)
+  ], ball2dManager.prototype, "ball2d", 2);
+  ball2dManager = __decorateClass([
+    regClass2("20bfe878-cd06-49ec-9d52-3521f2c224ff", "script/ball/ball2dManager.ts")
+  ], ball2dManager);
+
+  // assets/script/ball/ball3d.ts
+  var { regClass: regClass3, property: property3 } = Laya;
+  var RenderTexture = Laya.RenderTexture;
+  var RenderTargetFormat = Laya.RenderTargetFormat;
+  var ball3d = class extends Laya.Script {
+    constructor() {
+      super();
+      this.camera = null;
+      this.textureList = [];
+      this.renderMesh = null;
+      this.outRenderTexture = null;
+      this.ballNode = null;
+      this.normalMap = null;
+    }
+    onStart() {
+    }
+    setValue(index) {
+      let material = new Laya.BlinnPhongMaterial();
+      material.renderMode = Laya.MaterialRenderMode.RENDERMODE_TRANSPARENT;
+      material.shininess = 1;
+      let texture = this.textureList[index - 1];
+      material.albedoTexture = texture;
+      this.renderMesh.material = material;
+      let renderTexture = new RenderTexture(200, 200, RenderTargetFormat.R16G16B16A16, RenderTargetFormat.DEPTHSTENCIL_24_8, false, 1);
+      renderTexture.filterMode = Laya.FilterMode.Bilinear;
+      this.camera.renderTarget = renderTexture;
+      this.outRenderTexture = this.camera.renderTarget;
+      this.randomRoute();
+    }
+    randomRoute() {
+      let sp = this.ballNode;
+      sp.transform.rotationEuler = new Laya.Vector3(Math.random() * 360, Math.random() * 360, Math.random() * 360);
+    }
+    /**
+     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
+     */
+    //onAwake(): void {}
+    /**
+     * 组件被启用后执行，例如节点被添加到舞台后
+     */
+    //onEnable(): void {}
+    /**
+     * 组件被禁用时执行，例如从节点从舞台移除后
+     */
+    //onDisable(): void {}
+    /**
+     * 第一次执行update之前执行，只会执行一次
+     */
+    //onStart(): void {}
+    /**
+     * 手动调用节点销毁时执行
+     */
+    //onDestroy(): void {
+    /**
+     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    onUpdate() {
+    }
+    /**
+     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onLateUpdate(): void {}
+    /**
+     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
+     */
+    //onMouseClick(): void {}
+  };
+  __name(ball3d, "ball3d");
+  __decorateClass([
+    property3(Laya.Camera)
+  ], ball3d.prototype, "camera", 2);
+  __decorateClass([
+    property3([Laya.Texture2D])
+  ], ball3d.prototype, "textureList", 2);
+  __decorateClass([
+    property3(Laya.MeshRenderer)
+  ], ball3d.prototype, "renderMesh", 2);
+  __decorateClass([
+    property3(Laya.Node)
+  ], ball3d.prototype, "ballNode", 2);
+  __decorateClass([
+    property3(Laya.Texture2D)
+  ], ball3d.prototype, "normalMap", 2);
+  ball3d = __decorateClass([
+    regClass3("0943151a-e93b-408a-bcf2-7732e3e472dd", "script/ball/ball3d.ts")
+  ], ball3d);
+
+  // assets/script/ball/ball3dManager.ts
+  var { regClass: regClass4, property: property4 } = Laya;
+  var ball3dManager = class extends Laya.Script {
+    constructor() {
+      super();
+      this.scene3d = null;
+      this.ballPre = null;
+      this._addedNum = 0;
+      this.ballTextueKv = {};
+      this.ballCommKv = {};
+    }
+    onStart() {
+    }
+    /** */
+    insertValue(index) {
+      let ball = this.ballPre.create();
+      let ball3dComm = ball.getComponent(ball3d);
+      ball3dComm.setValue(index);
+      this.scene3d.addChild(ball);
+      ball.transform.position = new Laya.Vector3(this._addedNum * 100, 0, 0);
+      this._addedNum += 1;
+      this.ballCommKv[index] = ball3dComm;
+      this.ballTextueKv[index] = ball3dComm.outRenderTexture;
+      return ball3dComm;
+    }
+    /**
+     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
+     */
+    //onAwake(): void {}
+    /**
+     * 组件被启用后执行，例如节点被添加到舞台后
+     */
+    //onEnable(): void {}
+    /**
+     * 组件被禁用时执行，例如从节点从舞台移除后
+     */
+    //onDisable(): void {}
+    /**
+     * 第一次执行update之前执行，只会执行一次
+     */
+    //onStart(): void {}
+    /**
+     * 手动调用节点销毁时执行
+     */
+    //onDestroy(): void {
+    /**
+     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onUpdate(): void {}
+    /**
+     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onLateUpdate(): void {}
+    /**
+     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
+     */
+    //onMouseClick(): void {}
+  };
+  __name(ball3dManager, "ball3dManager");
+  __decorateClass([
+    property4(Laya.Node)
+  ], ball3dManager.prototype, "scene3d", 2);
+  __decorateClass([
+    property4(Laya.Prefab)
+  ], ball3dManager.prototype, "ballPre", 2);
+  ball3dManager = __decorateClass([
+    regClass4("a4d0dee3-5109-4390-913f-a05f8f3256df", "script/ball/ball3dManager.ts")
+  ], ball3dManager);
+
+  // assets/script/ball/ballManager.ts
+  var { regClass: regClass5, property: property5 } = Laya;
+  var ballManager = class extends Laya.Script {
+    constructor() {
+      super();
+      this.ballKv = {};
+    }
+    initBallManager() {
+      window["ball"] = this;
+      this.ball3dManager = this.owner.getComponent(ball3dManager);
+      this.ball2dManager = this.owner.getComponent(ball2dManager);
+    }
+    /**
+     * @param {Laya.Vector2} pos 球的位置 
+     * @param value 
+     */
+    insertBall(pos, value2, id) {
+      let ball3d2 = this.ball3dManager.insertValue(value2);
+      let ball2d2 = this.ball2dManager.insertValue(pos);
+      ball2d2.setTexture(this.ball3dManager.ballTextueKv[value2]);
+      this.ballKv[id] = {
+        ball2d: ball2d2,
+        ball3d: ball3d2
+      };
+    }
+    /**
+     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
+     */
+    //onAwake(): void {}
+    /**
+     * 组件被启用后执行，例如节点被添加到舞台后
+     */
+    //onEnable(): void {}
+    /**
+     * 组件被禁用时执行，例如从节点从舞台移除后
+     */
+    //onDisable(): void {}
+    /**
+     * 第一次执行update之前执行，只会执行一次
+     */
+    //onStart(): void {}
+    /**
+     * 手动调用节点销毁时执行
+     */
+    //onDestroy(): void {
+    /**
+     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onUpdate(): void {}
+    /**
+     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onLateUpdate(): void {}
+    /**
+     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
+     */
+    //onMouseClick(): void {}
+  };
+  __name(ballManager, "ballManager");
+  ballManager = __decorateClass([
+    regClass5("81f2ed27-4d13-433c-b35f-73d85b703cd2", "script/ball/ballManager.ts")
+  ], ballManager);
+
+  // assets/script/billordWorldManager.ts
+  var import_matter_js = __toESM(require_matter());
+
+  // assets/script/ballWorldConfig.ts
+  var ballWorldConfig_default = {
+    ballRadius: 12.5,
+    //球刚体的半径
+    mainBallPosition: {
+      //主球的位置
+      x: 100,
+      y: 223
+    },
+    startBallPos: {
+      //开头球的
+      x: 500,
+      y: 223
+    },
+    numRows: 5,
+    //其他球的列数
+    deskSize: {
+      //物理世界中桌子的尺寸
+      width: 820,
+      height: 480
+    },
+    restitution: 1,
+    wallSize: {
+      width: 1e5,
+      height: 1e5,
+      wallBorder: 67
+      //墙体厚度
+    }
+  };
+
+  // assets/script/billordWorldManager.ts
+  var Matter = __toESM(require_matter());
+  var billordWorldManager = class {
+    /**
+     * 
+     * @param isRender nodejs服务器和cocos引擎不需要开启渲染
+     */
+    constructor(isRender = false) {
+      this.otherBallKv = {};
+      this.otherBallList = [];
+      this.ballList = [];
+      this.engine = this.createEngine();
+      this.mainBall = this.createMainBall();
+      this.createBall();
+      this.createWall();
+      this.runner = import_matter_js.Runner.create();
+      isRender && this.createRender();
+    }
+    /**
+     * 物理世界启动
+     * @param num 
+     */
+    runTick(num) {
+      Matter.Runner.tick(this.runner, this.engine, num);
+    }
+    createRender() {
+      let width = ballWorldConfig_default.deskSize.width;
+      let height = ballWorldConfig_default.deskSize.height;
+      var render = import_matter_js.Render.create({
+        element: document.body,
+        engine: this.engine,
+        options: {
+          width,
+          height,
+          wireframes: false
+        }
+      });
+      import_matter_js.Render.run(render);
+      return render;
+    }
+    createEngine() {
+      let engine = import_matter_js.Engine.create({
+        gravity: { x: 0, y: 0 }
+        // 关闭重力效果
+      });
+      return engine;
+    }
+    createMainBall() {
+      var restitution = ballWorldConfig_default.restitution;
+      var cueBall = import_matter_js.Bodies.circle(ballWorldConfig_default.mainBallPosition.x, ballWorldConfig_default.mainBallPosition.y, ballWorldConfig_default.ballRadius, {
+        restitution
+        // 调整回弹系数以控制球的弹跳
+      });
+      import_matter_js.World.add(this.engine.world, cueBall);
+      this.ballList.push(cueBall);
+      return cueBall;
+    }
+    createBall() {
+      let engine = this.engine;
+      let ballRadius = ballWorldConfig_default.ballRadius;
+      var objectBalls = [];
+      var numRows = ballWorldConfig_default.numRows;
+      var startX = ballWorldConfig_default.startBallPos.x;
+      var startY = ballWorldConfig_default.startBallPos.y;
+      var restitution = ballWorldConfig_default.restitution;
+      for (var row = 0; row < numRows; row++) {
+        var ballsInRow = row + 1;
+        var rowStartX = startX;
+        var rowStartY = startY - row * ballRadius;
+        for (var i2 = 0; i2 < ballsInRow; i2++) {
+          var x = rowStartX + (row - numRows / 2) * ballRadius * 2;
+          var y = rowStartY + i2 * ballRadius * 2;
+          var ball = import_matter_js.Bodies.circle(x, y, ballRadius, {
+            restitution
+            // 调整回弹系数以控制球的弹跳
+          });
+          objectBalls.push(ball);
+          this.ballList.push(ball);
+          this.otherBallKv[ball.id] = ball;
+        }
+      }
+      import_matter_js.World.add(engine.world, [...objectBalls]);
+      this.otherBallList = objectBalls;
+    }
+    createWall() {
+      let wallBorder = ballWorldConfig_default.wallSize.wallBorder;
+      let width = ballWorldConfig_default.wallSize.width;
+      let height = ballWorldConfig_default.wallSize.height;
+      let worldWidth = ballWorldConfig_default.deskSize.width;
+      let worldheight = ballWorldConfig_default.deskSize.height;
+      let engine = this.engine;
+      var staticRect = import_matter_js.Bodies.rectangle(0, -height / 2 + wallBorder, width, height, {
+        isStatic: true,
+        restitution: 1
+        // 调整回弹系数以控制球的弹跳
+      });
+      import_matter_js.World.add(engine.world, staticRect);
+      var staticRectBanner = import_matter_js.Bodies.rectangle(0, worldheight + height / 2 - wallBorder, width, height, {
+        isStatic: true,
+        restitution: 1
+        // 调整回弹系数以控制球的弹跳
+      });
+      import_matter_js.World.add(engine.world, staticRectBanner);
+      var staticLeft = import_matter_js.Bodies.rectangle(-width / 2 + wallBorder, 0, width, height, {
+        isStatic: true,
+        restitution: 1
+        // 调整回弹系数以控制球的弹跳
+      });
+      import_matter_js.World.add(engine.world, staticLeft);
+      var staticRight = import_matter_js.Bodies.rectangle(worldWidth + width / 2 - wallBorder, 0, width, height, {
+        isStatic: true,
+        restitution: 1
+        // 调整回弹系数以控制球的弹跳
+      });
+      import_matter_js.World.add(engine.world, staticRight);
+    }
+    runTimeTick() {
+      setInterval(() => {
+        Matter.Runner.tick(this.runner, this.engine, 1e3 / 60);
+      }, 1e3 / 60);
+    }
+    /**
+     * 打球
+     * @param angle 
+     */
+    hitBall(angle) {
+      let angleDir = this.getNormalizedVectorFromAngle(angle);
+      let ball = this.mainBall;
+      var forceMagnitude = 0.05;
+      angleDir.x *= forceMagnitude;
+      angleDir.y *= forceMagnitude;
+      var force = { x: angleDir.x, y: angleDir.y };
+      Matter.Body.applyForce(ball, ball.position, force);
+    }
+    getNormalizedVectorFromAngle(angle) {
+      const degree = angle % 360;
+      const radian = degree * Math.PI / 180;
+      const x = Math.cos(radian);
+      const y = Math.sin(radian);
+      return { x, y };
+    }
+    /**
+     * 在物理世界中施加力
+     * @param normal 
+     * @param hitEnergy 
+     */
+    hitNormal(normal, hitEnergy = 0.03) {
+      let force = normal;
+      normal.x *= hitEnergy;
+      normal.y *= hitEnergy;
+      let ball = this.mainBall;
+      Matter.Body.applyForce(ball, ball.position, force);
+    }
+  };
+  __name(billordWorldManager, "billordWorldManager");
+
+  // assets/script/comm/billordCubeBarComm.ts
+  var { regClass: regClass6, property: property6 } = Laya;
+  var billordCubeBarComm = class extends Laya.Script {
+    constructor() {
+      super();
+      this.cubeNode = null;
+    }
+    //declare owner : Laya.Sprite3D;
+    onStart() {
+    }
+    runAction() {
+      return new Promise((reslove) => {
+        let tween = new Laya.Tween();
+        tween.from(this.cubeNode, { y: 0 }, 0);
+        tween.to(this.cubeNode, { y: 100 }, 500, null, new Laya.Handler(this, () => {
+          tween.to(this.cubeNode, { y: 0 }, 50, null, new Laya.Handler(this, () => {
+            reslove(null);
+          }));
+        }));
+      });
+    }
+    /**
+     * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
+     */
+    //onAwake(): void {}
+    /**
+     * 组件被启用后执行，例如节点被添加到舞台后
+     */
+    //onEnable(): void {}
+    /**
+     * 组件被禁用时执行，例如从节点从舞台移除后
+     */
+    //onDisable(): void {}
+    /**
+     * 第一次执行update之前执行，只会执行一次
+     */
+    //onStart(): void {}
+    /**
+     * 手动调用节点销毁时执行
+     */
+    //onDestroy(): void {
+    /**
+     * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onUpdate(): void {}
+    /**
+     * 每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
+     */
+    //onLateUpdate(): void {}
+    /**
+     * 鼠标点击后执行。与交互相关的还有onMouseDown等十多个函数，具体请参阅文档。
+     */
+    //onMouseClick(): void {}
+  };
+  __name(billordCubeBarComm, "billordCubeBarComm");
+  __decorateClass([
+    property6(Laya.Node)
+  ], billordCubeBarComm.prototype, "cubeNode", 2);
+  billordCubeBarComm = __decorateClass([
+    regClass6("b3360337-ccae-48c7-959d-4cab4466807e", "script/comm/billordCubeBarComm.ts")
+  ], billordCubeBarComm);
+
   // assets/script/ballMain.ts
-  var mgr = new Manager("ws://127.0.0.1:3000", {
-    reconnectionDelayMax: 1e4
-  });
-  mgr.socket("");
   var { regClass: regClass7, property: property7 } = Laya;
   var ballMain = class extends Laya.Script {
     constructor() {
@@ -8587,19 +8676,53 @@
       this.billordCube = null;
       this.ballworld = null;
       this.ballManager = null;
+      this.mainBallId = 0;
     }
     onStart() {
       let ballword = this.ballworld = new billordWorldManager();
       this.ballManager = this.owner.getComponent(ballManager);
       this.ballManager.initBallManager();
-      this.ballManager.insertBall(new Laya.Vector2(ballword.mainBall.position.x, ballword.mainBall.position.y), 1);
-      let otherballList = Object.keys(ballword.otherBallKv);
-      for (let i2 = 0; i2 < otherballList.length; i2++) {
-        let index = Number(otherballList[i2]);
-        let ball = ballword.otherBallKv[index];
-        this.ballManager.insertBall(new Laya.Vector2(ball.position.x, ball.position.y), index);
-      }
+      this.listenEve();
       this.listenTouch();
+      billboradGolbal.getInstance().ws.send("synceBallWorldReq", {});
+    }
+    listenEve() {
+      billboradGolbal.getInstance().event.once("synceBallWorldRsp", (data) => {
+        let ballData = data.ballData;
+        this.ballManager.insertBall(new Laya.Vector2(ballData.mainBall.position.x, ballData.mainBall.position.y), 1, ballData.mainBall.id);
+        let otherBallList = ballData.otherBall;
+        this.mainBallId = ballData.mainBall.id;
+        otherBallList.forEach((item) => {
+          this.ballManager.insertBall(new Laya.Vector2(item.position.x, item.position.y), item.value, item.id);
+        });
+        billboradGolbal.getInstance().event.on("synceBallBarRsp", (data2) => {
+          if (data2.userId != billboradGolbal.getInstance().userData.userId) {
+            this.selectAngle(data2.synceData);
+          }
+        });
+        billboradGolbal.getInstance().event.on("hitBallRsp", (data2) => {
+          if (data2.userId != billboradGolbal.getInstance().userData.userId) {
+            this.hitHandel(data2.synceData.hitNormal);
+          }
+        });
+        billboradGolbal.getInstance().event.on("syncBallFrameRsp", (data2) => {
+          let ballList = data2.ball;
+          ballList.forEach((item) => {
+            let ballItem = this.ballManager.ballKv[item.id];
+            let ball2d2 = ballItem.ball2d;
+            let ball2dSp = ball2d2.owner;
+            let localPos = new Laya.Vector2(ball2dSp.x - item.position.x, ball2dSp.y - item.position.y);
+            let len = Laya.Vector2.scalarLength(localPos);
+            let normal = localPos.clone();
+            Laya.Vector2.normalize(localPos, normal);
+            let ball3dNode = ballItem.ball3d.ballNode;
+            if (len) {
+              ball3dNode.transform.rotate(new Laya.Vector3(normal.y * (len / 160) * 360, 0, normal.x * (len / 160) * 360), false, false);
+              ball2dSp.pos(item.position.x, item.position.y);
+            }
+          });
+        });
+      });
     }
     listenTouch() {
       Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.mouseStart);
@@ -8614,15 +8737,19 @@
     }
     mouseEnd() {
       return new Promise((reslove) => __async(this, null, function* () {
-        let billordCube = this.billordCube.owner;
-        yield this.billordCube.runAction();
         let mapSp = this.ballManager.ball2dManager.scene2dNode;
-        let mainPos = new Laya.Vector2(this.ballworld.mainBall.position.x, this.ballworld.mainBall.position.y);
+        let mainBall = this.ballManager.ballKv[this.mainBallId].ball2d.owner;
+        let mainPos = new Laya.Vector2(mainBall.x, mainBall.y);
         let pos = new Laya.Vector2(Laya.stage.mouseX, Laya.stage.mouseY);
         let globalPos = mapSp.globalToLocal(new Laya.Point(pos.x, pos.y), true);
         let inMainLocalPos = new Laya.Vector2(globalPos.x - mainPos.x, globalPos.y - mainPos.y);
         let normal = new Laya.Vector2();
         Laya.Vector2.normalize(inMainLocalPos, normal);
+        billboradGolbal.getInstance().ws.send("hitBall", {
+          hitNormal: { x: normal.x, y: normal.y }
+        });
+        let billordCube = this.billordCube.owner;
+        yield this.billordCube.runAction();
         this.ballworld.hitNormal(normal);
         setTimeout(() => {
           billordCube.visible = false;
@@ -8630,7 +8757,24 @@
         }, 200);
         Laya.stage.off(Laya.Event.MOUSE_MOVE, this, this.mouseMove);
         Laya.stage.off(Laya.Event.MOUSE_UP, this, this.mouseEnd);
+        return;
       }));
+    }
+    hitHandel(hitNormal) {
+      return __async(this, null, function* () {
+        let mapSp = this.ballManager.ball2dManager.scene2dNode;
+        let mainPos = new Laya.Vector2(this.ballworld.mainBall.position.x, this.ballworld.mainBall.position.y);
+        let pos = new Laya.Vector2(Laya.stage.mouseX, Laya.stage.mouseY);
+        let globalPos = mapSp.globalToLocal(new Laya.Point(pos.x, pos.y), true);
+        let inMainLocalPos = new Laya.Vector2(globalPos.x - mainPos.x, globalPos.y - mainPos.y);
+        let normal = new Laya.Vector2(hitNormal.x, hitNormal.y);
+        Laya.Vector2.normalize(inMainLocalPos, normal);
+        let billordCube = this.billordCube.owner;
+        yield this.billordCube.runAction();
+        setTimeout(() => {
+          billordCube.visible = false;
+        }, 200);
+      });
     }
     routeAngle(pos, angle) {
       angle = Math.PI / 180 * angle;
@@ -8639,12 +8783,13 @@
         y: -Math.sin(angle) * pos.x + Math.cos(angle) * pos.y
       };
     }
-    selectAngle() {
+    selectAngle(syncData) {
       let mapSp = this.ballManager.ball2dManager.scene2dNode;
       let billordCube = this.billordCube.owner;
       billordCube.visible = true;
       billordCube.zOrder = this.ballManager.ball2dManager.scene2dNode.numChildren;
-      let mainPos = new Laya.Vector2(this.ballworld.mainBall.position.x, this.ballworld.mainBall.position.y);
+      let ballNode = this.ballManager.ballKv[this.mainBallId].ball2d.owner;
+      let mainPos = new Laya.Vector2(ballNode.x, ballNode.y);
       let pos = new Laya.Vector2(Laya.stage.mouseX, Laya.stage.mouseY);
       let globalPos = mapSp.globalToLocal(new Laya.Point(pos.x, pos.y), true);
       let inMainLocalPos = new Laya.Vector2(globalPos.x - mainPos.x, globalPos.y - mainPos.y);
@@ -8652,14 +8797,26 @@
       Laya.Vector2.normalize(inMainLocalPos, normal);
       let cos = Laya.Vector2.dot(normal, new Laya.Vector2(1, 0));
       let angle = 0;
-      angle = 180 / Math.PI * Math.acos(cos);
-      angle += 90;
-      if (inMainLocalPos.y > 0) {
-        billordCube.rotation = angle;
+      if (syncData == void 0) {
+        angle = 180 / Math.PI * Math.acos(cos);
+        angle += 90;
+        if (inMainLocalPos.y > 0) {
+          billordCube.rotation = angle;
+        } else {
+          billordCube.rotation = 180 - angle;
+        }
       } else {
-        billordCube.rotation = 180 - angle;
+        billordCube.rotation = syncData.rotation;
+        normal.x = syncData.normal.x;
+        normal.y = syncData.normal.y;
       }
       billordCube.pos(mainPos.x + normal.x * -10, mainPos.y + normal.y * -10);
+      if (syncData == void 0) {
+        billboradGolbal.getInstance().ws.send("synceBallBar", {
+          rotation: billordCube.rotation,
+          normal: { x: normal.x, y: normal.y }
+        });
+      }
     }
     /**
      * 游戏的tick运行时
@@ -8706,6 +8863,7 @@
      * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
      */
     onUpdate() {
+      return;
       this.updateTick(Laya.timer.delta);
     }
     /**
@@ -8728,24 +8886,16 @@
     regClass7("8e3b7db3-2492-4e8f-8b42-195285ed59b9", "script/ballMain.ts")
   ], ballMain);
 
-  // src/Main.ts
+  // assets/script/loginDialog.ts
   var { regClass: regClass8, property: property8 } = Laya;
-  var Main = class extends Laya.Script {
-    onStart() {
-      console.log("Game start");
-    }
-  };
-  __name(Main, "Main");
-  Main = __decorateClass([
-    regClass8("7bad1742-6eed-4d8d-81c0-501dc5bf03d6", "../src/Main.ts")
-  ], Main);
-
-  // src/ss.ts
-  var { regClass: regClass9, property: property9 } = Laya;
-  var Script = class extends Laya.Script {
+  var loginDialogss = class extends Laya.Script {
     constructor() {
       super();
       this.text = "";
+      this.sureBtn = null;
+      this.roomIdInput = null;
+      this.userIdInput = null;
+      this.joined = false;
     }
     /**
      * 组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
@@ -8754,15 +8904,45 @@
     /**
      * 组件被启用后执行，例如节点被添加到舞台后
      */
-    //onEnable(): void {}
+    onEnable() {
+    }
     /**
      * 组件被禁用时执行，例如从节点从舞台移除后
      */
-    //onDisable(): void {}
+    onDisable() {
+    }
     /**
      * 第一次执行update之前执行，只会执行一次
      */
-    //onStart(): void {}
+    onStart() {
+      let eve = billboradGolbal.getInstance().event;
+      billboradGolbal.getInstance();
+      this.sureBtn.clickHandler = new Laya.Handler(this, this.clickBtn);
+      eve.once("loginRoomRsp", (data) => {
+        let scene = Laya.loader.getRes("mainGame.ls");
+        if (!scene) {
+          Laya.Scene.load("mainGame.ls", new Laya.Handler(this, (scene2) => {
+            console.warn("loaded", scene2);
+            billboradGolbal.getInstance().userData = data;
+            scene2.open(true, data);
+          }));
+        } else {
+          scene.open(true, data);
+        }
+      });
+    }
+    clickBtn() {
+      if (this.joined)
+        return;
+      this.joined = true;
+      let roomId = this.roomIdInput.text;
+      let userId = this.userIdInput.text;
+      billboradGolbal.getInstance().ws.setData({
+        roomId: Number(roomId),
+        userId: Number(userId)
+      });
+      billboradGolbal.getInstance().ws.init();
+    }
     /**
      * 手动调用节点销毁时执行
      */
@@ -8780,13 +8960,45 @@
      */
     //onMouseClick(): void {}
   };
-  __name(Script, "Script");
+  __name(loginDialogss, "loginDialogss");
   __decorateClass([
-    property9(String)
-  ], Script.prototype, "text", 2);
-  Script = __decorateClass([
-    regClass9("da0096b9-6cc9-47c9-81e5-27a79ff1d8f9", "../src/ss.ts")
-  ], Script);
+    property8(String)
+  ], loginDialogss.prototype, "text", 2);
+  __decorateClass([
+    property8(Laya.Button)
+  ], loginDialogss.prototype, "sureBtn", 2);
+  __decorateClass([
+    property8(Laya.TextInput)
+  ], loginDialogss.prototype, "roomIdInput", 2);
+  __decorateClass([
+    property8(Laya.TextInput)
+  ], loginDialogss.prototype, "userIdInput", 2);
+  loginDialogss = __decorateClass([
+    regClass8("ef5c70e6-ac41-4abc-8a74-f1e3b09ae6f4", "script/loginDialog.ts")
+  ], loginDialogss);
+
+  // src/mainGameScene.generated.ts
+  var mainGameSceneBase = class extends Laya.Scene {
+  };
+  __name(mainGameSceneBase, "mainGameSceneBase");
+
+  // src/mainGameScene.ts
+  var { regClass: regClass9, property: property9 } = Laya;
+  var mainGameScene = class extends mainGameSceneBase {
+    onOpened(param) {
+      this.roomIdLabel.text = `roomId :${param.roomId}`;
+      this.playerIdLabel.text = `playerId :${param.userId}`;
+      if (param.userSeat == "3") {
+        this.playerSeatLabel.text = `playerSeat :\u89C2\u4F17`;
+      } else {
+        this.playerSeatLabel.text = `playerSeat :${param.userSeat}`;
+      }
+    }
+  };
+  __name(mainGameScene, "mainGameScene");
+  mainGameScene = __decorateClass([
+    regClass9("716c2f75-99fe-4dd4-b334-ab18ece48381", "../src/mainGameScene.ts")
+  ], mainGameScene);
 })();
 /*! Bundled license information:
 
