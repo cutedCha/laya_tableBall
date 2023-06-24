@@ -1,6 +1,7 @@
 import { billboradGolbal } from "./BillordGlobal";
 import { ball3dManager } from "./ball/ball3dManager";
 import { ballManager } from "./ball/ballManager";
+import { billordFramesSyncManager } from "./billordFramesManager";
 import { billordWorldManager } from "./billordWorldManager";
 import { billordCubeBarComm } from "./comm/billordCubeBarComm";
 
@@ -21,16 +22,28 @@ export class ballMain extends Laya.Script {
         super();
     }
     ballManager: ballManager = null
-
+    billordFrames:billordFramesSyncManager  = null
     onStart(): void {
         
         let ballword = this.ballworld = new billordWorldManager
         this.ballManager = this.owner.getComponent(ballManager)
 
         this.ballManager.initBallManager()
+
+        this.billordFrames = new billordFramesSyncManager()
+        this.billordFrames.controller.ballManager = this.ballManager
+        this.billordFrames.controller.ballworld = this.ballworld
+
+        
         this.listenEve()
         this.listenTouch()
+  
+
+
+
         billboradGolbal.getInstance().ws.send("synceBallWorldReq",{})
+
+
 
     }
     mainBallId:number = 0
@@ -78,6 +91,12 @@ export class ballMain extends Laya.Script {
                     }
                 })
             })
+            billboradGolbal.getInstance().event.on("hitRsp",(data:{frames:any[],userId:number|string})=>{
+                data.frames.forEach(item=>{
+                    this.billordFrames.addFrame(item)
+                })
+
+            })
         })
 
 
@@ -110,7 +129,8 @@ export class ballMain extends Laya.Script {
             })
             let billordCube = this.billordCube.owner as Laya.Sprite
             await this.billordCube.runAction()
-            this.ballworld.hitNormal(normal)
+            this.billordFrames.setState(1)
+            // this.ballworld.hitNormal(normal)
 
             setTimeout(() => {
                 billordCube.visible = false
@@ -136,6 +156,7 @@ export class ballMain extends Laya.Script {
         await this.billordCube.runAction()
         setTimeout(() => {
             billordCube.visible = false
+
         }, 200);
 
     }
@@ -257,6 +278,9 @@ export class ballMain extends Laya.Script {
      * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
      */
     onUpdate(): void {
+        if(this.billordFrames){
+            this.billordFrames.update(Laya.timer.delta)
+        }
         return
         this.updateTick(Laya.timer.delta)
     }

@@ -8361,7 +8361,6 @@
       this.ballKv = {};
     }
     initBallManager() {
-      window["ball"] = this;
       this.ball3dManager = this.owner.getComponent(ball3dManager);
       this.ball2dManager = this.owner.getComponent(ball2dManager);
     }
@@ -8415,6 +8414,65 @@
   ballManager = __decorateClass([
     regClass5("81f2ed27-4d13-433c-b35f-73d85b703cd2", "script/ball/ballManager.ts")
   ], ballManager);
+
+  // assets/script/billordFramesManager.ts
+  var syncManagerBase = class {
+    //当前播放了这女
+    constructor() {
+      this.frameTime = 0;
+      this.state = 0;
+      this.currentTime = 0;
+      //当前播放了多少时间
+      this.currentFrame = 0;
+      this.state = 0;
+      this.frames = [];
+    }
+    addFrame(frame) {
+      this.frames.push(frame);
+    }
+    cleanFrames() {
+      this.currentFrame = 0;
+      this.frames = [];
+    }
+    getState() {
+      return this.state;
+    }
+    setState(newState) {
+      this.state = newState;
+    }
+    update(dt) {
+      if (this.state == 0)
+        return;
+    }
+  };
+  __name(syncManagerBase, "syncManagerBase");
+  var billordFramesSyncManager = class extends syncManagerBase {
+    constructor() {
+      super();
+      //一些控制器
+      this.controller = {};
+    }
+    update(dt) {
+      if (this.state == 0)
+        return;
+      this.updateHandel(dt);
+    }
+    /**
+     * 更新
+     * @param dt 
+     */
+    updateHandel(dt) {
+      return;
+      this.currentTime += dt;
+      let frame = Math.floor(this.currentTime);
+      if (frame < this.frames.length) {
+        console.warn("\u5F53\u524D\u64AD\u653E\u5230===>", this.currentTime, Math.floor(this.currentTime / 10));
+      } else {
+        console.warn("\u64AD\u653E\u5B8C\u6210");
+      }
+    }
+  };
+  __name(billordFramesSyncManager, "billordFramesSyncManager");
 
   // assets/script/billordWorldManager.ts
   var import_matter_js = __toESM(require_matter());
@@ -8676,12 +8734,16 @@
       this.billordCube = null;
       this.ballworld = null;
       this.ballManager = null;
+      this.billordFrames = null;
       this.mainBallId = 0;
     }
     onStart() {
       let ballword = this.ballworld = new billordWorldManager();
       this.ballManager = this.owner.getComponent(ballManager);
       this.ballManager.initBallManager();
+      this.billordFrames = new billordFramesSyncManager();
+      this.billordFrames.controller.ballManager = this.ballManager;
+      this.billordFrames.controller.ballworld = this.ballworld;
       this.listenEve();
       this.listenTouch();
       billboradGolbal.getInstance().ws.send("synceBallWorldReq", {});
@@ -8722,6 +8784,11 @@
             }
           });
         });
+        billboradGolbal.getInstance().event.on("hitRsp", (data2) => {
+          data2.frames.forEach((item) => {
+            this.billordFrames.addFrame(item);
+          });
+        });
       });
     }
     listenTouch() {
@@ -8750,7 +8817,7 @@
         });
         let billordCube = this.billordCube.owner;
         yield this.billordCube.runAction();
-        this.ballworld.hitNormal(normal);
+        this.billordFrames.setState(1);
         setTimeout(() => {
           billordCube.visible = false;
           reslove(null);
@@ -8863,6 +8930,9 @@
      * 每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
      */
     onUpdate() {
+      if (this.billordFrames) {
+        this.billordFrames.update(Laya.timer.delta);
+      }
       return;
       this.updateTick(Laya.timer.delta);
     }
@@ -8922,7 +8992,6 @@
         let scene = Laya.loader.getRes("mainGame.ls");
         if (!scene) {
           Laya.Scene.load("mainGame.ls", new Laya.Handler(this, (scene2) => {
-            console.warn("loaded", scene2);
             billboradGolbal.getInstance().userData = data;
             scene2.open(true, data);
           }));

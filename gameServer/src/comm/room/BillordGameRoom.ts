@@ -16,6 +16,29 @@ export class BillordGameRoom {
     this.player2 = null;
     this.gameState = {};
     this.ballWorld = new billordWorldManager
+return
+    setInterval(() => {
+      let ballList:any[] = []
+  
+      this.ballWorld.ballList.forEach((item)=>{
+        ballList.push({
+          id:item.id,
+          position:{x:item.position.x,y:item.position.y}
+        })
+      })
+          this.ballWorld.runTick(10)    
+          this.Broadcast({
+            msgId:"syncBallFrameRsp",
+            msgData:{
+              // userId:userId,
+              ball:ballList
+            }
+          })
+          this.ballWorld.ballList.forEach(item=>{
+            console.warn(item.angularSpeed)
+          })
+      }, 10);
+
   }
 
   addPlayer(player: BillordUser) {
@@ -50,29 +73,53 @@ export class BillordGameRoom {
     console.warn("房间人满了你只能是观众了")
     return 3
   }
-  
-  generateFrames(){}
-  startGame() {
-    return
-    // TODO: Implement game logic here
-    setInterval(() => {
-      let ballList:any[] = []
-  
-      this.ballWorld.ballList.forEach((item)=>{
-        ballList.push({
-          id:item.id,
-          position:{x:item.position.x,y:item.position.y}
-        })
-      })
-          this.ballWorld.runTick(10)    
-          this.Broadcast({
-            msgId:"syncBallFrameRsp",
-            msgData:{
-              // userId:userId,
-              ball:ballList
+
+  /**
+   * 生成帧包
+   * @param frameBlock 
+   * @param time 
+   */
+  generateFrames(){
+    let frameNum = 10
+     let trickTime = 1000/frameNum
+
+    let frameList:{frames:any[]} = {
+      frames:[]
+    }
+    while(true){
+      let ballList = this.ballWorld.ballList
+      for(let i = 0;i<frameNum;i++){
+        let frames:any[] = []
+        this.ballWorld.runTick(trickTime)
+        ballList.forEach(item=>{
+          let frameItem = {
+            position:{
+              x: item.position.x,
+              y:item.position.y
             }
-          })
-      }, 10);
+          }
+          frames.push(frameItem)
+    
+        })
+        frameList.frames.push(frames)
+      }
+
+      let eveIsStop = ballList.every((value)=>{
+          return value.speed <= 0.001
+      })
+      if(eveIsStop){
+        ballList.forEach(item=>{
+          item.velocity.x = 0
+          item.velocity.y = 0
+        })
+        break
+      }
+    }
+    return frameList
+  }
+  startGame() {
+    // TODO: Implement game logic here
+
   }
 
   endGame() {
@@ -142,7 +189,18 @@ export class BillordGameRoom {
   }
   
   hitNoramWorld(normal:{x:number,y:number},userId:number){
-    this.ballWorld.hitNormal(normal)    
+    this.ballWorld.hitNormal(normal)   
+    // let data = new Date().getDate()
+    let f = this.generateFrames()
+    console.warn("9999---->",f.frames.length)
+    this.Broadcast({
+      msgId:"hitRsp",
+      msgData:{
+        ...f,
+        userId:userId
+      }
+    })
+  //  console.warn("xxxxx====>",f.frames.length,    data-new Date().getDate()    )
   }
 
   Broadcast(data:dataMsg){

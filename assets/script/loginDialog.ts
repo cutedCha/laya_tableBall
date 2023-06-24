@@ -47,7 +47,6 @@ export class loginDialogss extends Laya.Script {
             let scene = Laya.loader.getRes("mainGame.ls") as Laya.Scene
             if (!scene) {
                 Laya.Scene.load("mainGame.ls", new Laya.Handler(this, (scene: Laya.Scene) => {
-                    console.warn("loaded", scene)
                     billboradGolbal.getInstance().userData = data
                     scene.open(true,data)
                 }))
